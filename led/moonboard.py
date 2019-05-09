@@ -39,17 +39,17 @@ class MoonBoard:
     DEFAULT_COLOR = COLORS.blue
     X_GRID_NAMES = string.ascii_uppercase[0:11]
     NUM_PIXELS = 198
-    DEFAULT_BRIGHTNESS = 100
+    DEFAULT_BRIGHTNESS = 150
 
-    def __init__(self, driver_type, led_layout=None):
+    def __init__(self, driver_type, led_layout=None,brightness=DEFAULT_BRIGHTNESS):
         try:
             if driver_type == "WS281X":
-                driver = PiWS281X(self.NUM_PIXELS,US)
+                driver = PiWS281X(self.NUM_PIXELS)
             elif driver_type == "WS2801":
                 driver = WS2801(self.NUM_PIXELS, dev='/dev/spidev0.1',spi_interface= SPI_INTERFACES.PERIPHERY,spi_speed=1)
             elif driver_type == "SimPixel":
                 driver = SimPixel(self.NUM_PIXELS)
-                #driver.open_browser()
+                driver.open_browser()
             else:
                 raise ValueError(f"driver_type {driver_type} unknow." )
         except (ImportError, ValueError) as e:
@@ -63,9 +63,13 @@ class MoonBoard:
                                 height=18,
                                 coord_map=led_layout,
                                 threadedUpdate=True,
+                                brightness=brightness
                                 )
         else:
-            self.layout = Matrix(driver,width=11,height=18, threadedUpdate=True)
+            self.layout = Matrix(driver,width=11,height=18, 
+                                threadedUpdate=True,
+                                brightness=brightness
+                                )
         self.layout.cleanup_drivers()
         self.layout.start()
         self.animation = None
@@ -75,17 +79,17 @@ class MoonBoard:
         self.layout.all_off()
         self.layout.push_to_driver()
 
-    def set_hold(self, hold, color=DEFAULT_COLOR, brightness=DEFAULT_BRIGHTNESS):
+    def set_hold(self, hold, color=DEFAULT_COLOR):
         x_grid_name, y_grid_name = hold[0], int(hold[1:])
         x = self.X_GRID_NAMES.index(x_grid_name)
         y = 18 - y_grid_name
-        self.layout.set(x, y, color, brightness=brightness)
+        self.layout.set(x, y, color)
 
-    def show_hold(self, hold, color=DEFAULT_COLOR, brightness=DEFAULT_BRIGHTNESS):
-        self.set_hold(hold, color,brightness)
+    def show_hold(self, hold, color=DEFAULT_COLOR):
+        self.set_hold(hold, color)
         self.layout.push_to_driver()
 
-    def show_problem(self, holds, hold_colors={}, brightness=DEFAULT_BRIGHTNESS):
+    def show_problem(self, holds, hold_colors={}):
         self.clear()
         for k in ['START', 'MOVES', 'TOP']:
             for hold in holds[k]:
@@ -121,7 +125,7 @@ if __name__=="__main__":
     parser = argparse.ArgumentParser(description='Test led system')
 
     parser.add_argument('driver_type', type=str,
-                        help='driver type, depends on leds and device controlling the led.',choices=['WS281x', 'WS2801', 'SimPixel'])
+                        help='driver type, depends on leds and device controlling the led.',choices=['PiWS281x', 'WS2801', 'SimPixel'])
     parser.add_argument('--duration',  type=int, default=10,
                         help='Delay of progress.')
     parser.add_argument('--special_nest_layout',  action='store_true')

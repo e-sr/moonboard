@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import problems
-from server.server import main 
+from server import main 
 import argparse
 import asyncio
 from led.moonboard import MoonBoard,LED_LAYOUT
@@ -19,8 +19,8 @@ if __name__ == "__main__":
         parser.add_argument(f'-{hs}', action="store_true")
     parser.add_argument('--driver_type', type=str,
                         help='driver type, depends on leds and device controlling the led.',
-                        choices=['WS281x', 'WS2801', 'SimPixel'],
-                        default='WS281x')
+                        choices=['PiWS281x', 'WS2801', 'SimPixel'],
+                        default='WS2801')
 
     parser.add_argument('--brightness',  default=100, type=int)
 
@@ -41,14 +41,11 @@ if __name__ == "__main__":
     else:
         logger.setLevel(logging.INFO)
 
-
-    #test_leds(MOONBOARD_PIXELS)
-
     hold_sets = {k for k in problems.HOLDS_SETS if argsd[k]}
     #problems
 
     led_layout = LED_LAYOUT['nest'] if args.special_nest_layout else None
-    MOONBOARD = MoonBoard(args.driver_type,led_layout )
+    MOONBOARD = MoonBoard(args.driver_type,led_layout)
 
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main(logger, MOONBOARD, args.setup, hold_sets))
