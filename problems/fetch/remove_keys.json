@@ -1,0 +1,34 @@
+{
+   "UserGrade": null,
+   "MoonBoardConfiguration": null,
+   "Setter": {
+      "Id": "94e2c2c9-6b86-4bbc-a2c7-1720c9a4315a",
+      "City": "Berlin",
+      "Country": "Germany",
+      "ProfileImageUrl": "/Content/Account/Images/default-profile.png?636898989903755346",
+      "CanShareData": false
+   },
+   "FirstAscender": false,
+   "UserRating": 0,
+   "Attempts": 0,
+   "Holdsetup": {
+      "Setby": null,
+      "DateInserted": null,
+      "DateUpdated": null,
+      "DateDeleted": null,
+      "IsLocked": false,
+      "Holdsets": null,
+      "MoonBoardConfigurations": null,
+      "AllowClimbMethods": false
+   },
+   "ProblemType": null,
+   "Holdsets": null,
+   "Locations": null,
+   "RepeatText": "Be the first to repeat this problem",
+   "NumberOfTries": null,
+   "NameForUrl": "coco2",
+   "ApiId": 0,
+   "DateUpdated": null,
+   "DateDeleted": null,
+   "DateTimeString": "03 Apr 2019 14:11"
+}

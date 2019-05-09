@@ -1,0 +1,12 @@
+
+[Unit]
+Description= moon board app service
+After=multi-user.target
+
+[Service]
+User=pi
+Type=idle
+ExecStart=/bin/bash /home/pi/moonboard/scripts/start_server.sh
+
+[Install]
+WantedBy=multi-user.target

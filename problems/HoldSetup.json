@@ -1,0 +1,704 @@
+{
+   "2016": {
+      "H7": {
+         "HoldSet": "OS",
+         "Hold": 1,
+         "Orientation": "SE"
+      },
+      "J14": {
+         "HoldSet": "OS",
+         "Hold": 2,
+         "Orientation": "NW"
+      },
+      "K7": {
+         "HoldSet": "OS",
+         "Hold": 3,
+         "Orientation": "N"
+      },
+      "D8": {
+         "HoldSet": "OS",
+         "Hold": 4,
+         "Orientation": "N"
+      },
+      "A16": {
+         "HoldSet": "OS",
+         "Hold": 5,
+         "Orientation": "NW"
+      },
+      "F6": {
+         "HoldSet": "OS",
+         "Hold": 6,
+         "Orientation": "E"
+      },
+      "K6": {
+         "HoldSet": "OS",
+         "Hold": 7,
+         "Orientation": "N"
+      },
+      "C9": {
+         "HoldSet": "OS",
+         "Hold": 8,
+         "Orientation": "W"
+      },
+      "A10": {
+         "HoldSet": "OS",
+         "Hold": 9,
+         "Orientation": "SW"
+      },
+      "I8": {
+         "HoldSet": "OS",
+         "Hold": 10,
+         "Orientation": "N"
+      },
+      "K12": {
+         "HoldSet": "OS",
+         "Hold": 11,
+         "Orientation": "N"
+      },
+      "A11": {
+         "HoldSet": "OS",
+         "Hold": 12,
+         "Orientation": "SE"
+      },
+      "B7": {
+         "HoldSet": "OS",
+         "Hold": 13,
+         "Orientation": "S"
+      },
+      "D16": {
+         "HoldSet": "OS",
+         "Hold": 14,
+         "Orientation": "N"
+      },
+      "K10": {
+         "HoldSet": "OS",
+         "Hold": 15,
+         "Orientation": "S"
+      },
+      "G16": {
+         "HoldSet": "OS",
+         "Hold": 16,
+         "Orientation": "N"
+      },
+      "F8": {
+         "HoldSet": "OS",
+         "Hold": 17,
+         "Orientation": "N"
+      },
+      "F15": {
+         "HoldSet": "OS",
+         "Hold": 18,
+         "Orientation": "N"
+      },
+      "G7": {
+         "HoldSet": "OS",
+         "Hold": 19,
+         "Orientation": "SW"
+      },
+      "H15": {
+         "HoldSet": "OS",
+         "Hold": 20,
+         "Orientation": "NE"
+      },
+      "C12": {
+         "HoldSet": "OS",
+         "Hold": 21,
+         "Orientation": "N"
+      },
+      "D6": {
+         "HoldSet": "OS",
+         "Hold": 22,
+         "Orientation": "N"
+      },
+      "D3": {
+         "HoldSet": "OS",
+         "Hold": 23,
+         "Orientation": "S"
+      },
+      "D13": {
+         "HoldSet": "OS",
+         "Hold": 24,
+         "Orientation": "N"
+      },
+      "J11": {
+         "HoldSet": "OS",
+         "Hold": 25,
+         "Orientation": "N"
+      },
+      "A13": {
+         "HoldSet": "OS",
+         "Hold": 26,
+         "Orientation": "N"
+      },
+      "G11": {
+         "HoldSet": "OS",
+         "Hold": 27,
+         "Orientation": "E"
+      },
+      "H18": {
+         "HoldSet": "OS",
+         "Hold": 28,
+         "Orientation": "N"
+      },
+      "B4": {
+         "HoldSet": "OS",
+         "Hold": 29,
+         "Orientation": "SW"
+      },
+      "K8": {
+         "HoldSet": "OS",
+         "Hold": 30,
+         "Orientation": "N"
+      },
+      "C15": {
+         "HoldSet": "OS",
+         "Hold": 31,
+         "Orientation": "NW"
+      },
+      "H9": {
+         "HoldSet": "OS",
+         "Hold": 32,
+         "Orientation": "E"
+      },
+      "D10": {
+         "HoldSet": "OS",
+         "Hold": 33,
+         "Orientation": "NW"
+      },
+      "H14": {
+         "HoldSet": "OS",
+         "Hold": 34,
+         "Orientation": "W"
+      },
+      "I5": {
+         "HoldSet": "OS",
+         "Hold": 35,
+         "Orientation": "N"
+      },
+      "I12": {
+         "HoldSet": "OS",
+         "Hold": 36,
+         "Orientation": "SW"
+      },
+      "K13": {
+         "HoldSet": "OS",
+         "Hold": 37,
+         "Orientation": "N"
+      },
+      "C7": {
+         "HoldSet": "OS",
+         "Hold": 38,
+         "Orientation": "N"
+      },
+      "C18": {
+         "HoldSet": "OS",
+         "Hold": 39,
+         "Orientation": "N"
+      },
+      "F9": {
+         "HoldSet": "OS",
+         "Hold": 40,
+         "Orientation": "N"
+      },
+      "C14": {
+         "HoldSet": "A",
+         "Hold": 50,
+         "Orientation": "N"
+      },
+      "D17": {
+         "HoldSet": "A",
+         "Hold": 51,
+         "Orientation": "N"
+      },
+      "D9": {
+         "HoldSet": "A",
+         "Hold": 52,
+         "Orientation": "NE"
+      },
+      "F7": {
+         "HoldSet": "A",
+         "Hold": 53,
+         "Orientation": "NW"
+      },
+      "F12": {
+         "HoldSet": "A",
+         "Hold": 54,
+         "Orientation": "E"
+      },
+      "G12": {
+         "HoldSet": "A",
+         "Hold": 55,
+         "Orientation": "NE"
+      },
+      "B11": {
+         "HoldSet": "A",
+         "Hold": 56,
+         "Orientation": "NW"
+      },
+      "J10": {
+         "HoldSet": "A",
+         "Hold": 57,
+         "Orientation": "NE"
+      },
+      "J2": {
+         "HoldSet": "A",
+         "Hold": 58,
+         "Orientation": "SE"
+      },
+      "E13": {
+         "HoldSet": "A",
+         "Hold": 59,
+         "Orientation": "N"
+      },
+      "I6": {
+         "HoldSet": "A",
+         "Hold": 60,
+         "Orientation": "NE"
+      },
+      "J9": {
+         "HoldSet": "A",
+         "Hold": 61,
+         "Orientation": "SE"
+      },
+      "F14": {
+         "HoldSet": "A",
+         "Hold": 62,
+         "Orientation": "NW"
+      },
+      "I13": {
+         "HoldSet": "A",
+         "Hold": 63,
+         "Orientation": "E"
+      },
+      "E10": {
+         "HoldSet": "A",
+         "Hold": 64,
+         "Orientation": "NW"
+      },
+      "F10": {
+         "HoldSet": "A",
+         "Hold": 65,
+         "Orientation": "NE"
+      },
+      "E15": {
+         "HoldSet": "A",
+         "Hold": 66,
+         "Orientation": "NW"
+      },
+      "B8": {
+         "HoldSet": "A",
+         "Hold": 67,
+         "Orientation": "N"
+      },
+      "A12": {
+         "HoldSet": "A",
+         "Hold": 68,
+         "Orientation": "E"
+      },
+      "I16": {
+         "HoldSet": "A",
+         "Hold": 69,
+         "Orientation": "NE"
+      },
+      "I11": {
+         "HoldSet": "A",
+         "Hold": 70,
+         "Orientation": "N"
+      },
+      "B16": {
+         "HoldSet": "A",
+         "Hold": 71,
+         "Orientation": "NW"
+      },
+      "E11": {
+         "HoldSet": "A",
+         "Hold": 72,
+         "Orientation": "N"
+      },
+      "H11": {
+         "HoldSet": "A",
+         "Hold": 73,
+         "Orientation": "W"
+      },
+      "E7": {
+         "HoldSet": "A",
+         "Hold": 74,
+         "Orientation": "S"
+      },
+      "D12": {
+         "HoldSet": "A",
+         "Hold": 75,
+         "Orientation": "N"
+      },
+      "J8": {
+         "HoldSet": "A",
+         "Hold": 76,
+         "Orientation": "N"
+      },
+      "B13": {
+         "HoldSet": "A",
+         "Hold": 77,
+         "Orientation": "NW"
+      },
+      "B9": {
+         "HoldSet": "A",
+         "Hold": 78,
+         "Orientation": "NE"
+      },
+      "C10": {
+         "HoldSet": "A",
+         "Hold": 79,
+         "Orientation": "NE"
+      },
+      "B3": {
+         "HoldSet": "A",
+         "Hold": 80,
+         "Orientation": "SW"
+      },
+      "G2": {
+         "HoldSet": "A",
+         "Hold": 81,
+         "Orientation": "N"
+      },
+      "G18": {
+         "HoldSet": "A",
+         "Hold": 82,
+         "Orientation": "W"
+      },
+      "I4": {
+         "HoldSet": "A",
+         "Hold": 83,
+         "Orientation": "NE"
+      },
+      "K11": {
+         "HoldSet": "A",
+         "Hold": 84,
+         "Orientation": "NW"
+      },
+      "A5": {
+         "HoldSet": "A",
+         "Hold": 85,
+         "Orientation": "N"
+      },
+      "K5": {
+         "HoldSet": "A",
+         "Hold": 86,
+         "Orientation": "N"
+      },
+      "K18": {
+         "HoldSet": "A",
+         "Hold": 87,
+         "Orientation": "W"
+      },
+      "G8": {
+         "HoldSet": "A",
+         "Hold": 88,
+         "Orientation": "N"
+      },
+      "F5": {
+         "HoldSet": "A",
+         "Hold": 89,
+         "Orientation": "N"
+      },
+      "G13": {
+         "HoldSet": "A",
+         "Hold": 90,
+         "Orientation": "N"
+      },
+      "E18": {
+         "HoldSet": "A",
+         "Hold": 91,
+         "Orientation": "N"
+      },
+      "J6": {
+         "HoldSet": "A",
+         "Hold": 92,
+         "Orientation": "S"
+      },
+      "D14": {
+         "HoldSet": "A",
+         "Hold": 93,
+         "Orientation": "N"
+      },
+      "C11": {
+         "HoldSet": "A",
+         "Hold": 94,
+         "Orientation": "W"
+      },
+      "C6": {
+         "HoldSet": "A",
+         "Hold": 95,
+         "Orientation": "S"
+      },
+      "F16": {
+         "HoldSet": "A",
+         "Hold": 96,
+         "Orientation": "S"
+      },
+      "D5": {
+         "HoldSet": "A",
+         "Hold": 97,
+         "Orientation": "NW"
+      },
+      "A15": {
+         "HoldSet": "A",
+         "Hold": 98,
+         "Orientation": "N"
+      },
+      "B18": {
+         "HoldSet": "A",
+         "Hold": 99,
+         "Orientation": "SE"
+      },
+      "H16": {
+         "HoldSet": "B",
+         "Hold": 100,
+         "Orientation": "N"
+      },
+      "B15": {
+         "HoldSet": "B",
+         "Hold": 101,
+         "Orientation": "N"
+      },
+      "J12": {
+         "HoldSet": "B",
+         "Hold": 102,
+         "Orientation": "NE"
+      },
+      "J13": {
+         "HoldSet": "B",
+         "Hold": 103,
+         "Orientation": "N"
+      },
+      "K16": {
+         "HoldSet": "B",
+         "Hold": 104,
+         "Orientation": "N"
+      },
+      "F13": {
+         "HoldSet": "B",
+         "Hold": 105,
+         "Orientation": "NW"
+      },
+      "E16": {
+         "HoldSet": "B",
+         "Hold": 106,
+         "Orientation": "NW"
+      },
+      "I7": {
+         "HoldSet": "B",
+         "Hold": 107,
+         "Orientation": "NE"
+      },
+      "I15": {
+         "HoldSet": "B",
+         "Hold": 108,
+         "Orientation": "NW"
+      },
+      "I9": {
+         "HoldSet": "B",
+         "Hold": 109,
+         "Orientation": "SE"
+      },
+      "E12": {
+         "HoldSet": "B",
+         "Hold": 110,
+         "Orientation": "NE"
+      },
+      "H5": {
+         "HoldSet": "B",
+         "Hold": 111,
+         "Orientation": "NW"
+      },
+      "G15": {
+         "HoldSet": "B",
+         "Hold": 112,
+         "Orientation": "NW"
+      },
+      "J7": {
+         "HoldSet": "B",
+         "Hold": 113,
+         "Orientation": "N"
+      },
+      "H12": {
+         "HoldSet": "B",
+         "Hold": 114,
+         "Orientation": "NW"
+      },
+      "G17": {
+         "HoldSet": "B",
+         "Hold": 115,
+         "Orientation": "N"
+      },
+      "E9": {
+         "HoldSet": "B",
+         "Hold": 116,
+         "Orientation": "NE"
+      },
+      "J16": {
+         "HoldSet": "B",
+         "Hold": 117,
+         "Orientation": "E"
+      },
+      "F11": {
+         "HoldSet": "B",
+         "Hold": 118,
+         "Orientation": "NE"
+      },
+      "D11": {
+         "HoldSet": "B",
+         "Hold": 119,
+         "Orientation": "SW"
+      },
+      "I10": {
+         "HoldSet": "B",
+         "Hold": 120,
+         "Orientation": "N"
+      },
+      "K9": {
+         "HoldSet": "B",
+         "Hold": 121,
+         "Orientation": "N"
+      },
+      "E8": {
+         "HoldSet": "B",
+         "Hold": 122,
+         "Orientation": "N"
+      },
+      "A14": {
+         "HoldSet": "B",
+         "Hold": 123,
+         "Orientation": "NW"
+      },
+      "I14": {
+         "HoldSet": "B",
+         "Hold": 124,
+         "Orientation": "NW"
+      },
+      "C5": {
+         "HoldSet": "B",
+         "Hold": 125,
+         "Orientation": "N"
+      },
+      "D15": {
+         "HoldSet": "B",
+         "Hold": 126,
+         "Orientation": "NW"
+      },
+      "E14": {
+         "HoldSet": "B",
+         "Hold": 127,
+         "Orientation": "E"
+      },
+      "G9": {
+         "HoldSet": "B",
+         "Hold": 128,
+         "Orientation": "NE"
+      },
+      "E6": {
+         "HoldSet": "B",
+         "Hold": 129,
+         "Orientation": "NW"
+      },
+      "J5": {
+         "HoldSet": "B",
+         "Hold": 130,
+         "Orientation": "NW"
+      },
+      "H8": {
+         "HoldSet": "B",
+         "Hold": 131,
+         "Orientation": "NE"
+      },
+      "I18": {
+         "HoldSet": "B",
+         "Hold": 132,
+         "Orientation": "NE"
+      },
+      "A9": {
+         "HoldSet": "B",
+         "Hold": 133,
+         "Orientation": "NW"
+      },
+      "G6": {
+         "HoldSet": "B",
+         "Hold": 134,
+         "Orientation": "SW"
+      },
+      "C8": {
+         "HoldSet": "B",
+         "Hold": 135,
+         "Orientation": "NW"
+      },
+      "D18": {
+         "HoldSet": "B",
+         "Hold": 136,
+         "Orientation": "N"
+      },
+      "G14": {
+         "HoldSet": "B",
+         "Hold": 137,
+         "Orientation": "E"
+      },
+      "C13": {
+         "HoldSet": "B",
+         "Hold": 138,
+         "Orientation": "NW"
+      },
+      "A18": {
+         "HoldSet": "B",
+         "Hold": 139,
+         "Orientation": "N"
+      },
+      "H10": {
+         "HoldSet": "B",
+         "Hold": 140,
+         "Orientation": "NE"
+      },
+      "G4": {
+         "HoldSet": "B",
+         "Hold": 141,
+         "Orientation": "N"
+      },
+      "B12": {
+         "HoldSet": "B",
+         "Hold": 142,
+         "Orientation": "SE"
+      },
+      "C16": {
+         "HoldSet": "B",
+         "Hold": 143,
+         "Orientation": "N"
+      },
+      "K14": {
+         "HoldSet": "B",
+         "Hold": 144,
+         "Orientation": "NE"
+      },
+      "G10": {
+         "HoldSet": "B",
+         "Hold": 145,
+         "Orientation": "NE"
+      },
+      "D7": {
+         "HoldSet": "B",
+         "Hold": 146,
+         "Orientation": "S"
+      },
+      "B6": {
+         "HoldSet": "B",
+         "Hold": 147,
+         "Orientation": "NW"
+      },
+      "B10": {
+         "HoldSet": "B",
+         "Hold": 148,
+         "Orientation": "SE"
+      },
+      "H13": {
+         "HoldSet": "B",
+         "Hold": 149,
+         "Orientation": "SW"
+      }
+   }
+}
