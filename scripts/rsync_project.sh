@@ -1,10 +1,11 @@
 #!/bin/bash
-echo Beginning rsync
+host=moonboard-1
+echo Beginning rsync to  $host
 
 cd /home/esr/Documents
 
 #control
-RPI="moonboard:~/"
+RPI="$host:~/"
 EXCLUDE="moonboard/scripts/rsync_exclude.txt"
 FOLDERS="moonboard/"
 
