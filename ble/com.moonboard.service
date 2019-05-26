@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=com.moonboard
+Exec=/usr/bin/python3 /home/esr/Documents/moonboard/ble/moonboard_BLE_service.py
+User=root
