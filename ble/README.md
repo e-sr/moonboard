@@ -5,14 +5,15 @@ In this directory you find informations how setup the same functionality of the 
 
 ## Moonboard led box information
 
-###  BLE Advertising 
+### BLE Advertising
 
 The original led box advertise itself with the following packet: 
 
 **Advertising:**
-|Desc|TYPE|VALUE||
+
+|Desc|TYPE|VALUE| |
 |--|--|--|--| 
-|flags|0x01|0x06| LE General Discoverable Mode” and “BR/EDR Not Supported”
+|flags|0x01|0x06| LE General 'Discoverable Mode' and 'BR/EDR Not Supported'
 |Tx power level|0x0A|0x00|
 |services uiid |0x06|0x9ecadc240ee5a9e093f3a3b50100406e| UART service 
 
@@ -39,7 +40,7 @@ Communication between app and led box is done by the uart service. The others se
 
 ### APP => Nordic UART  communication Protocol
 
-The communication is very simple, the app send a sequence of characters describing the problem. The sequenche always **start** with `'#l'` and **finish** with `'#'`. Holds information are comma `,` separated. The hold first character describe the hold type. `'S'` for start, `'P'` for moves and `'E'` for end holds. The following char describe the position.
+The communication is very simple, the app send a sequence of characters describing the problem. The sequence always **start** with `'#l'` and **finish** with `'#'`. Holds information are comma `,` separated. The hold first character describe the hold type. `'S'` for start, `'P'` for moves and `'E'` for end holds. The following char describe the position.
 As an Example we can have `'l#S5,P9,P13,E18#'`
 
 The hold positions is a number between 1 and 198. It trasform to the grid position following the strip.  
