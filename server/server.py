@@ -24,15 +24,13 @@ async def register(ws,conn, mounted_holds, logger,**kwargs):
     CLIENT_N += 1
     client = CLIENT_N
     CLIENTS[CLIENT_N] = ws
-    gradi=['6B+','6C','6C+','7A','7A+']
-    p,_=await query.user_query_get_problems(
-        conn, 
-        Grades=gradi, 
-        Name="", 
-        Setter="Ben", 
-        Benchmark=False,
-        limit=LIMIT
-        )
+    gradi=['6B+','6C','6C+','7A']
+    search_param={
+        'Grades': gradi, 'Name': '', 'Setter': '','Benchmarks':True, 
+        'RmHolds':{k:[] for k in mounted_holds.keys()},
+        'RequireHolds':{k:[] for k in mounted_holds.keys()}
+        }
+    p,_=await query.user_query_get_problems(conn=conn, limit=LIMIT, **search_param)
 
     logger.info(
         f'Add client n. {CLIENT_N}, number of clients is {len(CLIENTS)}')
@@ -42,9 +40,8 @@ async def register(ws,conn, mounted_holds, logger,**kwargs):
          "holds": mounted_holds,
          "history": HISTORY,
          "problems":  p[:LIMIT],
-         "search_param": {'holds': [], 'grades': gradi, 'name': '', 'author': 'Ben'},
+         "search_param": search_param,
          }
-
     await ws.send(json.dumps(d))
     return client
 
@@ -55,20 +52,13 @@ async def unregister(ws,client,logger,**kwargs):
         f'Remove client n. {client}, number of clients is {len(CLIENTS)}')
 
 async def handle_search_submit_action(ws, msg, conn, logger,**kwargs):
-    search_parameter=msg['search_parameter']
-    logger.info(search_parameter)
-    p, limit_reach=await query.user_query_get_problems(
-        conn, 
-        Grades=search_parameter['grades'], 
-        Name= search_parameter['name'], 
-        Setter=search_parameter['author'],
-        Benchmark=True,
-        limit=LIMIT
-        )
+    search_param=msg['search_param']
+    logger.info(search_param)
+    p, limit_reach=await query.user_query_get_problems(conn=conn, limit=LIMIT, **search_param)
     if limit_reach:
         p=p[:LIMIT]
     d = {"type": "SEARCH_RESULTS",
-         "problems":  p
+         "problems":p
          }
     await ws.send(json.dumps(d))
 
@@ -114,7 +104,7 @@ async def usr_handler(ws, path, register, unregister, event_handlers):
 
 async def main(logger, moonboard, setup, hold_sets,**kwargs):
     conn = await aiosqlite.connect(problems.DB_PATH)
-    mounted_holds = {hold_set:(await query.get_setup_hold_positions(conn, setup, hold_sets)) \
+    mounted_holds = {hold_set:(await query.get_setup_hold_positions(conn, setup, hold_set)) \
                         for hold_set in hold_sets}
     kwargs = {
             'conn':conn,

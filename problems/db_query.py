@@ -38,10 +38,12 @@ async def get_problem_holds(conn, Id):
 
 
 async def get_setup_hold_positions(conn, setup, holdSet):
-    holdSetStr = ', '.join('{!r}'.format(s) for s in holdSet)
-    cmd = f"select Position from holds where (Setup={setup} and HoldSet IN ({holdSetStr}))"
-    async with conn.execute(cmd) as cursor :
-        return sorted([r async for r in  cursor])
+    cmd = f"select Position from holds where (Setup=:setup and HoldSet=:holdSet)"
+    holdlist=[]
+    async with conn.execute(cmd,{'setup':setup,"holdSet":holdSet}) as cursor :
+        async for r in  cursor:
+            holdlist.extend(r)
+    return sorted(holdlist)
 
 
 async def get_problems_list_from_ids(conn, Ids):
@@ -50,7 +52,7 @@ async def get_problems_list_from_ids(conn, Ids):
         return await cursor.fetchall()
 
 
-async def user_query_get_problems(conn, Grades, Name, Setter, holdSetMounted={'A', 'B', 'OS'}, Benchmark=False, limit=2001):
+async def user_query_get_problems(conn, Grades, Name, Setter, holdSetMounted={'A', 'B', 'OS'}, Benchmark=False, limit=2001,**kwargs):
     #hold set to remove
     GradeStr = ', '.join('{!r}'.format(s) for s in Grades)
     cmd = f"""
