@@ -60,7 +60,7 @@ The application will show up with the service name `com.moonboard` in the sessio
 
 The application need access to the system dbus. For that the file `com.moonboard.conf` has to be copied in `/etc/dbus-1/system.d`.  
 
-To start the application at startup the file  `com.moonboard.conf` has to be copied in `/usr/share/dbus-1/system-services/`.  
+To start the application at startup the file  `com.moonboard.service` has to be copied in `/usr/share/dbus-1/system-services/`.  
 
 ### advertising details
 

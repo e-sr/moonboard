@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/bin/python3  /home/esr/Documents/moonboard/run.py --debug --led_layout=evo $1
+/usr/bin/python3  /home/pi/moonboard/run.py --led_layout=evo $1
