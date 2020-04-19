@@ -2,6 +2,23 @@
 
 This project contain software (written in python) and informations to build a led system for the MOONBOARD using a raspberrypi with integrated Bluetooth.
 
+## Getting Started
+* Flash a fresh Raspian buster and run ./install.sh
+
+`python3 ./run_server.py 2016 --driver_type SimPixel`
+
+
+## Usage
+```
+usage: run_server.py [-h] [-B] [-OS] [-A]
+                     [--driver_type {PiWS281x,WS2801,SimPixel}]
+                     [--brightness BRIGHTNESS] [--duration DURATION]
+                     [--special_nest_layout] [--debug]
+                     {2016}
+
+```
+
+
 ## Original led box
 
 The [moonboard](https://www.moonboard.com/) smartphone app is build to work with the [moonboard led box](https://moonclimbing.com/moonboard-led-system.html) togheter (via BLE) for displaying the problems.
