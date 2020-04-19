@@ -5,7 +5,7 @@ This project contain software (written in python) and informations to build a le
 ## Getting Started
 * Flash a fresh Raspian buster and run ./install.sh
 
-`python3 ./run_server.py 2016 --driver_type SimPixel`
+`python3 ./run.py 2016 --driver_type SimPixel`
 
 
 ## Usage
