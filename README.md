@@ -3,7 +3,11 @@
 This project contain software (written in python) and informations to build a led system for the MOONBOARD using a raspberrypi with integrated Bluetooth.
 
 ## Getting Started
-* Flash a fresh Raspian buster and run ./install.sh
+* Flash a fresh Raspian buster 
+* run ./install.sh
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/8cH9azbsFifZ/moonboard/master/install.sh)"
+```
 
 `python3 ./run.py 2016 --driver_type SimPixel`
 
