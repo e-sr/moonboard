@@ -1,6 +1,6 @@
 #!/bin/bash
 FILE=$1
-echo "Move service file $FILE"
+echo "Copy service file $FILE"
 cp --verbose $FILE /lib/systemd/system/$FILE
 echo "set permission"
 chmod 644 /lib/systemd/system/$FILE
