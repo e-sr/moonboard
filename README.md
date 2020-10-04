@@ -12,11 +12,9 @@ This project contains software and informations to build a led system for a DIY 
 * Starts the application (NB: please enable spi in config.txt)
 
 
-## Original led box
+# Description
 
-The [moonboard](https://www.moonboard.com/) smartphone app is build to work with the [moonboard led box](https://moonclimbing.com/moonboard-led-system.html) togheter (via BLE) for displaying the problems.
-
-In this project we emulate the behaviour of the box. More details in the `ble` folder.
+The [moonboard](https://www.moonboard.com/) smartphone app is build to work with the [moonboard led box](https://moonclimbing.com/moonboard-led-system.html) togheter (via BLE) for displaying the problems. In this project we emulate the behaviour of the box using a rasperry pi with integrated blueooth. 
 
 ## LED stripes
 
@@ -36,9 +34,7 @@ The led are driven by a raspberry using the SPI interface and the [bibliopixel](
 - 200 ws2801 LED 
 - power supply [meanwell mdr-60-5](https://www.meanwell.com/webapp/product/search.aspx?prod=MDR-60)
 
-
-## Software
-linux os, python > 3.6 (see `requirements.txt`), bluez 
+## Software description
 
 ### BLE process
 
@@ -50,9 +46,6 @@ More details in the `ble` folder.
 This process listen on the dbus for new problem signals and display the problem on the strips when new problems are available. This part is implemented on the script `run.py`.
 
 To have the script running at startup a systemd service has to be started. See `scripts/run.sh` and `services/moonbard.service`.
-
-
-*************
 
 ### OLD, TODO, ...
 
