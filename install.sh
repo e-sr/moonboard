@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get -y upgrade
 sudo apt-get -y install git vim python3-pip libatlas-base-dev
 
 test -d moonboard || git clone https://github.com/8cH9azbsFifZ/moonboard.git
