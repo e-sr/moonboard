@@ -33,3 +33,6 @@ sudo hcitool -i hci0 cmd 0x08 0x000a 01
 
 #python3 ./run.py --driver SimPixel --debug
 
+echo "Prepare logfiles"
+sudo touch /var/log/moonboard
+sudo chown pi:pi /var/log/moonboard
