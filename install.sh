@@ -4,7 +4,7 @@ echo "Make sure spi device enabled in /boot/config.txt"
 grep dtparam=spi=on /boot/config.txt
 
 echo "Make sure to have a good hostname"
-cat /etc/hostname
+sudo hostnamectl set-hostname moonboard
 
 echo "Prepare raspian"
 sudo apt-get update
