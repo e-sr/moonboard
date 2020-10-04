@@ -9,7 +9,8 @@ This project contain software (written in python) and informations to build a le
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/8cH9azbsFifZ/moonboard/master/install.sh)"
 ```
 
-`python3 ./run.py --driver_type SimPixel`
+* Starts the application (NB: please enable spi in config.txt)
+* Starts frontail moonboard:9001
 
 
 ## Original led box
