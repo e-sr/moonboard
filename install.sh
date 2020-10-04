@@ -9,3 +9,7 @@ cd moonboard
 git pull
 pip3 install -r requirements.txt
 pip3 install spidev
+
+cd services
+sudo ./install_service.sh moonboard.service 
+cd ..
