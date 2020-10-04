@@ -1,6 +1,6 @@
 # moonboard
 
-This project contain software (written in python) and informations to build a led system for the MOONBOARD using a raspberrypi with integrated Bluetooth.
+This project contains software and informations to build a led system for a DIY MOONBOARD using a raspberrypi.
 
 ## Getting Started
 * Flash a fresh Raspian buster 
@@ -32,7 +32,7 @@ The led are driven by a raspberry using the SPI interface and the [bibliopixel](
 
 ## Hardware used
 
-- raspberry pi 3B+. 
+- Rapi W Zero. 
 - 200 ws2801 LED 
 - power supply [meanwell mdr-60-5](https://www.meanwell.com/webapp/product/search.aspx?prod=MDR-60)
 
@@ -54,13 +54,13 @@ To have the script running at startup a systemd service has to be started. See `
 
 *************
 
-## OLD, TODO, ...
+### OLD, TODO, ...
 
 - **nginx service**: Webserver serving the moonboard app. See next section.  
 
 - **optional, app client service**: you can access moonboard app using the rpi browser. To automate it at startup. Add `services/kiosk_browser.service`.  
   
-### Install and setup  nginx
+#### Install and setup  nginx
 
 See [Deploy your React & .NET Core Apps on Linux using Nginx and Supervisor](https://hackernoon.com/deploy-your-react-net-core-apps-on-linux-using-nginx-and-supervisor-5a29d0b6ef94)
 - install nginx `sudo apt install nginx`. 
