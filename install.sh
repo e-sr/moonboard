@@ -24,3 +24,5 @@ echo "Install DBUS service"
 sudo cp ble/com.moonboard.conf /etc/dbus-1/system.d
 sudo cp ble/com.moonboard.service /usr/share/dbus-1/system-services/
 
+#python3 ./run.py --driver SimPixel --debug
+
