@@ -8,7 +8,7 @@ test -d moonboard || git clone https://github.com/8cH9azbsFifZ/moonboard.git
 cd moonboard
 git pull
 pip3 install -r requirements.txt
-pip3 install spidev
+pip3 install spidev python-periphery
 
 cd services
 sudo ./install_service.sh moonboard.service 
