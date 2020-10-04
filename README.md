@@ -60,8 +60,6 @@ To have the script running at startup a systemd service has to be started. See `
 
 - **optional, app client service**: you can access moonboard app using the rpi browser. To automate it at startup. Add `services/kiosk_browser.service`.  
   
-To Add and start a service see `services/install_service.sh`
-
 ### Install and setup  nginx
 
 See [Deploy your React & .NET Core Apps on Linux using Nginx and Supervisor](https://hackernoon.com/deploy-your-react-net-core-apps-on-linux-using-nginx-and-supervisor-5a29d0b6ef94)
