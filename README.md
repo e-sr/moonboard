@@ -9,7 +9,7 @@ This project contain software (written in python) and informations to build a le
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/8cH9azbsFifZ/moonboard/master/install.sh)"
 ```
 
-`python3 ./run.py 2016 --driver_type SimPixel`
+`python3 ./run.py --driver_type SimPixel`
 
 
 ## Usage
