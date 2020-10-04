@@ -38,6 +38,8 @@ sudo touch /var/log/moonboard
 sudo chown pi:pi /var/log/moonboard
 
 echo "Install frontail"
-npm i frontail -g
+sudo npm i frontail -g
+#sudo frontail --host 10.101.10.114 --port 9001 /var/log/moonboard 
+
 
 #python3 ./run.py --driver SimPixel --debug
