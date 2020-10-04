@@ -12,17 +12,6 @@ This project contain software (written in python) and informations to build a le
 `python3 ./run.py --driver_type SimPixel`
 
 
-## Usage
-```
-usage: run_server.py [-h] [-B] [-OS] [-A]
-                     [--driver_type {PiWS281x,WS2801,SimPixel}]
-                     [--brightness BRIGHTNESS] [--duration DURATION]
-                     [--special_nest_layout] [--debug]
-                     {2016}
-
-```
-
-
 ## Original led box
 
 The [moonboard](https://www.moonboard.com/) smartphone app is build to work with the [moonboard led box](https://moonclimbing.com/moonboard-led-system.html) togheter (via BLE) for displaying the problems.
@@ -67,8 +56,6 @@ To have the script running at startup a systemd service has to be started. See `
 
 ## OLD, TODO, ...
 
-- **moonboard backend service**: backend service to the moonboard app. Add `services/moonboard.service`.  
-  
 - **nginx service**: Webserver serving the moonboard app. See next section.  
 
 - **optional, app client service**: you can access moonboard app using the rpi browser. To automate it at startup. Add `services/kiosk_browser.service`.  
