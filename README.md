@@ -4,7 +4,7 @@ This project contain software (written in python) and informations to build a le
 
 ## Getting Started
 * Flash a fresh Raspian buster 
-* run ./install.sh
+* run installer
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/8cH9azbsFifZ/moonboard/master/install.sh)"
 ```
