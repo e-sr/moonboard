@@ -13,3 +13,6 @@ pip3 install spidev
 cd services
 sudo ./install_service.sh moonboard.service 
 cd ..
+
+echo "Make sure spi device enabled in /boot/config.txt"
+grep dtparam=spi=on /boot/config.txt
