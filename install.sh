@@ -9,7 +9,7 @@ sudo hostnamectl set-hostname moonboard
 echo "Prepare raspian"
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt-get -y install git vim python3-pip libatlas-base-dev 
+sudo apt-get -y install git vim python3-pip libatlas-base-dev npm nginx rsync
 
 echo "Install application"
 test -d moonboard || git clone https://github.com/8cH9azbsFifZ/moonboard.git
@@ -36,5 +36,11 @@ sudo hcitool -i hci0 cmd 0x08 0x000a 01
 echo "Prepare logfiles"
 sudo touch /var/log/moonboard
 sudo chown pi:pi /var/log/moonboard
+
+echo "Prepare webinterface"
+cd frontend
+npm install
+npm run build
+#npm start
 
 #python3 ./run.py --driver SimPixel --debug
