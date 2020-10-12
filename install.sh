@@ -28,6 +28,9 @@ cd ble
 sudo ./install_service.sh com.moonboard.service
 cd ..
 
+echo "Enable SPI"
+sudo sed -i 's/\#dtparam=spi=on/dtparam=spi=on/g' /boot/config.txt
+
 echo "Start advertising stuff"
 sudo hcitool -i hci0 cmd 0x08 0x0008  {adv: 32 byte 0-padded if necessary}
 sudo hcitool -i hci0 cmd 0x08 0x0009 {adv: 32 byte 0-padded if necessary}
@@ -39,3 +42,16 @@ sudo touch /var/log/moonboard
 sudo chown pi:pi /var/log/moonboard
 
 #python3 ./run.py --driver SimPixel --debug
+
+echo "Restarting in 5 seconds to finalize changes. CTRL+C to cancel."
+sleep 1
+echo "."
+sleep 1
+echo "."
+sleep 1
+echo "."
+sleep 1
+echo "."
+sleep 1
+echo " Restarting"
+sudo shutdown -r now
