@@ -23,9 +23,10 @@ cd services
 sudo ./install_service.sh moonboard.service 
 cd ..
 
-echo "Install DBUS service"
-sudo cp ble/com.moonboard.conf /etc/dbus-1/system.d
-sudo cp ble/com.moonboard.service /usr/share/dbus-1/system-services/
+echo "Install BLE service"
+cd ble
+sudo ./install_service.sh com.moonboard.service
+cd ..
 
 echo "Start advertising stuff"
 sudo hcitool -i hci0 cmd 0x08 0x0008  {adv: 32 byte 0-padded if necessary}

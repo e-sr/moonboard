@@ -1,4 +1,13 @@
-[D-BUS Service]
-Name=com.moonboard
-Exec=/usr/bin/python3 /home/pi/moonboard/ble/moonboard_BLE_service.py
+[Unit]
+Description=Moonboard DBUS Service
+After=multi-user.target
+
+[Service]
+Type=dbus
+BusName=com.moonboard
+ExecStart=/usr/bin/python3 /home/pi/moonboard/ble/moonboard_BLE_service.py
 User=root
+SystemdService=dbus-org.com.moonbooard.service
+
+[Install]
+WantedBy=multi-user.target
