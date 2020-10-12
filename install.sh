@@ -23,12 +23,6 @@ cd services
 sudo ./install_service.sh moonboard.service 
 cd ..
 
-echo "Install DBUS service"
-sudo cp /home/pi/moonboard/ble/com.moonboard.conf /etc/dbus-1/system.d
-cd ble
-sudo ../services/install_service.sh com.moonboard.service
-cd ..
-
 echo "Enable SPI"
 sudo sed -i 's/\#dtparam=spi=on/dtparam=spi=on/g' /boot/config.txt
 
@@ -43,6 +37,9 @@ sudo touch /var/log/moonboard
 sudo chown pi:pi /var/log/moonboard
 
 #python3 ./run.py --driver SimPixel --debug
+
+# Prepare phase 2 to run at boot
+sudo sed -i 's/exit 0/sudo \/home\/pi\/moonboard\/install-phase2.sh\r\nexit 0/g' /etc/rc.local
 
 echo "Restarting in 5 seconds to finalize changes. CTRL+C to cancel."
 sleep 1 > /dev/null
