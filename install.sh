@@ -25,7 +25,7 @@ cd ..
 
 echo "Install BLE service"
 cd ble
-sudo ./install_service.sh com.moonboard.service
+sudo ../services/install_service.sh com.moonboard.service
 cd ..
 
 echo "Enable SPI"
