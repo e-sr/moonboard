@@ -12,7 +12,7 @@ sudo apt-get -y upgrade
 sudo apt-get -y install git vim python3-pip libatlas-base-dev   
 
 echo "Install application"
-test -d moonboard || git clone https://github.com/8cH9azbsFifZ/moonboard.git
+test -d moonboard || git clone https://github.com/travismartinjones/moonboard.git
 cd moonboard
 git pull
 pip3 install -r requirements.txt
@@ -23,7 +23,8 @@ cd services
 sudo ./install_service.sh moonboard.service 
 cd ..
 
-echo "Install BLE service"
+echo "Install DBUS service"
+sudo cp /home/pi/moonboard/ble/com.moonboard.conf /etc/dbus-1/system.d
 cd ble
 sudo ../services/install_service.sh com.moonboard.service
 cd ..

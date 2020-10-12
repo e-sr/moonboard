@@ -11,3 +11,4 @@ SystemdService=dbus-org.com.moonbooard.service
 
 [Install]
 WantedBy=multi-user.target
+
