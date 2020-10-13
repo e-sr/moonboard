@@ -39,7 +39,7 @@ sudo chown pi:pi /var/log/moonboard
 #python3 ./run.py --driver SimPixel --debug
 
 # Prepare phase 2 to run at boot
-sudo sed -i 's/exit 0/sudo .\/home\/pi\/moonboard\/install-phase2.sh\r\nexit 0/g' /etc/rc.local
+sudo sed -i 's/^#!\/bin\/sh -e/#!\/bin\/sh -e\r\nsudo .\/home\/pi\/moonboard\/install-phase2.sh/g' /etc/rc.local
 
 echo "Restarting in 5 seconds to finalize changes. CTRL+C to cancel."
 sleep 1 > /dev/null
