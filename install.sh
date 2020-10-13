@@ -39,7 +39,10 @@ sudo chown pi:pi /var/log/moonboard
 #python3 ./run.py --driver SimPixel --debug
 
 # Prepare phase 2 to run at boot
-sudo sed -i 's/^#!\/bin\/sh -e/#!\/bin\/sh -e\r\nsudo .\/home\/pi\/moonboard\/install-phase2.sh/g' /etc/rc.local
+sudo cp --verbose /home/pi/moonboard/services/moonboard-install.service /lib/systemd/system/moonboard-install.service
+sudo chmod 644 /lib/systemd/system/moonboard-install.service
+sudo systemctl daemon-reload
+sudo systemctl enable moonboard-install.service
 
 echo "Restarting in 5 seconds to finalize changes. CTRL+C to cancel."
 sleep 1 > /dev/null

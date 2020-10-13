@@ -5,4 +5,4 @@ sudo ../services/install_service.sh com.moonboard.service > /tmp/moonboard-servi
 cd ..
 
 # Remove phase 2 from boot
-sudo sed -i 's/sudo .\/home\/pi\/moonboard\/install-phase2.sh/# Moonboard install phase 2 complete/g' /etc/rc.local
+sudo systemctl disable moonboard-install.service
