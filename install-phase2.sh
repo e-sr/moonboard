@@ -1,8 +1,8 @@
+#!/bin/bash
 echo "Install DBUS service"
 sudo cp /home/pi/moonboard/ble/com.moonboard.conf /etc/dbus-1/system.d
-cd ble
-sudo ../services/install_service.sh com.moonboard.service > /tmp/moonboard-service-install.log
-cd ..
+cd /home/pi/moonboard/ble
+sudo /home/pi/moonboard/services/install_service.sh com.moonboard.service > /tmp/moonboard-service-install.log
 
 # Remove phase 2 from boot
 sudo systemctl disable moonboard-install.service
