@@ -9,3 +9,6 @@ sudo pip3 install LightBerries rpi-ws281x-light-show
 
 
 sudo python3 strandtest.py
+
+
+adjust number of led
