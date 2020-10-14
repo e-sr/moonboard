@@ -5,6 +5,8 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get -y install git vim python3-pip
 sudo apt-get -y install libatlas-base-dev
+sudo apt-get -y install python-dev swig scons
+
 
 git clone https://github.com/8cH9azbsFifZ/moonboard.git
 =======
