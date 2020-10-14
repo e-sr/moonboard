@@ -48,4 +48,16 @@ echo "Prepare logfiles"
 sudo touch /var/log/moonboard
 sudo chown pi:pi /var/log/moonboard
 
+echo "Prepare WS2811 drivers"
+cd
+git clone https://github.com/jgarff/rpi_ws281x.git
+#cd rpi_ws281x
+##sudo scons
+#cd python
+#sudo python3 setup.py build install
+pip3 install rpi-ws281x 
+
+
+
+
 #python3 ./run.py --driver SimPixel --debug
