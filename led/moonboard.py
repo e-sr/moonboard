@@ -4,7 +4,6 @@ from bibliopixel import Matrix
 from bibliopixel.drivers.PiWS281X import PiWS281X
 from bibliopixel.drivers.dummy_driver import DriverDummy
 from bibliopixel.drivers.SPI.WS2801 import  WS2801
-from bibliopixel.drivers.PiWS281X import  PiWS281X
 from bibliopixel.drivers.SimPixel import SimPixel
 from bibliopixel.drivers.spi_interfaces import SPI_INTERFACES
 import string
