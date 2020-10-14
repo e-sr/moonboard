@@ -25,3 +25,29 @@ TBD: disable sound card stuff from blog above
 
 
 WS2811 
+
+
+
+Not able to initialize the driver. Error
+PiWS281X Requires the rpi_ws281x C extension.
+
+Install rpi_ws281x with the following shell commands:
+
+    git clone https://github.com/jgarff/rpi_ws281x.git
+    cd rpi_ws281x
+
+    sudo apt-get install python-dev swig scons
+    sudo scons
+
+    cd python
+    # If using default system python3
+    sudo python3 setup.py build install
+    # If using virtualenv, enter env then run
+    python setup.py build install
+
+Use bibliopixel.drivers.dummy_driver
+^Ckeyboard interrupt received
+
+
+
+=> Must be installed :)
