@@ -1,6 +1,5 @@
 #!/bin/bash
 
-<<<<<<< HEAD
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get -y install git vim python3-pip
@@ -9,25 +8,13 @@ sudo apt-get -y install python-dev swig scons
 
 
 git clone https://github.com/8cH9azbsFifZ/moonboard.git
-=======
-echo "Make sure spi device enabled in /boot/config.txt"
-grep dtparam=spi=on /boot/config.txt 
-
-echo "Make sure to have a good hostname"
-sudo hostnamectl set-hostname moonboard
-
-echo "Prepare raspian"
-sudo apt-get update
-sudo apt-get -y upgrade
-sudo apt-get -y install git vim python3-pip libatlas-base-dev   
-
-echo "Install application"
-test -d moonboard || git clone https://github.com/8cH9azbsFifZ/moonboard.git
->>>>>>> a8f3928429ed2c7e394403af6f4baa689c2f2e37
 cd moonboard
 git pull
 pip3 install -r requirements.txt
 pip3 install spidev python-periphery
+# FIXME
+sudo pip3 install -r requirements.txt 
+sudo pip3 install spidev python-periphery
 
 echo "Install service"
 cd services
@@ -51,13 +38,16 @@ sudo chown pi:pi /var/log/moonboard
 echo "Prepare WS2811 drivers"
 cd
 git clone https://github.com/jgarff/rpi_ws281x.git
-#cd rpi_ws281x
-##sudo scons
-#cd python
-#sudo python3 setup.py build install
+cd rpi_ws281x
+sudo scons
+cd python
+sudo python3 setup.py build install
+cd
 pip3 install rpi-ws281x 
+#FIXME
+sudo pip3 install rpi-ws281x 
 
 
-
+#/usr/bin/python3  /home/pi/moonboard/run.py --led_layout=evo --debug --driver PiWS281x
 
 #python3 ./run.py --driver SimPixel --debug
