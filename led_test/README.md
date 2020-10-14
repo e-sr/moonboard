@@ -18,3 +18,6 @@ pins as described elsewhere
 TBD
 
 5v over same pwr supply
+
+
+TBD: disable sound card stuff from blog above
