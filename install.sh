@@ -12,9 +12,6 @@ cd moonboard
 git pull
 pip3 install -r requirements.txt
 pip3 install spidev python-periphery
-# FIXME
-#sudo pip3 install -r requirements.txt 
-#sudo pip3 install spidev python-periphery
 
 echo "Install service"
 cd services
@@ -49,7 +46,6 @@ pip3 install rpi-ws281x
 #sudo pip3 install rpi-ws281x 
 
 echo "Prepare BiblioPixel Fix for WS2811"
-pip3 uninstall BiblioPixel
 cd
 git clone https://github.com/8cH9azbsFifZ/BiblioPixel.git # use own fork for version consistency
 cd BiblioPixel
