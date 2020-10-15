@@ -42,7 +42,9 @@ sudo python3 setup.py build install --record files.txt # must be installed as ro
 cd
 
 echo "Prepare BiblioPixel Fix for WS2811 (Python)"
-cd
-git clone https://github.com/8cH9azbsFifZ/BiblioPixel.git # use own fork for version consistency
-cd BiblioPixel
-sudo python3 setup.py build install --record files.txt
+
+#cd
+#git clone https://github.com/8cH9azbsFifZ/BiblioPixel.git # use own fork for version consistency
+#cd BiblioPixel
+#python3 setup.py build
+#sudo python3 setup.py install 
