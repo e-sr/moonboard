@@ -117,6 +117,30 @@ def register_app_error_cb(error):
     print('Failed to register application: ' + str(error))
     mainloop.quit()
 
+
+def run(*popenargs, **kwargs):
+    input = kwargs.pop("input", None)
+    check = kwargs.pop("handle", False)
+
+    if input is not None:
+        if 'stdin' in kwargs:
+            raise ValueError('stdin and input arguments may not both be used.')
+        kwargs['stdin'] = subprocess.PIPE
+
+    process = subprocess.Popen(*popenargs, **kwargs)
+    try:
+        stdout, stderr = process.communicate(input)
+    except:
+        process.kill()
+        process.wait()
+        raise
+    retcode = process.poll()
+    if check and retcode:
+        raise subprocess.CalledProcessError(
+            retcode, process.args, output=stdout, stderr=stderr)
+    return retcode, stdout, stderr
+
+
 def setup_adv(logger):
     logger.info('setup adv')
     setup_adv = [
@@ -126,7 +150,8 @@ def setup_adv(logger):
     "hcitool -i hci0 cmd 0x08 0x0006 80 02 c0 03 00 00 00 00 00 00 00 00 00 07 00"
     ]
     for c in setup_adv:
-        subprocess.run("sudo "+ c, shell=True,check=True)
+        run("sudo "+ c, shell=True)
+
 
 def start_adv(logger,start=True):
     if start:
@@ -136,7 +161,7 @@ def start_adv(logger,start=True):
         start='00'
         logger.info('stop adv')
     start_adv= "hcitool -i hci0 cmd 0x08 0x000a {}".format(start)
-    subprocess.run("sudo " +start_adv, shell=True,check=True)
+    run("sudo " +start_adv, shell=True)
 
 def main(logger,adapter):
     global mainloop
