@@ -10,9 +10,16 @@ sudo apt-get -y install python-dev swig scons # for building WS2811 drivers
 git clone https://github.com/8cH9azbsFifZ/moonboard.git
 cd moonboard
 git pull
+
+# Installing python dependencies
 pip3 install -r requirements.txt
 sudo pip3 install -r requirements.txt 
 # pip3 uninstall -y -r requirements.txt # uninstall
+
+echo "Prepare BiblioPixel Fix for WS2811 (Python)"
+cd /usr/local/lib/python3.7/dist-packages/bibliopixel/drivers/
+sudo patch < ~/moonboard/patch/PiWS281X.py.patch 
+cd
 
 
 echo "Install service"
@@ -44,11 +51,3 @@ cd python
 sudo python3 setup.py build install --record files.txt # must be installed as root
 cd
 
-echo "Prepare BiblioPixel Fix for WS2811 (Python)"
-cd /usr/local/lib/python3.7/dist-packages/bibliopixel/drivers/
-sudo patch < ~/moonboard/patch/PiWS281X.py.patch 
-#cd
-#git clone https://github.com/8cH9azbsFifZ/BiblioPixel.git # use own fork for version consistency
-#cd BiblioPixel
-#python3 setup.py build
-#sudo python3 setup.py install 
