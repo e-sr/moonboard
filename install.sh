@@ -38,7 +38,7 @@ sudo chown pi:pi /var/log/moonboard
 echo "Prepare WS2811 drivers"
 cd
 #git clone https://github.com/jgarff/rpi_ws281x.git # use own fork for version consistency
-git clone git@github.com:8cH9azbsFifZ/rpi_ws281x.git
+git clone https://github.com/8cH9azbsFifZ/rpi_ws281x.git
 cd rpi_ws281x
 sudo scons
 cd python
@@ -47,6 +47,11 @@ cd
 pip3 install rpi-ws281x 
 #FIXME
 sudo pip3 install rpi-ws281x 
+
+echo "Prepare BiblioPixel Fix for WS2811"
+cd
+git clone https://github.com/8cH9azbsFifZ/BiblioPixel.git
+cd BiblioPixel
 
 
 #/usr/bin/python3  /home/pi/moonboard/run.py --led_layout=evo --debug --driver PiWS281x
