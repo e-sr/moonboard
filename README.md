@@ -46,3 +46,14 @@ More details in the `ble` folder.
 This process listen on the dbus for new problem signals and display the problem on the strips when new problems are available. This part is implemented on the script `run.py`.
 
 To have the script running at startup a systemd service has to be started. See `scripts/run.sh` and `services/moonbard.service`.
+
+
+# Test run
+```
+# python3 ./run.py --driver SimPixel --debug
+```
+or with WS2811 LED:
+```
+sudo /usr/bin/python3  /home/pi/moonboard/run.py --led_layout=evo --debug --driver PiWS281x
+```
+

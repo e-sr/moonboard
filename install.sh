@@ -53,7 +53,9 @@ cd
 git clone https://github.com/8cH9azbsFifZ/BiblioPixel.git
 cd BiblioPixel
 
+python3 setup.py build
+sudo python3 setup.py install
 
-#/usr/bin/python3  /home/pi/moonboard/run.py --led_layout=evo --debug --driver PiWS281x
 
+#sudo /usr/bin/python3  /home/pi/moonboard/run.py --led_layout=evo --debug --driver PiWS281x
 #python3 ./run.py --driver SimPixel --debug
