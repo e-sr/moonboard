@@ -36,8 +36,6 @@ Besides the tools, time and money (the clmbing holds are the most expensive comp
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/8cH9azbsFifZ/moonboard/master/install.sh)"
 ```
 
-* Starts the application (NB: please enable spi in config.txt)
-
 ## Test run
 ```
 # python3 ./run.py --driver SimPixel --debug

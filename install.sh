@@ -5,6 +5,8 @@
 ##dtparam=audio=on
 # FIXME - stuff for spi
 # FIXME - provide as patch
+# * Starts the application (NB: please enable spi in config.txt)
+
 
 # Install dependencies
 sudo apt-get update
