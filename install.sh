@@ -40,14 +40,3 @@ sudo hcitool -i hci0 cmd 0x08 0x000a 01
 echo "Prepare logfiles"
 sudo touch /var/log/moonboard
 sudo chown pi:pi /var/log/moonboard
-
-echo "Prepare WS2811 drivers (Python)"
-cd
-#git clone https://github.com/jgarff/rpi_ws281x.git # use own fork for version consistency
-git clone https://github.com/8cH9azbsFifZ/rpi_ws281x.git
-cd rpi_ws281x
-sudo scons
-cd python
-sudo python3 setup.py build install --record files.txt # must be installed as root
-cd
-
