@@ -1,5 +1,5 @@
---- PiWS281X.py	2020-10-15 17:23:59.000000000 +0200
-+++ PiWS281X_patch.py	2020-10-15 14:27:08.000000000 +0200
+--- /usr/local/lib/python3.7/dist-packages/bibliopixel/drivers/PiWS281X.py	2020-10-15 17:23:59.000000000 +0200
++++ /usr/local/lib/python3.7/dist-packages/bibliopixel/drivers/PiWS281X_patch.py	2020-10-15 14:27:08.000000000 +0200
 @@ -31,7 +31,7 @@
  """
  
