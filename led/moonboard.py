@@ -4,7 +4,6 @@ from bibliopixel import Matrix
 from bibliopixel.drivers.PiWS281X import PiWS281X
 from bibliopixel.drivers.dummy_driver import DriverDummy
 from bibliopixel.drivers.SPI.WS2801 import  WS2801
-from bibliopixel.drivers.PiWS281X import  PiWS281X
 from bibliopixel.drivers.SimPixel import SimPixel
 from bibliopixel.drivers.spi_interfaces import SPI_INTERFACES
 import string
@@ -62,7 +61,7 @@ class MoonBoard:
 
     def __init__(self, driver_type, led_layout=None, brightness=DEFAULT_BRIGHTNESS):
         try:
-            if driver_type == "WS281X":
+            if driver_type == "PiWS281x":
                 driver = PiWS281X(self.NUM_PIXELS)
             elif driver_type == "WS2801":
                 driver = WS2801(self.NUM_PIXELS, dev='/dev/spidev0.1',spi_interface= SPI_INTERFACES.PERIPHERY,spi_speed=1)
