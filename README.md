@@ -52,7 +52,7 @@ To have the script running at startup a systemd service has to be started. See `
 ```
 # python3 ./run.py --driver SimPixel --debug
 ```
-or with WS2811 LED:
+or with WS2811 LED (must run as root)
 ```
 sudo /usr/bin/python3  /home/pi/moonboard/run.py --led_layout=evo --debug --driver PiWS281x
 ```

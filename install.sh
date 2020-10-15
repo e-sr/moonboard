@@ -3,18 +3,18 @@
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get -y install git vim python3-pip
-sudo apt-get -y install libatlas-base-dev
-sudo apt-get -y install python-dev swig scons
+sudo apt-get -y install libatlas-base-dev 
+sudo apt-get -y install python-dev swig scons # for building WS2811 drivers
 
-
+# Installing moonboard code
 git clone https://github.com/8cH9azbsFifZ/moonboard.git
 cd moonboard
 git pull
 pip3 install -r requirements.txt
 pip3 install spidev python-periphery
 # FIXME
-sudo pip3 install -r requirements.txt 
-sudo pip3 install spidev python-periphery
+#sudo pip3 install -r requirements.txt 
+#sudo pip3 install spidev python-periphery
 
 echo "Install service"
 cd services
@@ -42,20 +42,16 @@ git clone https://github.com/8cH9azbsFifZ/rpi_ws281x.git
 cd rpi_ws281x
 sudo scons
 cd python
-sudo python3 setup.py build install
+sudo python3 setup.py build install # must be installed as root
 cd
 pip3 install rpi-ws281x 
 #FIXME
-sudo pip3 install rpi-ws281x 
+#sudo pip3 install rpi-ws281x 
 
 echo "Prepare BiblioPixel Fix for WS2811"
 pip3 uninstall BiblioPixel
 cd
 git clone https://github.com/8cH9azbsFifZ/BiblioPixel.git # use own fork for version consistency
 cd BiblioPixel
-
 python3 setup.py build
 sudo python3 setup.py install
-
-
-#sudo /usr/bin/python3  /home/pi/moonboard/run.py --led_layout=evo --debug --driver PiWS281x
