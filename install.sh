@@ -11,7 +11,6 @@ git clone https://github.com/8cH9azbsFifZ/moonboard.git
 cd moonboard
 git pull
 pip3 install -r requirements.txt
-pip3 install spidev python-periphery
 
 echo "Install service"
 cd services
@@ -41,9 +40,6 @@ sudo scons
 cd python
 sudo python3 setup.py build install # must be installed as root
 cd
-pip3 install rpi-ws281x 
-#FIXME
-#sudo pip3 install rpi-ws281x 
 
 echo "Prepare BiblioPixel Fix for WS2811"
 cd
