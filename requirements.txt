@@ -36,4 +36,4 @@ Werkzeug==0.15.2
 wrapt==1.11.1
 spidev 
 python-periphery
-rpi-ws281x 
+rpi-ws281x==4.2.2

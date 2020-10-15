@@ -11,6 +11,9 @@ git clone https://github.com/8cH9azbsFifZ/moonboard.git
 cd moonboard
 git pull
 pip3 install -r requirements.txt
+sudo pip3 install -r requirements.txt 
+# pip3 uninstall -y -r requirements.txt # uninstall
+
 
 echo "Install service"
 cd services
@@ -42,7 +45,6 @@ sudo python3 setup.py build install --record files.txt # must be installed as ro
 cd
 
 echo "Prepare BiblioPixel Fix for WS2811 (Python)"
-
 #cd
 #git clone https://github.com/8cH9azbsFifZ/BiblioPixel.git # use own fork for version consistency
 #cd BiblioPixel
