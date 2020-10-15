@@ -1,0 +1,11 @@
+--- PiWS281X.py	2020-10-15 17:23:59.000000000 +0200
++++ PiWS281X_patch.py	2020-10-15 14:27:08.000000000 +0200
+@@ -31,7 +31,7 @@
+ """
+ 
+ try:
+-    from neopixel import Adafruit_NeoPixel, Color as NeoColor
++    from rpi_ws281x import Adafruit_NeoPixel, Color as NeoColor
+ except:
+     NeoColor = None
+ 
