@@ -37,7 +37,8 @@ sudo chown pi:pi /var/log/moonboard
 
 echo "Prepare WS2811 drivers"
 cd
-git clone https://github.com/jgarff/rpi_ws281x.git
+#git clone https://github.com/jgarff/rpi_ws281x.git # use own fork for version consistency
+git clone git@github.com:8cH9azbsFifZ/rpi_ws281x.git
 cd rpi_ws281x
 sudo scons
 cd python
