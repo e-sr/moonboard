@@ -31,12 +31,25 @@ Your best option is to keep all the rows but reduce the spacing between rows. Th
 Instead of missing options of more routes etc I choose a spacing of 17cm between the holds and add a horizontal 18th row.
 
 ## Material choice
-After considering the various obvious options I came across the standard “Baudiele”. It is available in 300 x 20 x 4 cm (400 cm is also common). They are cheap, very portable, widely available and thick enough to not need a framing construction. So I came across the final design.
+After considering the various obvious options I came across the standard “Baudiele”. 
+It is available in 300 x 20 x 4 cm (400 cm is also common). They are cheap, very portable, widely available and thick enough to not need a framing construction. So I came across the final design.
 
-M10 Drills:
-High quality ones, as mentioned (TBD video perfect).
-The screws must be longer (consider 4mm depth of the holes). A good choice are 6cm length for small and 8 cm length for big holds. 
+![Design](front.png)
+
+The screws for the climbing holds must be longer (consider 4cm depth of the holes). A good choice are 6cm length for small and 8 cm length for big holds.
+
+## Rough Materials List
+
+| QTY           | Name                     | Image  |
+| ------------- |:------------------------:| ------:|
+|               | 300 x 20 x 4 cm Baudiele |    ![Baudiele](baudiele.png)     |
+|               | M10 Drills: Go for the high quality ones with two srews. |  ![Drills](drill.png)|
+|               | Screws for Climbing Holds. ||
 
 
 ## Further readings:
+- [Howto Build a Moonboard](https://www.moonboard.com/how-to-build-your-moonboard/) - Original description
 - [BATTLE OF THE BOARDS: MOON, HANG AND CAMPUS](http://eveningsends.com/battle-of-the-boards-moon-hang-and-campus-a-home-gym-review/)
+- [Building a Home Climbing Wall](https://www.youtube.com/watch?v=ZZG8lnL_lbA&ab_channel=BreakingBeta) - Very useful description of materials choice and designing dimensions
+- [How to Build a Freestanding Mini MoonBoard for Complete Beginners ](https://www.youtube.com/watch?v=HKDwhwOcVSc&ab_channel=JakeKrebs) - Useful description how to design a board with little materials
+- [Tips for Building a Moon Board](https://www.youtube.com/watch?v=r-orVA3vWMc&t=1511s&ab_channel=AlanHauser) - Tips for calculations and tools
