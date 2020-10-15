@@ -22,24 +22,7 @@ Besides the tools, time and money (the clmbing holds are the most expensive comp
 # Build Instructions
 
 - [How to Build a Home Climbing Wall](doc/BUILD-WALL.md)
-
-
-
-### LED stripes
-
-The LEDs used are **addressable LED** stripes. There are many type of them (i.e. ws281x, ws2801, apa102). The original project goes for WS2801, but they were not available in Q4 2020 for me. 
-Therefore this project uses WS2811. 
-
-The led are driven by a raspberry using the SPI interface and the [bibliopixel]() python library. 
-
-#### Wiring the LED stripes
-The WS2811 LED strips have three wires (colors may differ in your case): 
-- White = GND
-- Red = 5V
-- Green = Signal 
-
-Further readings:
-- [Raspberry Pi Zero als LED Strip Controller](https://developer-blog.net/raspberry-pi-zero-als-led-strip-controller)
+- [How to Build the LED System](doc/BUILD-LEDSYSTEM.md)
 
 
 
@@ -68,16 +51,12 @@ sudo /usr/bin/python3  /home/pi/moonboard/run.py --led_layout=evo --debug --driv
 
 ## Software description
 
-### BLE process
-
-The BLE of the raspberry is setup to act as the moonboard led box. When a problem is sent from the app to the raspberry a signal containing the problems holds is send on the dbus.
-More details in the `ble` folder.
-
-### Led driving process
-
-This process listen on the dbus for new problem signals and display the problem on the strips when new problems are available. This part is implemented on the script `run.py`.
-
-To have the script running at startup a systemd service has to be started. See `scripts/run.sh` and `services/moonbard.service`.
+* The LEDs are driven by a raspberry using the SPI interface and the [bibliopixel]() python library. 
+* The BLE of the raspberry is setup to act as the moonboard led box. When a problem is sent from the app to the raspberry a signal containing the problems holds is send on the dbus.
+ More details in the `ble` folder [The BLE Process](ble/README.md).
+* The LED driving process: This process listen on the dbus for new problem signals and display the problem on the strips when new problems are available. 
+ This part is implemented on the script `run.py`.
+ To have the script running at startup a systemd service has to be started. See `scripts/run.sh` and `services/moonbard.service`.
 
 
 

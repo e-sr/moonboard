@@ -1,11 +1,9 @@
 # Climbing Wall Build Instructions
 
-
 When it comes to home build system walls, there is lots of information on the web these days. Most widely known is the moonboard (other brands as tension or kelter 
 board are available, too). It seems like the pattern of 18 rows and 11 columns is most famous, as it has been adapted by the other brands as well. 
 
-Further readings:
-- [BATTLE OF THE BOARDS: MOON, HANG AND CAMPUS](http://eveningsends.com/battle-of-the-boards-moon-hang-and-campus-a-home-gym-review/)
+
 
 ## General Considerations
 
@@ -20,7 +18,6 @@ A thing to consider in advance
 [Training Log Day 2 - Power | Moonboard | 25° & 40° Comparison](https://www.youtube.com/watch?v=wOz9GRdQMNc&feature=youtu.be&ab_channel=AlternativeBeta)
 and 
 [How and why to train on a moonboard](https://www.climbing.com/skills/how-and-why-to-train-on-the-moonboard/).
-
 
 
 ## Design the dimensions
@@ -39,3 +36,7 @@ After considering the various obvious options I came across the standard “Baud
 M10 Drills:
 High quality ones, as mentioned (TBD video perfect).
 The screws must be longer (consider 4mm depth of the holes). A good choice are 6cm length for small and 8 cm length for big holds. 
+
+
+## Further readings:
+- [BATTLE OF THE BOARDS: MOON, HANG AND CAMPUS](http://eveningsends.com/battle-of-the-boards-moon-hang-and-campus-a-home-gym-review/)
