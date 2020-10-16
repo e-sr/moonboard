@@ -26,12 +26,6 @@ sudo pip3 install -r requirements.txt
 # pip3 uninstall -y -r requirements.txt # uninstall
 
 
-echo "Prepare BiblioPixel Fix for WS2811 (Python)"
-cd /usr/local/lib/python3.7/dist-packages/bibliopixel/drivers/
-sudo patch < /home/pi/moonboard/patch/PiWS281X.py.patch 
-cd
-
-
 echo "Install service"
 cd /home/pi/moonboard/services
 sudo ./install_service.sh moonboard.service 

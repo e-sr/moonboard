@@ -1,7 +1,7 @@
 aiosqlite==0.10.0
 astroid==2.2.5
 beautifulsoup4==4.7.1
-BiblioPixel==3.4.44
+BiblioPixel==3.4.46
 BiblioPixelAnimations==3.20190410.153508
 BiblioPixelTriggers==1.0.2
 certifi==2019.3.9
