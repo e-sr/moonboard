@@ -29,14 +29,14 @@ sudo pip3 install -r requirements.txt
 
 echo "Prepare BiblioPixel Fix for WS2811 (Python)"
 cd /usr/local/lib/python3.7/dist-packages/bibliopixel/drivers/
-sudo patch < ~/moonboard/patch/PiWS281X.py.patch 
+sudo patch < /home/pi/moonboard/patch/PiWS281X.py.patch 
 cd
 
 
 echo "Install service"
-cd services
+cd /home/pi/moonboard/services
 sudo ./install_service.sh moonboard.service 
-cd ..
+cd /home/pi/moonboard
 
 #echo "Start advertising stuff"
 #sudo hcitool -i hci0 cmd 0x08 0x0008 {adv: 32 byte 0-padded if necessary}
@@ -45,8 +45,8 @@ cd ..
 #sudo hcitool -i hci0 cmd 0x08 0x000a 01
 
 echo "Install DBUS service"
-sudo cp ble/com.moonboard.conf /etc/dbus-1/system.d
-sudo cp ble/com.moonboard.service /usr/share/dbus-1/system-services/
+sudo cp /home/pi/moonboard/ble/com.moonboard.conf /etc/dbus-1/system.d
+sudo cp /home/pi/moonboard/ble/com.moonboard.service /usr/share/dbus-1/system-services/
 
 
 echo "Prepare logfiles"
