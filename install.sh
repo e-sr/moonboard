@@ -1,13 +1,12 @@
 #!/bin/bash
 
-#echo blacklist snd_bcm2835 >> /etc/modprobe.d/raspi-blacklist.conf
-#/boot/config.txt
-##dtparam=audio=on
-# FIXME - stuff for spi
-# FIXME - provide as patch
-# * Starts the application (NB: please enable spi in config.txt)
 echo "Enable SPI"
-#sudo sed -i 's/\#dtparam=spi=on/dtparam=spi=on/g' /boot/config.txt
+sudo sed -i 's/\#dtparam=spi=on/dtparam=spi=on/g' /boot/config.txt
+
+echo "Disable Audio"
+sudo sed -i 's/\dtparam=audio=on/#dtparam=audio=on/g' /boot/config.txt
+sudo echo blacklist snd_bcm2835 > /etc/modprobe.d/raspi-blacklist.conf # FIXME: defensive
+
 
 # Install dependencies
 sudo apt-get update
