@@ -37,11 +37,6 @@ cd /home/pi/moonboard/services
 sudo ./install_service.sh moonboard.service 
 cd /home/pi/moonboard
 
-#echo "Start advertising stuff"
-#sudo hcitool -i hci0 cmd 0x08 0x0008 {adv: 32 byte 0-padded if necessary}
-#sudo hcitool -i hci0 cmd 0x08 0x0009 {adv: 32 byte 0-padded if necessary}
-#sudo hcitool -i hci0 cmd 0x08 0x0006 {min:2byte} {max:2byte} {connectable:1byte} 00 00 00 00 00 00 00 00 07 00
-#sudo hcitool -i hci0 cmd 0x08 0x000a 01
 
 echo "Install DBUS service"
 sudo cp /home/pi/moonboard/ble/com.moonboard.conf /etc/dbus-1/system.d
@@ -53,22 +48,21 @@ sudo touch /var/log/moonboard
 sudo chown pi:pi /var/log/moonboard
 sudo chown pi:pi /var/log/moonboard
 
-## Very good approach - TBD: make defensive call
 # Prepare phase 2 to run at boot
-#sudo cp --verbose /home/pi/moonboard/services/moonboard-install.service /lib/systemd/system/moonboard-install.service
-#sudo chmod 644 /lib/systemd/system/moonboard-install.service
-#sudo systemctl daemon-reload
-#sudo systemctl enable moonboard-install.service
+sudo cp --verbose /home/pi/moonboard/services/moonboard-install.service /lib/systemd/system/moonboard-install.service
+sudo chmod 644 /lib/systemd/system/moonboard-install.service
+sudo systemctl daemon-reload
+sudo systemctl enable moonboard-install.service
 
-#echo "Restarting in 5 seconds to finalize changes. CTRL+C to cancel."
-#sleep 1 > /dev/null
-#printf "."
-#sleep 1 > /dev/null
-#printf "."
-#sleep 1 > /dev/null
-#printf "."
-#sleep 1 > /dev/null
-#printf "."
-#sleep 1 > /dev/null
-#printf " Restarting"
-#sudo shutdown -r now
+echo "Restarting in 5 seconds to finalize changes. CTRL+C to cancel."
+sleep 1 > /dev/null
+printf "."
+sleep 1 > /dev/null
+printf "."
+sleep 1 > /dev/null
+printf "."
+sleep 1 > /dev/null
+printf "."
+sleep 1 > /dev/null
+printf " Restarting"
+sudo shutdown -r now
