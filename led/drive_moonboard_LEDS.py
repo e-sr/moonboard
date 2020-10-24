@@ -12,6 +12,8 @@ X_GRID_NAMES = string.ascii_uppercase[0:11]
 MOONBOARD_PIXELS_COUNT = 198
 HOLDS_COLORS = {'START':COLORS.green,'TOP':COLORS.red,'MOVES':COLORS.blue}
 
+# FIXME: Cleanup?
+
 def init_pixels(type, npixels = MOONBOARD_PIXELS_COUNT, brightness=BRIGHTNESS):
     
     layout = Strip(driver,  brightness=brightness)
