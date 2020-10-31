@@ -64,7 +64,7 @@ class MoonBoard:
     LED_SPACING = 3 # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
     ROWS = 18
     COLS = 11
-    NUM_PIXELS = self.ROWS*self.COLS*self.LED_SPACING 
+    NUM_PIXELS = ROWS*COLS*LED_SPACING 
     DEFAULT_BRIGHTNESS = 150 # FIXME: to config file
 
     def __init__(self, driver_type, led_layout=None, brightness=DEFAULT_BRIGHTNESS):
