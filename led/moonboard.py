@@ -75,7 +75,7 @@ class MoonBoard:
     DEFAULT_PROBLEM_COLORS = {'START':COLORS.blue,'TOP':COLORS.red,'MOVES':COLORS.green}
     DEFAULT_COLOR = COLORS.blue #FIXME ?
     X_GRID_NAMES = string.ascii_uppercase[0:11]
-    NUM_PIXELS = 400#198 # FIXME?
+    NUM_PIXELS = 400 #198 # FIXME?
     DEFAULT_BRIGHTNESS = 150
 
     def __init__(self, driver_type, led_layout=None, brightness=DEFAULT_BRIGHTNESS):
@@ -97,13 +97,13 @@ class MoonBoard:
         if led_layout is not None:
             self.layout = Matrix(driver,
                                 width=11,
-                                height=18,
+                                height=18*3,
                                 coord_map=led_layout,
                                 threadedUpdate=True,
                                 brightness=brightness
                                 )
         else:
-            self.layout = Matrix(driver,width=11,height=18, 
+            self.layout = Matrix(driver,width=11,height=18*3, 
                                 threadedUpdate=True,
                                 brightness=brightness
                                 )
