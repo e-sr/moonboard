@@ -2,3 +2,4 @@
 .vscode/
 moonboard.code-workspace
 .DS_Store
+led/*.pyc
