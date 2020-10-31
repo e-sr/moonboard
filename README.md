@@ -4,7 +4,7 @@ This project contains software and informations to build a home climbing wall wi
 This fork has been done while building my home climbing wall. 
 
 ***WIP: Project ongoing. Next step: Mount the LED system to the wall***
-
+=> Please use the latest tagged version, :latest will probably not work for you.
 
 
 ![Image of the Wall](doc/front.png)

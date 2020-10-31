@@ -17,7 +17,7 @@ The WS2811 LED strips have three wires (colors may differ in your case):
 - Red = 5V
 - Green = Signal 
 
-## Configure the LED addresses
+## Configure the LED addresses FIXME!
 - Create a custom layout in <TBD> FIXME moonboard.py
 sudo /usr/bin/python3  /home/pi/moonboard/run.py --led_layout=gz --debug --driver PiWS281x
 
