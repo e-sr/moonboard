@@ -125,7 +125,7 @@ class MoonBoard:
                     )
         self.layout.push_to_driver()
 
-    def run_animation(self, animation, run_options={}, **kwds):
+    def run_animation(self, run_options={}, **kwds):
         x = 1
         y = 10
         color = COLORS.blue
