@@ -154,7 +154,7 @@ class MoonBoard:
                 holdset = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
                 color = COLORS.yellow
                 if (holdset == "A"):
-                    color = COLORS.green
+                    color = COLORS.red
                 if (holdset == "B"):
                     color = COLORS.blue
                 if (holdset == "OS"):
