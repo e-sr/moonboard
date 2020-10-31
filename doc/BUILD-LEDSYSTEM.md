@@ -35,7 +35,7 @@ The WS2811 LED strips have three wires (colors may differ in your case):
 sudo /usr/bin/python3  /home/pi/moonboard/run.py --led_layout=gz --debug --driver PiWS281x
 
 - TBD: run in led python3 moonboard.py ... 
-
+- sudo python3 moonboard.py WS2801
 
 ## Further readings:
 - [Raspberry Pi Zero als LED Strip Controller](https://developer-blog.net/raspberry-pi-zero-als-led-strip-controller)
