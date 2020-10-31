@@ -130,7 +130,20 @@ class MoonBoard:
         y = 10
         color = COLORS.blue
         self.layout.set(x, y, color)
+        self.layout.push_to_driver()
 
+    def stop_animation(self):
+        if self.animation is not None:
+            self.animation.stop()
+
+
+class TestAnimation:
+    COLOR=[COLORS.Green, COLORS.Blue]
+    def __init__(self, layout, ):
+        self.layout = layout
+
+    def step(self, amt=1):
+        pass
 
 if __name__=="__main__":
     import argparse
@@ -151,7 +164,7 @@ if __name__=="__main__":
     MOONBOARD = MoonBoard(args.driver_type,led_layout )
     print("Run animation,")
     #animation=
-    #MOONBOARD.run_animation(animation)
+    MOONBOARD.run_animation(animation)
     #MOONBOARD.layout.fillScreen(COLORS.red)
     print(f"wait {args.duration} seconds,")
     time.sleep(args.duration)
