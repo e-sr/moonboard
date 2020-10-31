@@ -126,15 +126,19 @@ class MoonBoard:
         self.layout.push_to_driver()
 
     def run_animation(self, run_options={}, **kwds):
-        x = 1
-        y = 10
-        color = COLORS.blue
-        self.layout.set(x, y, color)
-        self.layout.push_to_driver()
+        duration = 0.5
+        for r in range (0,ROWS):
+            for c in range (0,COLS):
+                color= COLORS.blue
+                self.layout.set(r, c, color)
+                self.layout.push_to_driver()
+                time.sleep(duration)
+        self.clear()
 
     def stop_animation(self):
-        if self.animation is not None:
-            self.animation.stop()
+        self.clear()
+        #if self.animation is not None:
+        #    self.animation.stop()
 
 
 class TestAnimation:
@@ -166,7 +170,7 @@ if __name__=="__main__":
     #animation=
     MOONBOARD.run_animation()
     #MOONBOARD.layout.fillScreen(COLORS.red)
-    print(f"wait {args.duration} seconds,")
-    time.sleep(args.duration)
+    #print(f"wait {args.duration} seconds,")
+    #time.sleep(args.duration)
     print("clear and exit.")
     MOONBOARD.clear()
