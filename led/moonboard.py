@@ -127,8 +127,8 @@ class MoonBoard:
 
     def run_animation(self, run_options={}, **kwds):
         duration = 0.5
-        for r in range (0,ROWS):
-            for c in range (0,COLS):
+        for r in range (0, self.ROWS):
+            for c in range (0, self.COLS):
                 color= COLORS.blue
                 self.layout.set(r, c, color)
                 self.layout.push_to_driver()
