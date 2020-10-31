@@ -7,6 +7,9 @@ from bibliopixel.drivers.SPI.WS2801 import  WS2801
 from bibliopixel.drivers.SimPixel import SimPixel
 from bibliopixel.drivers.spi_interfaces import SPI_INTERFACES
 import string
+import json
+
+
 
 # FIXME: Describe Layouts
 LED_LAYOUT = {
@@ -66,6 +69,8 @@ class MoonBoard:
     COLS = 11
     NUM_PIXELS = ROWS*COLS*LED_SPACING 
     DEFAULT_BRIGHTNESS = 150 # FIXME: to config file
+    SETUP = '2016' # FIXME: to config file / Arg
+
 
     def __init__(self, driver_type, led_layout=None, brightness=DEFAULT_BRIGHTNESS):
         try:
@@ -143,6 +148,23 @@ class MoonBoard:
 
         self.show_hold("A1", color=COLORS.red)
 
+        with open('../problems/HoldSetup.json') as json_file:
+            data = json.load(json_file)
+            for hold in data[setup]:
+                holdset = (data[setup][hold]['HoldSet']) # A, B, OS for 2016 
+                color = COLORS.yellow
+                if (holdset == "A"):
+                    color = COLORS.green
+                if (holdset == "B"):
+                    color = COLORS.blue
+                if (holdset == "OS"):
+                    color = COLORS.yellow
+
+                self.set_hold (hold, color)
+                self.layout.push_to_driver()
+
+                time.sleep(duration)
+
         self.clear()
 
     def stop_animation(self):
@@ -171,7 +193,7 @@ if __name__=="__main__":
                         help='Delay of progress.')
     parser.add_argument('--special_nest_layout',  action='store_true')
     args = parser.parse_args()
-    
+        
     print("Test MOONBOARD LEDS\n===========")
     led_layout = LED_LAYOUT['nest'] if args.special_nest_layout else None
     MOONBOARD = MoonBoard(args.driver_type,led_layout )
