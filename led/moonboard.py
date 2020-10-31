@@ -161,8 +161,8 @@ if __name__=="__main__":
     led_layout = LED_LAYOUT['nest'] if args.special_nest_layout else None
     MOONBOARD = MoonBoard(args.driver_type,led_layout )
     print("Run animation,")
-    #animation=
-    MOONBOARD.run_animation()
+    animation=
+    MOONBOARD.run_animation(animation)
     MOONBOARD.layout.fillScreen(COLORS.red)
     print(f"wait {args.duration} seconds,")
     time.sleep(args.duration)
