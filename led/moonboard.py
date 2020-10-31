@@ -52,7 +52,8 @@ LED_LAYOUT = {
        [  1,  34,  37,  70,  73, 106, 109, 142, 145, 178, 181],
        [  0,  35,  36,  71,  72, 107, 108, 143, 144, 179, 180]],
 
-'gz': [[ 17,  18,  53,  54,  89,  90, 125, 126, 161, 162, 397], # GZ LAYOUT
+'gz': [
+       [ 17,  18,  53,  54,  89,  90, 125, 126, 161, 162, 397], # GZ LAYOUT
        [ 16,  19,  52,  55,  88,  91, 124, 127, 160, 163, 396],
        [ 15,  20,  51,  56,  87,  92, 123, 128, 159, 164, 395],
        [ 14,  21,  50,  57,  86,  93, 122, 129, 158, 165, 394],
@@ -69,7 +70,8 @@ LED_LAYOUT = {
        [  3,  32,  39,  68,  75, 104, 111, 140, 147, 176, 383],
        [  2,  33,  38,  69,  74, 105, 110, 141, 146, 177, 382],
        [  1,  34,  37,  70,  73, 106, 109, 142, 145, 178, 381],
-       [  0,  35,  36,  71,  72, 107, 108, 143, 144, 179, 380]]}
+       [  0,  35,  36,  71,  72, 107, 108, 143, 144, 179, 380]
+       ]}
 
 class MoonBoard:
     DEFAULT_PROBLEM_COLORS = {'START':COLORS.blue,'TOP':COLORS.red,'MOVES':COLORS.green}
@@ -119,7 +121,7 @@ class MoonBoard:
     def set_hold(self, hold, color=DEFAULT_COLOR):
         x_grid_name, y_grid_name = hold[0], int(hold[1:])
         x = self.X_GRID_NAMES.index(x_grid_name)
-        y = 18 - y_grid_name
+        y = (18 - y_grid_name)*3 # FIXME
         self.layout.set(x, y, color)
 
     def show_hold(self, hold, color=DEFAULT_COLOR):
