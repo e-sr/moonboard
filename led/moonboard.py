@@ -125,7 +125,7 @@ class MoonBoard:
                     )
         self.layout.push_to_driver()
 
-    def run_animation(self, run_options={}, **kwds):
+    def run_animation(self, run_options={}, **kwds): # FIXME: will it still work?
         duration = 0.05
         for r in range (0, self.ROWS):
             for c in range (0, self.COLS):
@@ -136,9 +136,8 @@ class MoonBoard:
         self.clear()
 
     def stop_animation(self):
-        self.clear()
-        #if self.animation is not None:
-        #    self.animation.stop()
+        if self.animation is not None:
+            self.animation.stop()
 
 
 class TestAnimation:
