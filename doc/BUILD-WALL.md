@@ -47,6 +47,16 @@ The screws for the climbing holds must be longer (consider 4cm depth of the hole
 |               | Screws for Climbing Holds. ||
 
 
+### Holds
+- Allgäu Holds - Concave Jugs L (Klettergriffe Set) neon-pink
+- Allgäu Holds - Sandstein Edges L (Klettergriffe Set)
+- Entre Prises Klettergriffset Kineduc
+- Entre Prises Klettergriffset Essential Jugs L 3 (ehemals Flakes)
+- Entre Prises Klettergriffset Essential Jugs L 2 (ehemals Mini Roof)
+- Entre Prises Yangshuo Jugs M 1
+- Entre Prises Klettergriffe Essential Jugs L 1 (ehemals Bomber Jugs)
+
+
 ## Further readings:
 - [Howto Build a Moonboard](https://www.moonboard.com/how-to-build-your-moonboard/) - Original description
 - [BATTLE OF THE BOARDS: MOON, HANG AND CAMPUS](http://eveningsends.com/battle-of-the-boards-moon-hang-and-campus-a-home-gym-review/)
