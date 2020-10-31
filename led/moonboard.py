@@ -61,7 +61,7 @@ class MoonBoard:
     DEFAULT_PROBLEM_COLORS = {'START':COLORS.blue,'TOP':COLORS.red,'MOVES':COLORS.green}
     DEFAULT_COLOR = COLORS.blue #FIXME ?
     X_GRID_NAMES = string.ascii_uppercase[0:11]
-    LED_SPACING = 3 # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
+    LED_SPACING = 1 # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
     ROWS = 18
     COLS = 11
     NUM_PIXELS = ROWS*COLS*LED_SPACING 
@@ -162,9 +162,9 @@ if __name__=="__main__":
     MOONBOARD = MoonBoard(args.driver_type,led_layout )
     print("Run animation,")
     #animation=
-    #MoonBoard.run_animation()
-    #MOONBOARD.layout.fillScreen(COLORS.red)
-    #print(f"wait {args.duration} seconds,")
+    MoonBoard.run_animation()
+    MOONBOARD.layout.fillScreen(COLORS.red)
+    print(f"wait {args.duration} seconds,")
     time.sleep(args.duration)
     print("clear and exit.")
     MOONBOARD.clear()
