@@ -150,8 +150,8 @@ class MoonBoard:
 
         with open('../problems/HoldSetup.json') as json_file:
             data = json.load(json_file)
-            for hold in data[setup]:
-                holdset = (data[setup][hold]['HoldSet']) # A, B, OS for 2016 
+            for hold in data[self.SETUP]:
+                holdset = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
                 color = COLORS.yellow
                 if (holdset == "A"):
                     color = COLORS.green
