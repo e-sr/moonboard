@@ -1,10 +1,11 @@
 #!/usr/bin/python
+# This script is used to create the arrays for the LED layouts
 ROWS = 18
 COLS = 11
-LED_SPACING = 1#3
+LED_SPACING = 3
 
 # Every Col Bottom>Up Left>Right
-print ("Layout 1")
+print ("Layout 1 - Col")
 led_number = 0
 layout = [[0 for i in range(COLS)] for j in range(ROWS)]  
 for c in range (0,COLS):
@@ -14,7 +15,7 @@ for c in range (0,COLS):
 print(layout) 
 
 # Every Row Left>Right Bottom>Up
-print ("Layout 2")
+print ("Layout 2 - Row")
 led_number = 0
 layout = [[0 for i in range(COLS)] for j in range(ROWS)]  
 for r in range(0,ROWS):
@@ -24,7 +25,7 @@ for r in range(0,ROWS):
 print(layout) 
 
 # ZigZag: Left,Bottom>Left,Up >> 1 Right&Up>Down   -- aka: Evo
-print ("Layout 3")
+print ("Layout 3 - ZigZag")
 led_number = 0
 layout = [[0 for i in range(COLS)] for j in range(ROWS)]  
 for c in range (0,COLS):
