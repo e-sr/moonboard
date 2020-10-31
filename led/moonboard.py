@@ -133,7 +133,10 @@ class MoonBoard:
                 self.layout.set(r, c, color)
                 self.layout.push_to_driver()
                 time.sleep(duration)
-        self.clear()
+        #self.clear()
+
+        self.show_hold("A1", color=COLORS.red)
+
 
     def stop_animation(self):
         if self.animation is not None:
