@@ -129,9 +129,6 @@ class MoonBoard:
         self.stop_animation()
         self.animation = animation(self.layout, **kwds)
         self.animation.run(**run_options)
-        #def f(s):
-        #    print(s)
-        #test_leds(pixels=pixels, log_func=f, sleep_func=time.sleep, duration= args.duration)
 
     def stop_animation(self):
         if self.animation is not None:
@@ -145,23 +142,6 @@ class TestAnimation:
 
     def step(self, amt=1):
         pass
-
-    def test_leds(pixels, log_func , sleep_func, duration = 20.0, color = COLORS.red):
-    """"""
-        npixels = pixels.numLEDs
-        log_func({'progress': 0,'report': 'start test'})
-        npixelsON = 18
-        p=0
-        for p in range(npixels+npixelsON):
-            if p>=1:
-                pixels.setOff(p - npixelsON)
-            if p <= npixels:
-                pixels.set(p, color)
-            pixels.update()
-            sleep_func(float(duration)/npixels)
-            log_func({'progress': int(p*100/(npixels+npixelsON)), 'report': "Test running...\nLed number {}.".format(p)})
-        clear_problem(pixels)
-        log_func({'progress': 100, 'report': "Test finish...\nLed number {}.",'done':True})
 
 if __name__=="__main__":
     import argparse
