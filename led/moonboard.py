@@ -61,7 +61,7 @@ class MoonBoard:
     DEFAULT_PROBLEM_COLORS = {'START':COLORS.blue,'TOP':COLORS.red,'MOVES':COLORS.green}
     DEFAULT_COLOR = COLORS.blue #FIXME ?
     X_GRID_NAMES = string.ascii_uppercase[0:11]
-    LED_SPACING = 1 # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
+    LED_SPACING = 2 # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
     ROWS = 18
     COLS = 11
     NUM_PIXELS = ROWS*COLS*LED_SPACING 
@@ -126,7 +126,7 @@ class MoonBoard:
         self.layout.push_to_driver()
 
     def run_animation(self, run_options={}, **kwds): # FIXME: will it still work?
-        duration = 0.05
+        duration = 0.01
         for r in range (0, self.ROWS):
             for c in range (0, self.COLS):
                 color= COLORS.blue
