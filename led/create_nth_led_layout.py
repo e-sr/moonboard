@@ -45,3 +45,13 @@ for c in range (0, COLS):
         hold = (chr(c+65)+str(r+1))
         layout[ROWS-1-r][c] = hold
 print (layout)
+
+
+# List of all holds
+print ("List of all holds")
+layout = [0 for i in range(COLS*ROWS)]
+for c in range (0, COLS):
+    for r in range(0, ROWS):
+        hold = (chr(c+65)+str(r+1))
+        layout[c*ROWS+r] = hold 
+print (layout)
