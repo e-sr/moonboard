@@ -172,7 +172,7 @@ if __name__=="__main__":
     #animation=
     MOONBOARD.run_animation()
     #MOONBOARD.layout.fillScreen(COLORS.red)
-    #print(f"wait {args.duration} seconds,")
-    #time.sleep(args.duration)
+    print(f"wait {args.duration} seconds,")
+    time.sleep(args.duration)
     print("clear and exit.")
     MOONBOARD.clear()
