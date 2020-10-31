@@ -11,3 +11,8 @@
 
 
 
+# Moonboard Service
+To stop / restart the moonboard services (i.e. for debugging) use systemctl:
+```
+sudo systemctl stop moonboard.service
+```
