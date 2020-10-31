@@ -162,6 +162,7 @@ class MoonBoard:
 
                 self.set_hold (hold, color)
                 self.layout.push_to_driver()
+                #print "Orientation"
 
                 time.sleep(duration)
 
