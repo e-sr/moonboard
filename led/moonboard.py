@@ -77,8 +77,11 @@ class MoonBoard:
     DEFAULT_PROBLEM_COLORS = {'START':COLORS.blue,'TOP':COLORS.red,'MOVES':COLORS.green}
     DEFAULT_COLOR = COLORS.blue #FIXME ?
     X_GRID_NAMES = string.ascii_uppercase[0:11]
-    NUM_PIXELS = 11*18*3 #198 # FIXME?
-    DEFAULT_BRIGHTNESS = 150
+    LED_SPACING = 3 # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
+    ROWS = 18
+    COLS = 11
+    NUM_PIXELS = self.ROWS*self.COLS*self.LED_SPACING 
+    DEFAULT_BRIGHTNESS = 150 # FIXME: to config file
 
     def __init__(self, driver_type, led_layout=None, brightness=DEFAULT_BRIGHTNESS):
         try:
@@ -98,14 +101,14 @@ class MoonBoard:
 
         if led_layout is not None:
             self.layout = Matrix(driver,
-                                width=11,
-                                height=18*3,
+                                width=self.COLS,
+                                height=self.ROWS*self.LED_SPACING,
                                 coord_map=led_layout,
                                 threadedUpdate=True,
                                 brightness=brightness
                                 )
         else:
-            self.layout = Matrix(driver,width=11,height=18*3, 
+            self.layout = Matrix(driver,width=11,height=self.ROWS*self.LED_SPACING, 
                                 threadedUpdate=True,
                                 brightness=brightness
                                 )
@@ -121,7 +124,7 @@ class MoonBoard:
     def set_hold(self, hold, color=DEFAULT_COLOR):
         x_grid_name, y_grid_name = hold[0], int(hold[1:])
         x = self.X_GRID_NAMES.index(x_grid_name)
-        y = (18 - y_grid_name)*3 # FIXME
+        y = (self.ROWS - y_grid_name) * LED_SPACING # FIXME
         self.layout.set(x, y, color)
 
     def show_hold(self, hold, color=DEFAULT_COLOR):
