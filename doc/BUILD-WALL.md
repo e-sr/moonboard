@@ -19,6 +19,8 @@ A thing to consider in advance
 and 
 [How and why to train on a moonboard](https://www.climbing.com/skills/how-and-why-to-train-on-the-moonboard/).
 
+Time and materials? Lets be honest: you will need lots of time to build a wall (drilling, mounting, calculations, ....). In this design the most expensive part are the holds. Calculate with 8€ each roughly.
+
 
 ## Design the dimensions
 After measuring my room in the rooftop I drew a lot of different alternatives where to locate the board and what sizes to choose. 
@@ -68,7 +70,10 @@ Keep in mind to add 4cm wood depth to screw length and go for longer ones:
 
 ### Tools
 - 12mm Wood Drill (Hexagon mount, round shaft can be to weak for 4cm wood)
-- 13mm Wood Drill (Hexagon mount, round shaft can be to weak for 4cm wood)
+- 13mm Wood Drill (Hexagon mount, round shaft can be to weak for 4cm wood) - for the 12mm LED holes
+- Handsaw
+- Lots of spax screws, bits (torx)
+
 
 ## Further readings:
 - [Howto Build a Moonboard](https://www.moonboard.com/how-to-build-your-moonboard/) - Original description
