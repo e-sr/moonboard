@@ -16,3 +16,7 @@ To stop / restart the moonboard services (i.e. for debugging) use systemctl:
 ```
 sudo systemctl stop moonboard.service
 ```
+
+
+# LED Driver
+The LED driver scripts are located in the folder LED. moonboard.py is invoked by the BLE service. Alternatively you can run moonboard.py directly, i.e. for LED strip installation or hold setup. 
