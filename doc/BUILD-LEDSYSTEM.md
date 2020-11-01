@@ -28,6 +28,7 @@ The WS2811 LED strips have three wires (colors may differ in your case):
 - Red = 5V
 - Green = Signal 
 - Both the LED and the RASPI are driven by the same power supply (warning: GPIO power on raspi has no fuse)
+
 ![Raspi Wiring](raspi_wiring.png)
 
 ## Configure the LED addresses FIXME!
@@ -39,6 +40,7 @@ sudo /usr/bin/python3  /home/pi/moonboard/run.py --led_layout=gz --debug --drive
 
 There are different possibilities how to choose the path of your led strip (cf. layout in the sources). 
 There is a scrip in the folder led for creating the address arrays (create_nth_led_layout.py).
+
 ![LED path](led_path.png)
 
 
