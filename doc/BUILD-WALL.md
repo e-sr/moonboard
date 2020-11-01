@@ -47,6 +47,11 @@ The screws for the climbing holds must be longer (consider 4cm depth of the hole
 |               | Screws for Climbing Holds. ||
 
 
+### Screws
+Keep in mind to add 4cm wood depth to screw length and go for longer ones:
+- ALPIDEX 1 Zylinderkopfschraube M10 x 80 mm DIN 912 verzinkt 8.8 Innensechskant
+- ALPIDEX 1 Zylinderkopfschraube M10 x 60 mm DIN 912 verzinkt 8.8 Innensechskant
+
 ### Holds
 - Allgäu Holds - Concave Jugs L (Klettergriffe Set) neon-pink
 - Allgäu Holds - Sandstein Edges L (Klettergriffe Set)
