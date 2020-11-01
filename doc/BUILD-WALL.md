@@ -55,7 +55,14 @@ The screws for the climbing holds must be longer (consider 4cm depth of the hole
 - Entre Prises Klettergriffset Essential Jugs L 2 (ehemals Mini Roof)
 - Entre Prises Yangshuo Jugs M 1
 - Entre Prises Klettergriffe Essential Jugs L 1 (ehemals Bomber Jugs)
+- https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel-klettergriffe-set--kreuz.html
+- https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel--klettergriffe-set--leoni.html
+- https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel--klettergriffe-set--elli.html
 
+
+### Tools
+- 12mm Wood Drill (Hexagon mount, round shaft can be to weak for 4cm wood)
+- 13mm Wood Drill (Hexagon mount, round shaft can be to weak for 4cm wood)
 
 ## Further readings:
 - [Howto Build a Moonboard](https://www.moonboard.com/how-to-build-your-moonboard/) - Original description
