@@ -1,4 +1,6 @@
 # moonboard
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 
 This project contains software and informations to build a home climbing wall with LED support compatible with the popular moonboard. 
 This fork has been done while building my home climbing wall. 
