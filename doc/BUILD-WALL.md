@@ -63,6 +63,7 @@ Keep in mind to add 4cm wood depth to screw length and go for longer ones:
 - https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel-klettergriffe-set--kreuz.html
 - https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel--klettergriffe-set--leoni.html
 - https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel--klettergriffe-set--elli.html
+- For footholds: ALPIDEX 80 Klettergriffe in verschiedenen Größen und Formen
 
 
 ### Tools
