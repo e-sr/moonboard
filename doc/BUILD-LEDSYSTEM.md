@@ -37,5 +37,10 @@ sudo /usr/bin/python3  /home/pi/moonboard/run.py --led_layout=gz --debug --drive
 - TBD: run in led python3 moonboard.py ... 
 - sudo python3 moonboard.py WS2801
 
+There are different possibilities how to choose the path of your led strip (cf. layout in the sources). 
+There is a scrip in the folder led for creating the address arrays (create_nth_led_layout.py).
+![LED path](led_path.jpeg)
+
+
 ## Further readings:
 - [Raspberry Pi Zero als LED Strip Controller](https://developer-blog.net/raspberry-pi-zero-als-led-strip-controller)
