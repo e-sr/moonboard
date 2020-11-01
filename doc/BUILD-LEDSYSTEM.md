@@ -39,7 +39,7 @@ sudo /usr/bin/python3  /home/pi/moonboard/run.py --led_layout=gz --debug --drive
 
 There are different possibilities how to choose the path of your led strip (cf. layout in the sources). 
 There is a scrip in the folder led for creating the address arrays (create_nth_led_layout.py).
-![LED path](led_path.jpeg)
+![LED path](led_path.png)
 
 
 ## Further readings:
