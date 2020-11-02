@@ -45,7 +45,7 @@ The screws for the climbing holds must be longer (consider 4cm depth of the hole
 | QTY           | Name                     | Image  |
 | ------------- |:------------------------:| ------:|
 |               | 300 x 20 x 4 cm Baudiele |    ![Baudiele](baudiele.png)     |
-|               | M10 Drills: Go for the high quality ones with two srews. |  ![Drills](drill.png)|
+| 250           | M10 Drills: Go for the high quality ones with two srews. ALPIDEX 50 Edelstahl Spezial Einschlagmuttern M10 Anschraubmutter Klettergriffe|  ![Drills](drill.png)|
 |               | Screws for Climbing Holds. ||
 
 
