@@ -24,7 +24,7 @@ Time and materials? Lets be honest: you will need lots of time to build a wall (
 
 ## Design the dimensions
 After measuring my room in the rooftop I drew a lot of different alternatives where to locate the board and what sizes to choose. 
-Dimensions like size of wood, wall, angle, overlap, drill spacings etc. can easily be calculated using an excel sheet (TBD).
+Dimensions like size of wood, wall, angle, overlap, drill spacings etc. can easily be calculated using an [excel sheet](./Moonboard.xlsx).
 
 Ben Moon himself is cited: "As you have pointed out you could reduce the kick board hight and eliminate the rows although this isn’t a good idea. 
 Your best option is to keep all the rows but reduce the spacing between rows. This means you can do all the problems listed on the website but they will be at a slightly easier grade." 
