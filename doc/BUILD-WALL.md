@@ -71,6 +71,8 @@ Keep in mind to add 4cm wood depth to screw length and go for longer ones:
 ### Tools
 - 12mm Wood Drill (Hexagon mount, round shaft can be to weak for 4cm wood)
 - 13mm Wood Drill (Hexagon mount, round shaft can be to weak for 4cm wood) - for the 12mm LED holes
+- Drill Stand (4cm depth is too much for drilling per hand)
+- 
 - Handsaw
 - Lots of spax screws, bits (torx)
 
