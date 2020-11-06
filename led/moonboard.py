@@ -131,6 +131,10 @@ class MoonBoard:
 
     def run_animation(self, run_options={}, **kwds): # FIXME: will it still work?
         duration = 0.01
+        for i in range(1,18): 
+            self.set_hold ("A"+str(i), COLORS.red)
+            time.sleep(2)
+            
         self.set_hold ("A1", COLORS.red)
         self.set_hold ("A2", COLORS.red)
 
