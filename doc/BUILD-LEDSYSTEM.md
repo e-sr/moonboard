@@ -32,6 +32,7 @@ The WS2811 LED strips have three wires (colors may differ in your case):
 
 ![Raspi Wiring](raspi_wiring.png)
 
+
 ## Configure the LED addresses FIXME!
 - Create a custom layout in <TBD> FIXME moonboard.py
 ```
