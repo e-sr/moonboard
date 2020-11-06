@@ -139,7 +139,7 @@ class MoonBoard:
             print (h)
             self.set_hold (h, COLORS.red)
             self.layout.push_to_driver()
-            time.sleep(0.5)
+            time.sleep(0.01)
 
         #h = "A"+str(i)
         #self.set_hold ("A1", COLORS.red)
@@ -152,6 +152,7 @@ class MoonBoard:
         print ("B17")
         self.set_hold ("B17", COLORS.yellow)
 
+        time.sleep(10)
 
         self.set_hold ("K17", COLORS.green)
         self.set_hold ("K18", COLORS.green)
