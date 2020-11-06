@@ -132,9 +132,11 @@ class MoonBoard:
     def run_animation(self, run_options={}, **kwds): # FIXME: will it still work?
         duration = 0.01
         self.set_hold ("A1", COLORS.red)
+        self.set_hold ("A2", COLORS.red)
+
         self.layout.push_to_driver()
                 
-        time.sleep(2)
+        time.sleep(10)
         
 
         with open('../problems/HoldSetup.json') as json_file: # FIXME: path 

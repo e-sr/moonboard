@@ -39,8 +39,9 @@ The WS2811 LED strips have three wires (colors may differ in your case):
 sudo systemctl stop moonboard.service
 sudo /usr/bin/python3  /home/pi/moonboard/run.py --led_layout=gz --debug --driver PiWS281x
 ```
-- TBD: run in led python3 moonboard.py ... 
+- Running the script in testing mode
 ````
+sudo systemctl stop moonboard.service
 cd led
 sudo python3 moonboard.py PiWS281x
 ```
