@@ -183,11 +183,11 @@ if __name__=="__main__":
                         help='driver type, depends on leds and device controlling the led.',choices=['PiWS281x', 'WS2801', 'SimPixel'])
     parser.add_argument('--duration',  type=int, default=10,
                         help='Delay of progress.')
-    parser.add_argument('--special_nest_layout',  action='store_true')
+    parser.add_argument('--special_gz_layout',  action='store_true')
     args = parser.parse_args()
         
     print("Test MOONBOARD LEDS\n===========")
-    led_layout = LED_LAYOUT['nest'] if args.special_nest_layout else None
+    led_layout = LED_LAYOUT['gz'] if args.special_gz_layout else None
     MOONBOARD = MoonBoard(args.driver_type,led_layout )
     print("Run animation,")
     #animation=
