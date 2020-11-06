@@ -151,7 +151,7 @@ class MoonBoard:
         self.set_hold ("B18", COLORS.yellow)
         print ("B17")
         self.set_hold ("B17", COLORS.yellow)
-
+        self.layout.push_to_driver()
         time.sleep(20)
 
         self.set_hold ("K17", COLORS.green)
