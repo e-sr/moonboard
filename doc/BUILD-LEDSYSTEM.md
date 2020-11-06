@@ -43,7 +43,7 @@ sudo /usr/bin/python3  /home/pi/moonboard/run.py --led_layout=gz --debug --drive
 ````
 sudo systemctl stop moonboard.service
 cd led
-sudo python3 moonboard.py PiWS281x
+sudo python3 moonboard.py --special_gz_layout PiWS281x
 ```
 
 There are different possibilities how to choose the path of your led strip (cf. layout in the sources). 
