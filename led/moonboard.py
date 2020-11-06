@@ -64,9 +64,9 @@ class MoonBoard:
     DEFAULT_COLOR = COLORS.blue #FIXME ?
     X_GRID_NAMES = string.ascii_uppercase[0:11]
     LED_SPACING = 3 # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
-    ROWS = 18
+    ROWS = 18 * LED_SPACING
     COLS = 11
-    NUM_PIXELS = ROWS*COLS*LED_SPACING 
+    NUM_PIXELS = ROWS*COLS
     DEFAULT_BRIGHTNESS = 150 # FIXME: to config file
     SETUP = 'Moonboard2016' # FIXME: to config file / Arg
 
@@ -90,13 +90,13 @@ class MoonBoard:
         if led_layout is not None:
             self.layout = Matrix(driver,
                                 width=self.COLS,
-                                height=self.ROWS*self.LED_SPACING,
+                                height=self.ROWS,
                                 coord_map=led_layout,
                                 threadedUpdate=True,
                                 brightness=brightness
                                 )
         else:
-            self.layout = Matrix(driver,width=11,height=self.ROWS*self.LED_SPACING, 
+            self.layout = Matrix(driver,width=11,height=self.ROWS, 
                                 threadedUpdate=True,
                                 brightness=brightness
                                 )
@@ -112,7 +112,7 @@ class MoonBoard:
     def set_hold(self, hold, color=DEFAULT_COLOR):
         x_grid_name, y_grid_name = hold[0], int(hold[1:])
         x = self.X_GRID_NAMES.index(x_grid_name)
-        y = (self.ROWS - y_grid_name) * self.LED_SPACING # FIXME
+        y = (self.ROWS - y_grid_name * self.LED_SPACING) # FIXME
         self.layout.set(x, y, color)
 
     def show_hold(self, hold, color=DEFAULT_COLOR):
