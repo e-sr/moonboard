@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # This script is used to create the arrays for the LED layouts
-ROWS = 18 #*3
+ROWS = 18 *3 #+2
 COLS = 11
 LED_SPACING = 1
 
