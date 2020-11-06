@@ -132,7 +132,7 @@ class MoonBoard:
 
     def run_animation(self, run_options={}, **kwds): # FIXME: will it still work?
         duration = 0.01
-        for i in range(1,18): 
+        for i in range(1,18+1): 
             h = "A"+str(i)
             print (h)
             self.set_hold (h, COLORS.red)
@@ -147,6 +147,9 @@ class MoonBoard:
         self.set_hold ("A18", COLORS.yellow)
         print ("B18")
         self.set_hold ("B18", COLORS.yellow)
+        print ("B17")
+        self.set_hold ("B17", COLORS.yellow)
+
 
         self.set_hold ("K17", COLORS.green)
         self.set_hold ("K18", COLORS.green)
