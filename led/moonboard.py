@@ -69,7 +69,7 @@ class MoonBoard:
     COLS = 11
     NUM_PIXELS = ROWS*COLS*LED_SPACING 
     DEFAULT_BRIGHTNESS = 150 # FIXME: to config file
-    SETUP = '2016' # FIXME: to config file / Arg
+    SETUP = 'Moonboard2016' # FIXME: to config file / Arg
 
 
     def __init__(self, driver_type, led_layout=None, brightness=DEFAULT_BRIGHTNESS):
