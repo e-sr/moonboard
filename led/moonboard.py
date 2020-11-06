@@ -133,8 +133,9 @@ class MoonBoard:
         duration = 0.01
         for i in range(1,18): 
             self.set_hold ("A"+str(i), COLORS.red)
+            self.layout.push_to_driver()
             time.sleep(2)
-            
+
         self.set_hold ("A1", COLORS.red)
         self.set_hold ("A2", COLORS.red)
 
