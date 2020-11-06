@@ -39,7 +39,10 @@ sudo systemctl stop moonboard.service
 sudo /usr/bin/python3  /home/pi/moonboard/run.py --led_layout=gz --debug --driver PiWS281x
 ```
 - TBD: run in led python3 moonboard.py ... 
-- sudo python3 moonboard.py WS2801
+````
+cd led
+sudo python3 moonboard.py PiWS281x
+```
 
 There are different possibilities how to choose the path of your led strip (cf. layout in the sources). 
 There is a scrip in the folder led for creating the address arrays (create_nth_led_layout.py).
