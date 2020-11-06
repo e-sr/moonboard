@@ -114,7 +114,7 @@ class MoonBoard:
     def set_hold(self, hold, color=DEFAULT_COLOR):
         x_grid_name, y_grid_name = hold[0], int(hold[1:])
         x = self.X_GRID_NAMES.index(x_grid_name)
-        y = (self.ROWS -2 - y_grid_name * self.LED_SPACING) # FIXME
+        y = (self.ROWS -2 - y_grid_name * self.LED_SPACING    +   x*self.LED_SPACING ) # FIXME
         print (x, y)
         self.layout.set(x, y, color)
 
@@ -152,7 +152,7 @@ class MoonBoard:
         print ("B17")
         self.set_hold ("B17", COLORS.yellow)
 
-        time.sleep(10)
+        time.sleep(20)
 
         self.set_hold ("K17", COLORS.green)
         self.set_hold ("K18", COLORS.green)
