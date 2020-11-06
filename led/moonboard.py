@@ -134,6 +134,13 @@ class MoonBoard:
 
     def run_animation(self, run_options={}, **kwds): # FIXME: will it still work?
         duration = 0.01
+
+        print ("A1")
+        self.set_hold ("A1", COLORS.red)
+        self.layout.push_to_driver()
+        time.sleep(20)
+
+
         for i in range(1,18+1): 
             h = "A"+str(i)
             print (h)
@@ -154,8 +161,8 @@ class MoonBoard:
         self.layout.push_to_driver()
         time.sleep(20)
 
-        self.set_hold ("K17", COLORS.green)
-        self.set_hold ("K18", COLORS.green)
+        #self.set_hold ("K17", COLORS.green)
+        #self.set_hold ("K18", COLORS.green)
         
         self.layout.push_to_driver()
                 
