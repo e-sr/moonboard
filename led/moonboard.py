@@ -134,6 +134,10 @@ class MoonBoard:
         self.set_hold ("A1", COLORS.red)
         self.set_hold ("A2", COLORS.red)
 
+        self.set_hold ("A18", COLORS.yellow)
+        self.set_hold ("B18", COLORS.yellow)
+
+
         self.set_hold ("K17", COLORS.green)
         self.set_hold ("K18", COLORS.green)
         
