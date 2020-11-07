@@ -147,35 +147,6 @@ class MoonBoard:
     def run_animation(self, run_options={}, **kwds): # FIXME: will it still work?
         duration = 0.01
 
-        #self.layout.set( 0, COLORS.red)
-        #self.layout.set( 3, COLORS.yellow)
-        #self.layout.set( 6, COLORS.blue)
-        #self.layout.set( (18-1)*3, COLORS.blue)
-
-
-        #self.layout.set(0, 0, COLORS.red)
-        #self.layout.set(0, 1, COLORS.yellow)
-        #self.layout.set(0, 2, COLORS.blue)
-        #self.layout.set(1, 0, COLORS.red)
-        #self.layout.set(1, 1, COLORS.yellow)
-        #self.layout.set(1, 2, COLORS.blue)
-        #self.layout.push_to_driver()
-
-        #time.sleep(10)
-
-
-        #print ("A1")
-        #self.set_hold ("A1", COLORS.red)
-        #self.layout.push_to_driver()
-        #time.sleep(1)
-
-        self.layout.set(self.MAPPING["A1"], COLORS.blue)
-        self.layout.set(self.MAPPING["K1"], COLORS.blue)
-        self.layout.set(self.MAPPING["B1"], COLORS.blue)
-        self.layout.set(self.MAPPING["F1"], COLORS.blue)
-        self.layout.push_to_driver()
-        time.sleep (10)
-
         for i in range(1,18+1): 
             for j in range (0,11):
 
@@ -185,28 +156,10 @@ class MoonBoard:
                 self.layout.set(self.MAPPING[h], COLORS.purple)
                 #self.set_hold (h, COLORS.red)
             self.layout.push_to_driver()
-            time.sleep(0.01)
+            time.sleep(duration)
         
         time.sleep (10)
         self.clear()
-
-        #for i in range(1,18+1): 
-        #    h = "B"+str(i)
-        #    print (h)
-        #    self.set_hold (h, COLORS.yellow)
-        #    self.layout.push_to_driver()
-        #    time.sleep(0.01)
-
-      
-        #time.sleep(20)
-
-        #self.set_hold ("K17", COLORS.green)
-        #self.set_hold ("K18", COLORS.green)
-        
-        #self.layout.push_to_driver()
-                
-        #time.sleep(10)
-        
 
         #with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
         #    data = json.load(json_file)
