@@ -66,7 +66,7 @@ class MoonBoard:
     DEFAULT_COLOR = COLORS.blue #FIXME ?
     X_GRID_NAMES = string.ascii_uppercase[0:11]
     LED_SPACING = 3 # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
-    ROWS = 18 * LED_SPACING +2 # FIXME
+    ROWS = 18 * LED_SPACING # FIXME
     COLS = 11
     NUM_PIXELS = ROWS*COLS
     DEFAULT_BRIGHTNESS = 150 # FIXME: to config file
