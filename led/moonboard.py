@@ -161,23 +161,23 @@ class MoonBoard:
         time.sleep (10)
         self.clear()
 
-        #with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
-        #    data = json.load(json_file)
-        #    for hold in data[self.SETUP]:
-        #        holdset = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
-        #        color = COLORS.yellow
-        #        if (holdset == "A"): # FIXME
-        #            color = COLORS.red
-         #       if (holdset == "B"):# FIXME
-         #           color = COLORS.blue
-         #       if (holdset == "OS"):# FIXME
-         #           color = COLORS.yellow
-#
-         #       self.set_hold (hold, color)
-         #       self.layout.push_to_driver()
+        with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
+            data = json.load(json_file)
+            for hold in data[self.SETUP]:
+                holdset = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
+                color = COLORS.yellow
+                if (holdset == "Hold Set A"): # FIXME
+                    color = COLORS.red
+                if (holdset == "Original School Holds"):# FIXME
+                    color = COLORS.blue
+                if (holdset == "Hold Set B"):# FIXME
+                    color = COLORS.yellow
+
+                self.set_hold (hold, color)
+                self.layout.push_to_driver()
                 #print "Orientation"
 
-         #       time.sleep(duration)
+                time.sleep(10)
 
         self.clear()
 
