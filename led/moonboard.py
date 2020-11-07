@@ -142,22 +142,22 @@ class MoonBoard:
             data = json.load(json_file)
             for hold in data[self.SETUP]:
                 holdset = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
-                color = COLORS.yellow
-                if (holdset == "Hold Set A"): # FIXME
-                    color = COLORS.red
+                color = COLORS.black
+                #if (holdset == "Hold Set A"): # FIXME
+                #    color = COLORS.red
                 if (holdset == "Original School Holds"):# FIXME
                     color = COLORS.blue
-                if (holdset == "Hold Set B"):# FIXME
-                    color = COLORS.yellow
-                if (holdset == "Hold Set C"):# FIXME
-                    color = COLORS.green                    
+                #if (holdset == "Hold Set B"):# FIXME
+                #    color = COLORS.yellow
+                #if (holdset == "Hold Set C"):# FIXME
+                #    color = COLORS.green                    
                 self.layout.set(self.MAPPING[hold], color)
                 #self.set_hold (hold, color)
-                self.layout.push_to_driver()
                 #print "Orientation"
-
         
-        time.sleep(10)
+        self.layout.push_to_driver()
+
+        time.sleep(100)
 
         self.clear()
 
@@ -185,11 +185,11 @@ if __name__=="__main__":
                         help='driver type, depends on leds and device controlling the led.',choices=['PiWS281x', 'WS2801', 'SimPixel'])
     parser.add_argument('--duration',  type=int, default=10,
                         help='Delay of progress.')
-    parser.add_argument('--special_gz_layout',  action='store_true')
+    parser.add_argument('--special_gz_layout',  action='store_true') # FIXME
     args = parser.parse_args()
         
     print("Test MOONBOARD LEDS\n===========")
-    led_layout = LED_LAYOUT['gz'] if args.special_gz_layout else None
+    led_layout = LED_LAYOUT['gz'] if args.special_gz_layout else None # FIXME
     MOONBOARD = MoonBoard(args.driver_type,led_layout )
     print("Run animation,")
     #animation=
