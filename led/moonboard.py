@@ -176,17 +176,19 @@ class MoonBoard:
         self.layout.push_to_driver()
         time.sleep (10)
 
-        for j in range (0,11):
-            for i in range(1,18+1): 
+        for i in range(1,18+1): 
+                for j in range (0,11):
+
                 le = chr(j+65)
                 h = le+str(i)
                 print (h)
                 self.layout.set(self.MAPPING[h], COLORS.red)
                 #self.set_hold (h, COLORS.red)
-                self.layout.push_to_driver()
-                time.sleep(0.01)
-            time.sleep (0.5)
-            self.clear()
+            self.layout.push_to_driver()
+            time.sleep(0.01)
+        
+        time.sleep (10)
+        self.clear()
 
         #for i in range(1,18+1): 
         #    h = "B"+str(i)
