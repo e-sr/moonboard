@@ -35,11 +35,13 @@ led_number = 0
 layout = [[0 for i in range(COLS)] for j in range(ROWS)]  
 for c in range (0, COLS):
     for r in range(0, ROWS):
+        hold = ""
         if (c %2) == 0:
             layout[ROWS-1-r][c] = led_number
+            hold = (chr(c+65)+str(ROWS-r))
         else:
             layout[r][c] = led_number
-        hold = (chr(c+65)+str(r+1))
+            hold = (chr(c+65)+str(r+1))
         #print (hold, c,r,led_number)
         MAPPING [hold] = led_number
         led_number = led_number + LED_SPACING
