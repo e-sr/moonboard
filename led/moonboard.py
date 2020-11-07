@@ -146,53 +146,53 @@ class MoonBoard:
         time.sleep(10)
 
 
-        print ("A1")
-        self.set_hold ("A1", COLORS.red)
-        self.layout.push_to_driver()
-        time.sleep(1)
+        #print ("A1")
+        #self.set_hold ("A1", COLORS.red)
+        #self.layout.push_to_driver()
+        #time.sleep(1)
 
-        for i in range(1,18+1): 
-            h = "A"+str(i)
-            print (h)
-            self.set_hold (h, COLORS.red)
-            self.layout.push_to_driver()
-            time.sleep(0.01)
+        #for i in range(1,18+1): 
+         #   h = "A"+str(i)
+        #    print (h)
+        #    self.set_hold (h, COLORS.red)
+        #    self.layout.push_to_driver()
+        #    time.sleep(0.01)
 
-        for i in range(1,18+1): 
-            h = "B"+str(i)
-            print (h)
-            self.set_hold (h, COLORS.yellow)
-            self.layout.push_to_driver()
-            time.sleep(0.01)
+        #for i in range(1,18+1): 
+        #    h = "B"+str(i)
+        #    print (h)
+        #    self.set_hold (h, COLORS.yellow)
+        #    self.layout.push_to_driver()
+        #    time.sleep(0.01)
 
       
-        time.sleep(20)
+        #time.sleep(20)
 
         #self.set_hold ("K17", COLORS.green)
         #self.set_hold ("K18", COLORS.green)
         
-        self.layout.push_to_driver()
+        #self.layout.push_to_driver()
                 
-        time.sleep(10)
+        #time.sleep(10)
         
 
-        with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
-            data = json.load(json_file)
-            for hold in data[self.SETUP]:
-                holdset = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
-                color = COLORS.yellow
-                if (holdset == "A"): # FIXME
-                    color = COLORS.red
-                if (holdset == "B"):# FIXME
-                    color = COLORS.blue
-                if (holdset == "OS"):# FIXME
-                    color = COLORS.yellow
-
-                self.set_hold (hold, color)
-                self.layout.push_to_driver()
+        #with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
+        #    data = json.load(json_file)
+        #    for hold in data[self.SETUP]:
+        #        holdset = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
+        #        color = COLORS.yellow
+        #        if (holdset == "A"): # FIXME
+        #            color = COLORS.red
+         #       if (holdset == "B"):# FIXME
+         #           color = COLORS.blue
+         #       if (holdset == "OS"):# FIXME
+         #           color = COLORS.yellow
+#
+         #       self.set_hold (hold, color)
+         #       self.layout.push_to_driver()
                 #print "Orientation"
 
-                time.sleep(duration)
+         #       time.sleep(duration)
 
         self.clear()
 
