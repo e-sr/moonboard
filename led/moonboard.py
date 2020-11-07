@@ -115,7 +115,8 @@ class MoonBoard:
         x_grid_name, y_grid_name = hold[0], int(hold[1:])
         x = self.X_GRID_NAMES.index(x_grid_name)
 # b working        y = (self.ROWS - y_grid_name * self.LED_SPACING    ) -   x*2  -2  #) +1 # FIXME
-        y = (self.ROWS - y_grid_name * self.LED_SPACING    ) -   x*2  -1  #) +1 # FIXME
+     # only a workin   y = (self.ROWS - y_grid_name * self.LED_SPACING    ) -   x*2  -1  #) +1 # FIXME 
+        y = (self.ROWS - y_grid_name * self.LED_SPACING    ) -   x*2  -1  #) +1 # FIXME 
 
         print (x, y)
         self.layout.set(x, y, color)
