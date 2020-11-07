@@ -1,8 +1,10 @@
 #!/usr/bin/python
 # This script is used to create the arrays for the LED layouts
-ROWS = 18 *3 # for LED spacing FIXME 
+ROWS = 18  
 COLS = 11
-LED_SPACING = 1
+LED_SPACING = 3
+
+MAPPING = {}
 
 # Every Col Bottom>Up Left>Right
 #print ("Layout 1 - Col")
@@ -34,8 +36,12 @@ for c in range (0, COLS):
             layout[ROWS-1-r][c] = led_number
         else:
             layout[r][c] = led_number
+        hold = (chr(c+65)+str(r+1))
+        #print (hold, c,r,led_number)
+        MAPPING [hold] = led_number
         led_number = led_number + LED_SPACING
-print(layout)
+
+#print(layout)
 
 # Hold Layout
 #print ("Layout Holds")
@@ -55,3 +61,6 @@ for c in range (0, COLS):
         hold = (chr(c+65)+str(r+1))
         layout[c*ROWS+r] = hold 
 #print (layout)
+
+
+print (MAPPING) # FIXME: json
