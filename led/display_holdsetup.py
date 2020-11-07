@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# Display a holdset (testing script)
 import json
 setup='MoonboardMasters2017' 
 with open('problems/HoldSetup.json') as json_file:

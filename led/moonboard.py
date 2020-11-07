@@ -121,14 +121,7 @@ class MoonBoard:
         self.layout.push_to_driver()
 
     def set_hold(self, hold, color=DEFAULT_COLOR):
-        x_grid_name, y_grid_name = hold[0], int(hold[1:])
-        x = self.X_GRID_NAMES.index(x_grid_name)
-# b working        y = (self.ROWS - y_grid_name * self.LED_SPACING    ) -   x*2  -2  #) +1 # FIXME
-     # only a workin   y = (self.ROWS - y_grid_name * self.LED_SPACING    ) -   x*2  -1  #) +1 # FIXME 
-        y = (self.ROWS - y_grid_name * self.LED_SPACING    ) -   x*2  -1  #) +1 # FIXME 
-
-        print (x, y)
-        self.layout.set(x, y, color)
+        self.layout.set(self.MAPPING[hold], color)
 
     def show_hold(self, hold, color=DEFAULT_COLOR):
         self.set_hold(hold, color)

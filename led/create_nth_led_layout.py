@@ -3,11 +3,12 @@
 
 import json
 
+MAPPING = {}
+
 ROWS = 18  
 COLS = 11
 LED_SPACING = 3
 
-MAPPING = {}
 
 # Every Col Bottom>Up Left>Right
 #print ("Layout 1 - Col")
