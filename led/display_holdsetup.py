@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import json
-setup='Moonboard2016' 
+setup='MoonboardMasters2017' 
 with open('problems/HoldSetup.json') as json_file:
     data = json.load(json_file)
     for hold in data[setup]:
@@ -8,4 +8,4 @@ with open('problems/HoldSetup.json') as json_file:
         print (hold, holdset) # A, B, OS
     #    print (d['HoldSet'])
     #    #'HoldSet': 'A'
-    print (data[setup]['D5']["HoldSet"])
+    #print (data[setup]['D5']["HoldSet"])

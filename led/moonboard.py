@@ -70,7 +70,7 @@ class MoonBoard:
     COLS = 11
     NUM_PIXELS = ROWS*COLS
     DEFAULT_BRIGHTNESS = 150 # FIXME: to config file
-    SETUP = 'Moonboard2016' # FIXME: to config file / Arg
+    SETUP = 'MoonboardMasters2017' # FIXME: to config file / Arg
 
     
     # FIXME: json
@@ -172,6 +172,8 @@ class MoonBoard:
                     color = COLORS.blue
                 if (holdset == "Hold Set B"):# FIXME
                     color = COLORS.yellow
+                if (holdset == "Hold Set C"):# FIXME
+                    color = COLORS.green                    
                 self.layout.set(self.MAPPING[hold], color)
                 #self.set_hold (hold, color)
                 self.layout.push_to_driver()
