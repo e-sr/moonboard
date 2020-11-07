@@ -157,7 +157,7 @@ class MoonBoard:
         
         self.layout.push_to_driver()
 
-        time.sleep(100)
+        time.sleep(60*10)
 
         self.clear()
 
