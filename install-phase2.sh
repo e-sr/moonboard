@@ -1,4 +1,5 @@
 #!/bin/bash
+# FIXME: installdir
 echo "Install DBUS service"
 sudo cp /home/pi/moonboard/ble/com.moonboard.conf /etc/dbus-1/system.d
 cd /home/pi/moonboard/ble

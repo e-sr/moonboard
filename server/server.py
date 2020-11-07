@@ -1,4 +1,5 @@
 # WS server example that synchronizes state across clients
+# FIXME: delete file / dir?
 import asyncio
 import json
 import websockets
