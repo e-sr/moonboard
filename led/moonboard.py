@@ -177,7 +177,7 @@ class MoonBoard:
         time.sleep (10)
 
         for j in range (1,11+1):
-            for i in range(1,18+1): 
+            for i in range(1,18): 
                 le = chr(j+65)
                 h = le+str(i)
                 print (h)
