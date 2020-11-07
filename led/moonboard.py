@@ -169,7 +169,7 @@ class MoonBoard:
         #self.layout.push_to_driver()
         #time.sleep(1)
 
-        for j in range (0,12):
+        for j in range (9,11+1):
             for i in range(1,18+1): 
                 le = chr(j+65)
                 h = le+str(i)
