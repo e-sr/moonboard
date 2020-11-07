@@ -172,8 +172,8 @@ class MoonBoard:
                     color = COLORS.blue
                 if (holdset == "Hold Set B"):# FIXME
                     color = COLORS.yellow
-
-                self.set_hold (hold, color)
+                self.layout.set(self.MAPPING[hold], color)
+                #self.set_hold (hold, color)
                 self.layout.push_to_driver()
                 #print "Orientation"
 
