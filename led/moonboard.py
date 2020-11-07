@@ -10,7 +10,8 @@ from bibliopixel.drivers.spi_interfaces import SPI_INTERFACES
 import string
 import json
 
-# FIXME: Describe Layouts
+# FIXME: Describe Layouts 
+# FIXME: Delete this
 LED_LAYOUT = {
     'nest':[
     # Top panel
@@ -63,7 +64,7 @@ LED_LAYOUT = {
 class MoonBoard:
     DEFAULT_PROBLEM_COLORS = {'START':COLORS.blue,'TOP':COLORS.red,'MOVES':COLORS.green}
     DEFAULT_COLOR = COLORS.blue #FIXME ?
-    X_GRID_NAMES = string.ascii_uppercase[0:11]
+    X_GRID_NAMES = string.ascii_uppercase[0:11] # FIXME: del
     LED_SPACING = 3 # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
     ROWS = 18 * LED_SPACING # FIXME
     COLS = 11
@@ -94,7 +95,7 @@ class MoonBoard:
             driver = DriverDummy(self.NUM_PIXELS)
 
         if led_layout is not None:
-            self.layout = Matrix(driver,
+            self.layout = Matrix(driver, # FIXmE: del
                                 width=self.COLS,
                                 height=self.ROWS,
                                 coord_map=led_layout,
@@ -164,13 +165,17 @@ class MoonBoard:
         #self.layout.push_to_driver()
         #time.sleep(1)
 
-        for i in range(1,18+1): 
-            h = "K"+str(i)
-            print (h)
-            self.layout.set(self.MAPPING[h], COLORS.red)
-            #self.set_hold (h, COLORS.red)
-            self.layout.push_to_driver()
-            time.sleep(0.01)
+        for j in range (0,12):
+            for i in range(1,18+1): 
+                le = chr(j+65)
+                h = le+str(i)
+                print (h)
+                self.layout.set(self.MAPPING[h], COLORS.red)
+                #self.set_hold (h, COLORS.red)
+                self.layout.push_to_driver()
+                time.sleep(0.01)
+            time.sleep (5)
+            self.clear()
 
         #for i in range(1,18+1): 
         #    h = "B"+str(i)
