@@ -147,6 +147,7 @@ class MoonBoard:
                 #    color = COLORS.red
                 if (holdset == "Original School Holds"):# FIXME
                     color = COLORS.blue
+                    print (hold, data[self.SETUP][hold]["Orientation"])
                 #if (holdset == "Hold Set B"):# FIXME
                 #    color = COLORS.yellow
                 #if (holdset == "Hold Set C"):# FIXME
