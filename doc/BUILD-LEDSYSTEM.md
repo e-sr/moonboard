@@ -17,7 +17,7 @@ to color mismatches. To fix this the stripes usually have separate voltage conne
 In my case it was not possible to order custom length as of Q4 2020. So I ended up using 3x 4x 50 LED strips and use every 3rd LED. 
 The 
 patches to the LED layouts are in :latest.
-- FIXME.
+*** FIXME ***
 - TBD: configure and test LED_LAYOUT
 - TBD: method for initial test
 - TBD: method for mounting holds
@@ -40,7 +40,7 @@ sudo systemctl stop moonboard.service
 sudo /usr/bin/python3  /home/pi/moonboard/run.py --led_layout=gz --debug --driver PiWS281x
 ```
 - Running the script in testing mode
-````
+```
 sudo systemctl stop moonboard.service
 cd led
 sudo python3 moonboard.py --special_gz_layout PiWS281x
@@ -50,6 +50,7 @@ There are different possibilities how to choose the path of your led strip (cf. 
 There is a scrip in the folder led for creating the address arrays (create_nth_led_layout.py).
 
 ![LED path](led_path.png)
+
 
 
 ## Further readings:

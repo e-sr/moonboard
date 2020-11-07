@@ -28,4 +28,6 @@ sudo systemctl stop moonboard.service
 
 
 # LED Driver
+*** FIXME ***
+
 The LED driver scripts are located in the folder LED. moonboard.py is invoked by the BLE service. Alternatively you can run moonboard.py directly, i.e. for LED strip installation or hold setup. 
