@@ -165,7 +165,7 @@ class MoonBoard:
         #time.sleep(1)
 
         for i in range(1,18+1): 
-            h = "A"+str(i)
+            h = "K"+str(i)
             print (h)
             self.layout.set(self.MAPPING[h], COLORS.red)
             #self.set_hold (h, COLORS.red)
