@@ -69,7 +69,7 @@ class MoonBoard:
     ROWS = 18 * LED_SPACING # FIXME
     COLS = 11
     NUM_PIXELS = ROWS*COLS
-    DEFAULT_BRIGHTNESS = 150 # FIXME: to config file
+    DEFAULT_BRIGHTNESS = 100 # FIXME: to config file
     SETUP = 'MoonboardMasters2017' # FIXME: to config file / Arg
 
     
