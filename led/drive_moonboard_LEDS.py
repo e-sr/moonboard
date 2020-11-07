@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# FIXME: delete file?
 from bibliopixel import Strip
 from bibliopixel.drivers.SPI.WS2801 import  WS2801
 from bibliopixel.drivers.PiWS281X import  PiWS281X

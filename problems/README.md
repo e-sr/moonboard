@@ -1,4 +1,6 @@
 Howto obtain new hold setup JSON files?
+# How to download new hold setups?
+
 - Login to moonboard.com
 - Go to: https://www.moonboard.com/HoldSetups/Index
 - Open the developer tools > Network > Response for GetHoldsetupHolds

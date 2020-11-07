@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import json
-setup='2016'
+setup='2016' # FIXME
 with open('problems/HoldSetup.json') as json_file:
     data = json.load(json_file)
     for hold in data[setup]:
