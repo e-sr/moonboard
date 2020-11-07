@@ -32,6 +32,7 @@ Your best option is to keep all the rows but reduce the spacing between rows. Th
 
 Instead of missing options of more routes etc I choose a spacing of 17cm between the holds and add a horizontal 18th row.
 
+
 ## Material choice
 After considering the various obvious options I came across the standard “Baudiele”. 
 It is available in 300 x 20 x 4 cm (400 cm is also common). They are cheap, very portable, widely available and thick enough to not need a framing construction. So I came across the final design.
@@ -39,6 +40,7 @@ It is available in 300 x 20 x 4 cm (400 cm is also common). They are cheap, very
 ![Design](front.png)
 
 The screws for the climbing holds must be longer (consider 4cm depth of the holes). A good choice are 6cm length for small and 8 cm length for big holds.
+
 
 ## Rough Materials List
 
@@ -48,11 +50,15 @@ The screws for the climbing holds must be longer (consider 4cm depth of the hole
 | 250           | M10 Drills: Go for the high quality ones with two srews. ALPIDEX 50 Edelstahl Spezial Einschlagmuttern M10 Anschraubmutter Klettergriffe|  ![Drills](drill.png)|
 |               | Screws for Climbing Holds. ||
 
+*** FIXME ***
 
 ### Screws
 Keep in mind to add 4cm wood depth to screw length and go for longer ones:
 - 100 ALPIDEX 1 Zylinderkopfschraube M10 x 80 mm DIN 912 verzinkt 8.8 Innensechskant
 - 150 ALPIDEX 1 Zylinderkopfschraube M10 x 60 mm DIN 912 verzinkt 8.8 Innensechskant
+
+*** FIXME ***
+
 
 ### Holds
 - Allgäu Holds - Concave Jugs L (Klettergriffe Set) neon-pink
@@ -66,15 +72,16 @@ Keep in mind to add 4cm wood depth to screw length and go for longer ones:
 - https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel--klettergriffe-set--leoni.html
 - https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel--klettergriffe-set--elli.html
 - For footholds: ALPIDEX 80 Klettergriffe in verschiedenen Größen und Formen
+*** FIXME ***
 
 
 ### Tools
 - 12mm Wood Drill (Hexagon mount, round shaft can be to weak for 4cm wood)
 - 13mm Wood Drill (Hexagon mount, round shaft can be to weak for 4cm wood) - for the 12mm LED holes
 - Drill Stand (4cm depth is too much for drilling per hand)
-- 
 - Handsaw
 - Lots of spax screws, bits (torx)
+*** FIXME ***
 
 
 ## Further readings:
