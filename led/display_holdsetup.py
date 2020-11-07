@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import json
-setup='2016' # FIXME
+setup='Moonboard2016' 
 with open('problems/HoldSetup.json') as json_file:
     data = json.load(json_file)
     for hold in data[setup]:
