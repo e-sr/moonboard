@@ -47,6 +47,8 @@ for c in range (0, COLS):
             led_number = led_number + 1
         if (hold == "I9"):
             led_number = led_number + 1
+        if (hold == "J16"):
+            led_number = led_number + 1
 
 #print(layout)
 
