@@ -1,5 +1,8 @@
 #!/usr/bin/python
 # This script is used to create the arrays for the LED layouts
+
+import json
+
 ROWS = 18  
 COLS = 11
 LED_SPACING = 3
@@ -62,5 +65,8 @@ for c in range (0, COLS):
         layout[c*ROWS+r] = hold 
 #print (layout)
 
+print (MAPPING) 
 
-print (MAPPING) # FIXME: json
+outfile = "led_mapping.json"
+with open(outfile, 'w') as f:
+  json.dump(MAPPING, f, ensure_ascii=False)    
