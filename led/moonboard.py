@@ -179,7 +179,8 @@ class MoonBoard:
                 self.layout.push_to_driver()
                 #print "Orientation"
 
-                time.sleep(10)
+        
+        time.sleep(10)
 
         self.clear()
 
