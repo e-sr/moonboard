@@ -141,6 +141,9 @@ class MoonBoard:
         self.layout.set(0, 0, COLORS.red)
         self.layout.set(0, 1, COLORS.yellow)
         self.layout.set(0, 2, COLORS.blue)
+        self.layout.set(1, 0, COLORS.red)
+        self.layout.set(1, 1, COLORS.yellow)
+        self.layout.set(1, 2, COLORS.blue)
         self.layout.push_to_driver()
 
         time.sleep(10)
