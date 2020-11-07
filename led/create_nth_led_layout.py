@@ -45,6 +45,8 @@ for c in range (0, COLS):
         led_number = led_number + LED_SPACING
         if (hold == "E13"):
             led_number = led_number + 1
+        if (hold == "I10"):
+            led_number = led_number + 1
 
 #print(layout)
 
