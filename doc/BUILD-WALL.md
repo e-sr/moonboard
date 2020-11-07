@@ -8,7 +8,7 @@ board are available, too). It seems like the pattern of 18 rows and 11 columns i
 ## General Considerations
 
 My boundary conditions for the construction of my home climbing wall were: 
-- it should used my available space as best as possible (roof), 
+- it should use my available space as best as possible (roof), 
 - I should be able to do all work on my own without help (including transportation of the wood), 
 - the build process must be iterative due to my time constraints (spread out over 7 months),
 - I have to rely on other hold sources (delivery bottle neck due to lockdowns)
