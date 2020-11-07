@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from bibliopixel.colors import COLORS
 from bibliopixel import Matrix
+from bibliopixel import Strip
 from bibliopixel.drivers.PiWS281X import PiWS281X
 from bibliopixel.drivers.dummy_driver import DriverDummy
 from bibliopixel.drivers.SPI.WS2801 import  WS2801
@@ -98,10 +99,10 @@ class MoonBoard:
                                 brightness=brightness
                                 )
         else:
-            self.layout = Matrix(driver,width=self.COLS,height=self.ROWS, 
-                                threadedUpdate=True,
-                                brightness=brightness
-                                )
+            self.layout = Strip (driver) #Matrix(driver,width=self.COLS,height=self.ROWS, 
+                          #      threadedUpdate=True,
+                          #      brightness=brightness
+                          #      )
         self.layout.cleanup_drivers()
         self.layout.start()
         self.animation = None
@@ -138,12 +139,16 @@ class MoonBoard:
     def run_animation(self, run_options={}, **kwds): # FIXME: will it still work?
         duration = 0.01
 
-        self.layout.set(0, 0, COLORS.red)
-        self.layout.set(0, 1, COLORS.yellow)
-        self.layout.set(0, 2, COLORS.blue)
-        self.layout.set(1, 0, COLORS.red)
-        self.layout.set(1, 1, COLORS.yellow)
-        self.layout.set(1, 2, COLORS.blue)
+        self.layout.set( 0, COLORS.red)
+        self.layout.set( 1, COLORS.yellow)
+        self.layout.set( 2, COLORS.blue)
+        
+        #self.layout.set(0, 0, COLORS.red)
+        #self.layout.set(0, 1, COLORS.yellow)
+        #self.layout.set(0, 2, COLORS.blue)
+        #self.layout.set(1, 0, COLORS.red)
+        #self.layout.set(1, 1, COLORS.yellow)
+        #self.layout.set(1, 2, COLORS.blue)
         self.layout.push_to_driver()
 
         time.sleep(10)
