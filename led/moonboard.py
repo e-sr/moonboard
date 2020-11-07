@@ -140,8 +140,8 @@ class MoonBoard:
         duration = 0.01
 
         self.layout.set( 0, COLORS.red)
-        self.layout.set( 1, COLORS.yellow)
-        self.layout.set( 2, COLORS.blue)
+        self.layout.set( 3, COLORS.yellow)
+        self.layout.set( 6, COLORS.blue)
         
         #self.layout.set(0, 0, COLORS.red)
         #self.layout.set(0, 1, COLORS.yellow)
