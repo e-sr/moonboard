@@ -158,7 +158,7 @@ class MoonBoard:
             self.layout.push_to_driver()
             time.sleep(duration)
         
-        time.sleep (10)
+        time.sleep (3)
         self.clear()
 
         with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
