@@ -138,6 +138,12 @@ class MoonBoard:
     def run_animation(self, run_options={}, **kwds): # FIXME: will it still work?
         duration = 0.01
 
+        self.layout.set(0, 0, COLORS.red)
+        self.layout.set(0, 1, COLORS.yellow)
+        self.layout.set(0, 2, COLORS.blue)
+        time.sleep(10)
+
+
         print ("A1")
         self.set_hold ("A1", COLORS.red)
         self.layout.push_to_driver()
