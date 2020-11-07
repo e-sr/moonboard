@@ -1,5 +1,14 @@
 # Overview - Software used in this project
 
+
+## Software Build Instructions
+
+* Flash a fresh Raspian buster 
+* run installer
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/8cH9azbsFifZ/moonboard/master/install.sh)"
+```
+
 ## Software description
 
 * The LEDs are driven by a raspberry using the SPI interface and the [bibliopixel]() python library. 
