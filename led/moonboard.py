@@ -178,7 +178,7 @@ class MoonBoard:
                 #self.set_hold (h, COLORS.red)
                 self.layout.push_to_driver()
                 time.sleep(0.01)
-            time.sleep (5)
+            time.sleep (0.5)
             self.clear()
 
         #for i in range(1,18+1): 
