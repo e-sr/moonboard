@@ -37,13 +37,13 @@ The WS2811 LED strips have three wires (colors may differ in your case):
 - Create a custom layout in <TBD> FIXME moonboard.py
 ```
 sudo systemctl stop moonboard.service
-sudo /usr/bin/python3  /home/pi/moonboard/run.py --led_layout=gz --debug --driver PiWS281x
+sudo /usr/bin/python3  /home/pi/moonboard/run.py --debug --driver PiWS281x
 ```
 - Running the script in testing mode
 ```
 sudo systemctl stop moonboard.service
 cd led
-sudo python3 moonboard.py --special_gz_layout PiWS281x
+sudo python3 moonboard.py  PiWS281x
 ```
 
 There are different possibilities how to choose the path of your led strip (cf. layout in the sources). 
