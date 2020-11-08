@@ -21,12 +21,12 @@ cd moonboard
 git pull
 
 # Installing python dependencies
-pip3 install -r requirements.txt
-sudo pip3 install -r requirements.txt 
-# pip3 uninstall -y -r requirements.txt # uninstall
+pip3 install -r install/requirements.txt
+sudo pip3 install -r instll/requirements.txt 
+# pip3 uninstall -y -r install/requirements.txt # uninstall
 
 
-echo "Install service"
+echo "Install service" # FIXME
 cd /home/pi/moonboard/services
 sudo ./install_service.sh moonboard.service 
 cd /home/pi/moonboard
