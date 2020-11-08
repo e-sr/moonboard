@@ -125,7 +125,7 @@ class MoonBoard:
         duration = 0.001
 
         for i in range(1,18+1): 
-            for j in range (0,11):
+            for j in range (0,11): #FIXME
 
                 le = chr(j+65)
                 h = le+str(i)
@@ -149,11 +149,11 @@ class MoonBoard:
                 #if (holdset == "Original School Holds"):# FIXME
                 #    color = COLORS.blue
                 #    print (hold, data[self.SETUP][hold]["Orientation"])
-                if (holdset == "Hold Set B"):# FIXME
-                    color = COLORS.yellow
-                    print (hold, data[self.SETUP][hold]["Orientation"])
-                #if (holdset == "Hold Set C"):# FIXME
-                #    color = COLORS.green                    
+                #if (holdset == "Hold Set B"):# FIXME
+                #    color = COLORS.yellow
+                #    print (hold, data[self.SETUP][hold]["Orientation"])
+                if (holdset == "Hold Set C"):# FIXME
+                     color = COLORS.green                    
                 self.layout.set(self.MAPPING[hold], color)
                 #self.set_hold (hold, color)
                 #print "Orientation"
@@ -163,7 +163,29 @@ class MoonBoard:
         time.sleep(60*10)
 
         self.clear()
+        
+    def display_holdset(self, holdset, duration):
 
+        with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
+            data = json.load(json_file)
+            for hold in data[self.SETUP]:
+                hs = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
+                color = COLORS.black
+
+                if (holdset == hs):
+                     color = COLORS.red                    
+                     
+                self.layout.set(self.MAPPING[hold], color)
+                
+                
+        self.layout.push_to_driver()
+
+        time.sleep(duration)
+
+        self.clear()
+                
+                
+                
     def stop_animation(self):
         if self.animation is not None:
             self.animation.stop()
