@@ -66,6 +66,7 @@ Keep in mind to add 4cm wood depth to screw length and go for longer ones:
 ### Holds
 - Allgäu Holds - Concave Jugs L (Klettergriffe Set) neon-pink
 - Allgäu Holds - Sandstein Edges L (Klettergriffe Set)
+- Allgäu Holds - Concave Jugs XL (Klettergriffe Set)
 - Entre Prises Klettergriffset Kineduc
 - Entre Prises Klettergriffset Essential Jugs L 3 (ehemals Flakes)
 - Entre Prises Klettergriffset Essential Jugs L 2 (ehemals Mini Roof)
