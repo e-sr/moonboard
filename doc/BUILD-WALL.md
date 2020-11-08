@@ -14,7 +14,7 @@ My boundary conditions for the construction of my home climbing wall were:
 - I have to rely on other hold sources (delivery bottle neck due to lockdowns)
 
 Popular angles for a home climbing wall are 20° and 40°. The angle of my roof is about 40°, so I had to go for the harder version. 
-A thing to consider in advance 
+A thing to consider in advance before building a moonboard without trying one in advance: 
 [Training Log Day 2 - Power | Moonboard | 25° & 40° Comparison](https://www.youtube.com/watch?v=wOz9GRdQMNc&feature=youtu.be&ab_channel=AlternativeBeta)
 and 
 [How and why to train on a moonboard](https://www.climbing.com/skills/how-and-why-to-train-on-the-moonboard/).
@@ -30,16 +30,18 @@ Ben Moon himself is cited: "As you have pointed out you could reduce the kick bo
 Your best option is to keep all the rows but reduce the spacing between rows. This means you can do all the problems listed on the website but they will be at a slightly easier grade." 
 [Forum Post](https://www.mountainproject.com/forum/topic/109397643/moon-board-modifications).
 
-Instead of missing options of more routes etc I choose a spacing of 17cm between the holds and add a horizontal 18th row.
+Instead of missing options of more routes etc I choose a spacing of 17cm between the holds and add a horizontal 18th row. The frame comprises the 18th row and a mount for my hangboard, as well as the rings.
 
 
 ## Material choice
-After considering the various obvious options I came across the standard “Baudiele”. 
+After considering the various obvious options for the wood construction, I 
+came across the standard “Baudiele”. 
 It is available in 300 x 20 x 4 cm (400 cm is also common). They are cheap, very portable, widely available and thick enough to not need a framing construction. So I came across the final design.
 
 ![Design](front.png)
 
-The screws for the climbing holds must be longer (consider 4cm depth of the holes). A good choice are 6cm length for small and 8 cm length for big holds.
+### Screws
+The screws for the climbing holds must be longer (consider 4cm depth of the holes). A good choice are 6cm length for small and 8 cm length for big holds. For the largest holds I had to go for 10cm.
 
 
 ## Rough Materials List
