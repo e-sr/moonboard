@@ -56,14 +56,16 @@ The screws for the climbing holds must be longer (consider 4cm depth of the hole
 
 ### Screws
 Keep in mind to add 4cm wood depth to screw length and go for longer ones:
-- 100 ALPIDEX 1 Zylinderkopfschraube M10 x 80 mm DIN 912 verzinkt 8.8 Innensechskant
-- 150 ALPIDEX 1 Zylinderkopfschraube M10 x 60 mm DIN 912 verzinkt 8.8 Innensechskant
-- 6 M10 x 100mm (for the very big holds)
+- 100x ALPIDEX 1 Zylinderkopfschraube M10 x 80 mm DIN 912 verzinkt 8.8 Innensechskant
+- 150x ALPIDEX 1 Zylinderkopfschraube M10 x 60 mm DIN 912 verzinkt 8.8 Innensechskant
+- 6x M10 x 100mm (for the very big holds)
 
 *** FIXME ***
 
 
 ### Holds
+Due to delivery problems, caused by Covid-19, I had to go for other holds. This is collection of holds I have used in my setup:
+
 - Allgäu Holds - Concave Jugs L (Klettergriffe Set) neon-pink
 - Allgäu Holds - Sandstein Edges L (Klettergriffe Set)
 - Entre Prises Klettergriffset Kineduc
@@ -75,7 +77,6 @@ Keep in mind to add 4cm wood depth to screw length and go for longer ones:
 - https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel--klettergriffe-set--leoni.html
 - https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel--klettergriffe-set--elli.html
 - For footholds: ALPIDEX 80 Klettergriffe in verschiedenen Größen und Formen
-*** FIXME ***
 
 
 ### Tools
