@@ -33,35 +33,40 @@ Your best option is to keep all the rows but reduce the spacing between rows. Th
 Instead of missing options of more routes etc I choose a spacing of 17cm between the holds and add a horizontal 18th row. The frame comprises the 18th row and a mount for my hangboard, as well as the rings.
 
 
-## Material choice
+## Material choice and design
 After considering the various obvious options for the wood construction, I 
 came across the standard “Baudiele”. 
-It is available in 300 x 20 x 4 cm (400 cm is also common). They are cheap, very portable, widely available and thick enough to not need a framing construction. So I came across the final design.
+It is available in 300 x 20 x 4 cm (400 cm is also common). They are cheap, very portable, widely available and thick enough to not need a framing construction. So I came across the final design:
+- 11x plank (one for each column of the board)
+- 2x plank (for the kickboard)
+- 1x plank (frame top and final row)
+- 4x plank (frame)
+- 1x plank (hangboard)
 
-![Design](front.png)
+![Design Front](front.png)
+![Design Rear view](back_rearview.png)
+![Design Front view](back_edge_frontview.png)
+![Design Side view](back_edge_sideview.png)
+
+
 
 ### Screws
 The screws for the climbing holds must be longer (consider 4cm depth of the holes). A good choice are 6cm length for small and 8 cm length for big holds. For the largest holds I had to go for 10cm.
+
+Keep in mind to add 4cm wood depth to screw length and go for longer ones:
+- 100x ALPIDEX 1 Zylinderkopfschraube M10 x 80 mm DIN 912 verzinkt 8.8 Innensechskant
+- 150x ALPIDEX 1 Zylinderkopfschraube M10 x 60 mm DIN 912 verzinkt 8.8 Innensechskant
+- 6x M10 x 100mm (for the very big holds)
 
 
 ## Rough Materials List
 
 | QTY           | Name                     | Image  |
 | ------------- |:------------------------:| ------:|
-|               | 300 x 20 x 4 cm Baudiele |    ![Baudiele](baudiele.png)     |
+| 19            | 300 x 20 x 4 cm Baudiele |    ![Baudiele](baudiele.png)     |
 | 250           | M10 Drills: Go for the high quality ones with two srews. ALPIDEX 50 Edelstahl Spezial Einschlagmuttern M10 Anschraubmutter Klettergriffe|  ![Drills](drill.png)|
-|               | Screws for Climbing Holds. ||
 
 *** FIXME ***
-
-### Screws
-Keep in mind to add 4cm wood depth to screw length and go for longer ones:
-- 100x ALPIDEX 1 Zylinderkopfschraube M10 x 80 mm DIN 912 verzinkt 8.8 Innensechskant
-- 150x ALPIDEX 1 Zylinderkopfschraube M10 x 60 mm DIN 912 verzinkt 8.8 Innensechskant
-- 6x M10 x 100mm (for the very big holds)
-
-*** FIXME ***
-
 
 ### Holds
 Due to delivery problems, caused by Covid-19, I had to go for other holds. This is collection of holds I have used in my setup:
