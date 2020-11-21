@@ -6,6 +6,14 @@ Therefore this project uses WS2811 LEDs.
 
 ![LEDs](led.png)
 
+## Requirements
+Besides the tools, time and money (the climbing holds are the most expensive component) you will need:
+
+- Rapi W Zero with 8GB SD Card - powered over GPIO
+- 4x LED Strips: 50x WS2811 LED, 5V, 12mm - custom cable length of 23cm (alternatively 3x 4x LED Strips with standard length of 7cm)
+- Power supply [meanwell mdr-60-5](https://www.meanwell.com/webapp/product/search.aspx?prod=MDR-60) - (~60mA * 50 * 4 = 12A ==> 60 W for 5V)
+- Suitable Case (i.e. TEKO)
+
 
 ## General Considerations
 Bear in mind that 198 LEDs wired with 3-4 cables each mean a lot of soldering work. You probably want to order ready-to-use LED stripes with a 
@@ -21,6 +29,7 @@ patches to the LED layouts are in :latest.
 - TBD: configure and test LED_LAYOUT
 - TBD: method for initial test
 - TBD: method for mounting holds
+
 
 
 ## Wiring the LED stripes

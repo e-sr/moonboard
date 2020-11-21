@@ -18,7 +18,7 @@ In this project we emulate the behaviour of the box using a rasperry pi and addr
 
 # Requirements
 
-Besides the tools, time and money (the clmbing holds are the most expensive component) you will need:
+Besides the tools, time and money (the climbing holds are the most expensive component) you will need:
 
 - Rapi W Zero with 8GB SD Card - powered over GPIO
 - 4x LED Strips: 50x WS2811 LED, 5V, 12mm - custom cable length of 23cm (alternatively 3x 4x LED Strips with standard length of 7cm)
