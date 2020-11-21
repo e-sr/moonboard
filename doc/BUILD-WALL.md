@@ -50,7 +50,7 @@ It is available in 300 x 20 x 4 cm (400 cm is also common). They are cheap, very
 
 
 
-### Screws
+### Screws and drills
 The screws for the climbing holds must be longer (consider 4cm depth of the holes). A good choice are 6cm length for small and 8 cm length for big holds. For the largest holds I had to go for 10cm.
 
 Keep in mind to add 4cm wood depth to screw length and go for longer ones:
@@ -58,31 +58,27 @@ Keep in mind to add 4cm wood depth to screw length and go for longer ones:
 - 150x ALPIDEX 1 Zylinderkopfschraube M10 x 60 mm DIN 912 verzinkt 8.8 Innensechskant
 - 6x M10 x 100mm (for the very big holds)
 
+The M10 drills are fixed with two screws each: Go for the high quality ones with two srews. 
+- ALPIDEX 50 Edelstahl Spezial Einschlagmuttern M10 Anschraubmutter Klettergriffe 
 
-## Rough Materials List
+![Drills](drill.png)|
 
-| QTY           | Name                     | Image  |
-| ------------- |:------------------------:| ------:|
-| 19            | 300 x 20 x 4 cm Baudiele |    ![Baudiele](baudiele.png)     |
-| 250           | M10 Drills: Go for the high quality ones with two srews. ALPIDEX 50 Edelstahl Spezial Einschlagmuttern M10 Anschraubmutter Klettergriffe|  ![Drills](drill.png)|
-
-*** FIXME ***
 
 ### Holds
 Due to delivery problems, caused by Covid-19, I had to go for other holds. This is collection of holds I have used in my setup:
 
-- Allgäu Holds - Concave Jugs L (Klettergriffe Set) neon-pink
-- Allgäu Holds - Sandstein Edges L (Klettergriffe Set)
-- Allgäu Holds - Concave Jugs XL (Klettergriffe Set)
-- Entre Prises Klettergriffset Kineduc
-- Entre Prises Klettergriffset Essential Jugs L 3 (ehemals Flakes)
-- Entre Prises Klettergriffset Essential Jugs L 2 (ehemals Mini Roof)
-- Entre Prises Yangshuo Jugs M 1
-- Entre Prises Klettergriffe Essential Jugs L 1 (ehemals Bomber Jugs)
-- https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel-klettergriffe-set--kreuz.html
-- https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel--klettergriffe-set--leoni.html
-- https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel--klettergriffe-set--elli.html
-- For footholds: ALPIDEX 80 Klettergriffe in verschiedenen Größen und Formen
+- [Allgäu Holds - Concave Jugs L (Klettergriffe Set)](http://allgaeu-holds.de/site/unsere-klettergriffe/)
+- [Allgäu Holds - Sandstein Edges L (Klettergriffe Set)](http://allgaeu-holds.de/site/unsere-klettergriffe/)
+- [Allgäu Holds - Concave Jugs XL (Klettergriffe Set)](http://allgaeu-holds.de/site/unsere-klettergriffe/)
+- [Entre Prises Klettergriffset Kineduc](https://www.amazon.de/Entre-Prises-Klettergriffset-Kineduc/dp/B07L1QT68K)
+- [Entre Prises Klettergriffset Essential Jugs L 3 (ehemals Flakes)](https://www.amazon.de/Entre-Prises-Klettergriffset-Essential-ehemals/dp/B07L1PSF61)
+- [Entre Prises Klettergriffset Essential Jugs L 2 (ehemals Mini Roof)](https://www.amazon.de/Entre-Prises-Klettergriffset-Essential-ehemals/dp/B07L1PT5QT)
+- [Entre Prises Yangshuo Jugs M 1](https://www.kletterbude.de/kletterwandbau-befestigung/klettergriffe/m-klettergriffe/entre-prises-yangshuo-jugs-m-1_104856_123047)
+- [Entre Prises Klettergriffe Essential Jugs L 1 (ehemals Bomber Jugs)](https://entre-prises.com/de/produkt/bomber-jugs/)
+- [Henkel Klettergriffe Set Kreuz](https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel-klettergriffe-set--kreuz.html)
+- [Henkel Klettergriffe Set Leoni](https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel--klettergriffe-set--leoni.html)
+- [Henkel Klettergriffe Set Elli](https://www.goldtaler.com/klettergriffe/henkel-klettergriffe-sets/henkel--klettergriffe-set--elli.html)
+- For footholds: [ALPIDEX 80 Klettergriffe in verschiedenen Größen und Formen](https://www.amazon.de/ALPIDEX-Klettergriffe-verschiedenen-Gr%C3%B6%C3%9Fen-Formen/dp/B07H7PZ3ZV) 
 
 
 ### Tools
@@ -91,7 +87,6 @@ Due to delivery problems, caused by Covid-19, I had to go for other holds. This 
 - Drill Stand (4cm depth is too much for drilling per hand)
 - Handsaw
 - Lots of spax screws, bits (torx)
-*** FIXME ***
 
 
 ## Further readings:
