@@ -6,7 +6,7 @@
 * Flash a fresh Raspian buster 
 * run installer
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/8cH9azbsFifZ/moonboard/master/instll/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/8cH9azbsFifZ/moonboard/master/install/install.sh)"
 ```
 
 ## Software description
