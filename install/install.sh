@@ -22,7 +22,7 @@ git pull
 
 # Installing python dependencies
 pip3 install -r install/requirements.txt
-sudo pip3 install -r instll/requirements.txt 
+sudo pip3 install -r install/requirements.txt 
 # pip3 uninstall -y -r install/requirements.txt # uninstall
 
 
