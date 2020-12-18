@@ -164,7 +164,7 @@ class MoonBoard:
 
         self.clear()
         
-    def display_holdset(self, holdset, duration):
+    def display_holdset(self, holdset="A", duration=10):
 
         with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
             data = json.load(json_file)
