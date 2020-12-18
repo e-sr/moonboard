@@ -170,7 +170,7 @@ class MoonBoard:
         with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
             data = json.load(json_file)
             for hold in data[self.SETUP]:
-                hs = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
+                hs = (data[self.SETUP][hold]['HoldSet']) 
                 color = COLORS.black
     
                 if (hs == holdset):# FIXME
@@ -213,7 +213,7 @@ if __name__=="__main__":
                         help='driver type, depends on leds and device controlling the led.',choices=['PiWS281x', 'WS2801', 'SimPixel'])
     parser.add_argument('--duration',  type=int, default=10,
                         help='Delay of progress.')
-    parser.add_argument('--holdset',  type=str, help="Display a holdset for current layout", choices=['Hold Set A', 'Hold Set B', 'Hold Set C'])
+    parser.add_argument('--holdset',  type=str, help="Display a holdset for current layout", choices=['Hold Set A', 'Hold Set B', 'Hold Set C', 'Original School Holds'])
     args = parser.parse_args()
         
     led_layout = None
