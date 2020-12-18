@@ -167,31 +167,31 @@ class MoonBoard:
     def display_holdset(self, holdset="A", duration=10, **kwds): 
         print ("Display holdset: " + str(holdset))
 
-    with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
-        data = json.load(json_file)
-        for hold in data[self.SETUP]:
-            holdset = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
-            color = COLORS.black
-            #if (holdset == "Hold Set A"): # FIXME
-            #    color = COLORS.red
-            #    print (hold, data[self.SETUP][hold]["Orientation"])
-            #if (holdset == "Original School Holds"):# FIXME
-            #    color = COLORS.blue
-            #    print (hold, data[self.SETUP][hold]["Orientation"])
-            #if (holdset == "Hold Set B"):# FIXME
-            #    color = COLORS.yellow
-            #    print (hold, data[self.SETUP][hold]["Orientation"])
-            if (holdset == "Hold Set C"):# FIXME
-                    color = COLORS.green                    
-            self.layout.set(self.MAPPING[hold], color)
-            #self.set_hold (hold, color)
-            #print "Orientation"
-    
-    self.layout.push_to_driver()
+        with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
+            data = json.load(json_file)
+            for hold in data[self.SETUP]:
+                holdset = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
+                color = COLORS.black
+                #if (holdset == "Hold Set A"): # FIXME
+                #    color = COLORS.red
+                #    print (hold, data[self.SETUP][hold]["Orientation"])
+                #if (holdset == "Original School Holds"):# FIXME
+                #    color = COLORS.blue
+                #    print (hold, data[self.SETUP][hold]["Orientation"])
+                #if (holdset == "Hold Set B"):# FIXME
+                #    color = COLORS.yellow
+                #    print (hold, data[self.SETUP][hold]["Orientation"])
+                if (holdset == "Hold Set C"):# FIXME
+                        color = COLORS.green                    
+                self.layout.set(self.MAPPING[hold], color)
+                #self.set_hold (hold, color)
+                #print "Orientation"
+        
+        self.layout.push_to_driver()
 
-    time.sleep(60*10)
+        time.sleep(60*10)
 
-    self.clear()
+        self.clear()
                 
                 
                 
