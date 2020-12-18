@@ -214,6 +214,7 @@ if __name__=="__main__":
     args = parser.parse_args()
         
     print("Test MOONBOARD LEDS\n===========")
+    led_layout = None
     MOONBOARD = MoonBoard(args.driver_type,led_layout )
     print("Run animation,")
     #animation=
