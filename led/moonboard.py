@@ -164,7 +164,7 @@ class MoonBoard:
 
         self.clear()
         
-    def display_holdset(self, holdset="A", duration=10, **kwds): 
+    def display_holdset(self, holdset="Hold Set A", duration=10, **kwds): 
         print ("Display holdset: " + str(holdset))
 
         with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
@@ -172,18 +172,12 @@ class MoonBoard:
             for hold in data[self.SETUP]:
                 holdset = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
                 color = COLORS.black
-                #if (holdset == "Hold Set A"): # FIXME
-                #    color = COLORS.red
-                #    print (hold, data[self.SETUP][hold]["Orientation"])
-                #if (holdset == "Original School Holds"):# FIXME
-                #    color = COLORS.blue
-                #    print (hold, data[self.SETUP][hold]["Orientation"])
-                #if (holdset == "Hold Set B"):# FIXME
-                #    color = COLORS.yellow
-                #    print (hold, data[self.SETUP][hold]["Orientation"])
-                if (holdset == "Hold Set C"):# FIXME
+    
+                if (holdset == holdset):# FIXME
                         color = COLORS.green                    
+    
                 self.layout.set(self.MAPPING[hold], color)
+
                 #self.set_hold (hold, color)
                 #print "Orientation"
         
@@ -219,7 +213,7 @@ if __name__=="__main__":
                         help='driver type, depends on leds and device controlling the led.',choices=['PiWS281x', 'WS2801', 'SimPixel'])
     parser.add_argument('--duration',  type=int, default=10,
                         help='Delay of progress.')
-    parser.add_argument('--holdset',  type=str, help="Display a holdset for current layout", choices=['A', 'B', 'C'])
+    parser.add_argument('--holdset',  type=str, help="Display a holdset for current layout", choices=['Hold Set A', 'Hold Set B', 'Hold Set C'])
     args = parser.parse_args()
         
     led_layout = None
