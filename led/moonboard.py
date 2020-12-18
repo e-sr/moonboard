@@ -218,7 +218,7 @@ if __name__=="__main__":
 
     MOONBOARD = MoonBoard(args.driver_type,led_layout )
     
-    MOONBOARD.display_holdset({args.holdset}, {args.duration})
+    MOONBOARD.display_holdset(args.holdset, args.duration)
 
     print("Run animation,")
     #MOONBOARD.run_animation() # FIXME
