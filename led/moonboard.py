@@ -170,10 +170,10 @@ class MoonBoard:
         with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
             data = json.load(json_file)
             for hold in data[self.SETUP]:
-                holdset = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
+                hs = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
                 color = COLORS.black
     
-                if (holdset == holdset):# FIXME
+                if (hs == holdset):# FIXME
                         color = COLORS.green                    
     
                 self.layout.set(self.MAPPING[hold], color)
