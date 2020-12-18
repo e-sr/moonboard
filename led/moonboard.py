@@ -210,7 +210,7 @@ if __name__=="__main__":
                         help='driver type, depends on leds and device controlling the led.',choices=['PiWS281x', 'WS2801', 'SimPixel'])
     parser.add_argument('--duration',  type=int, default=10,
                         help='Delay of progress.')
-    parser.add_argument('--display_holdset',  type=str, help="Display a holdset for current layout", choices=['A', 'B', 'C'])
+    parser.add_argument('--holdset',  type=str, help="Display a holdset for current layout", choices=['A', 'B', 'C'])
     args = parser.parse_args()
         
     print("Test MOONBOARD LEDS\n===========")
