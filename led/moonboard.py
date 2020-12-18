@@ -218,7 +218,7 @@ if __name__=="__main__":
     MOONBOARD = MoonBoard(args.driver_type,led_layout )
     print("Run animation,")
     #animation=
-    MOONBOARD.display_holdset({args.holdset}, {args.duration})
+    #MOONBOARD.display_holdset({args.holdset}, {args.duration})
     #MOONBOARD.run_animation() # FIXME
     #MOONBOARD.layout.fillScreen(COLORS.red)
     print(f"wait {args.duration} seconds,")
