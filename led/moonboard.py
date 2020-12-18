@@ -164,8 +164,8 @@ class MoonBoard:
 
         self.clear()
         
-    def display_holdset(self, holdset="A", duration=10):
-
+    def display_holdset(self, holdset="A", duration=10, **kwds): 
+        print ("Display holdset: " + holdset)
         with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
             data = json.load(json_file)
             for hold in data[self.SETUP]:
@@ -213,14 +213,15 @@ if __name__=="__main__":
     parser.add_argument('--holdset',  type=str, help="Display a holdset for current layout", choices=['A', 'B', 'C'])
     args = parser.parse_args()
         
-    print("Test MOONBOARD LEDS\n===========")
     led_layout = None
+
     MOONBOARD = MoonBoard(args.driver_type,led_layout )
+    
+    MOONBOARD.display_holdset({args.holdset}, {args.duration})
+
     print("Run animation,")
-    #animation=
-    #MOONBOARD.display_holdset({args.holdset}, {args.duration})
     #MOONBOARD.run_animation() # FIXME
-    #MOONBOARD.layout.fillScreen(COLORS.red)
+
     print(f"wait {args.duration} seconds,")
     time.sleep(args.duration)
     print("clear and exit.")
