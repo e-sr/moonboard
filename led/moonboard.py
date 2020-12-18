@@ -211,6 +211,7 @@ if __name__=="__main__":
     parser.add_argument('--duration',  type=int, default=10,
                         help='Delay of progress.')
     parser.add_argument('--special_gz_layout',  action='store_true') # FIXME
+    parser.add_argument('--display_holdset',  type=str, help="Display a holdset for current layout", choices=['A', 'B', 'C'])
     args = parser.parse_args()
         
     print("Test MOONBOARD LEDS\n===========")
@@ -218,7 +219,8 @@ if __name__=="__main__":
     MOONBOARD = MoonBoard(args.driver_type,led_layout )
     print("Run animation,")
     #animation=
-    MOONBOARD.run_animation()
+    MOONBOARD.display_holdset({args.holdset}, {args.duration})
+    #MOONBOARD.run_animation() # FIXME
     #MOONBOARD.layout.fillScreen(COLORS.red)
     print(f"wait {args.duration} seconds,")
     time.sleep(args.duration)
