@@ -206,7 +206,7 @@ if __name__=="__main__":
 
     parser = argparse.ArgumentParser(description='Test led system')
 
-    parser.add_argument('driver_type', type=str,
+    parser.add_argument('--driver_type', type=str,
                         help='driver type, depends on leds and device controlling the led.',choices=['PiWS281x', 'WS2801', 'SimPixel'])
     parser.add_argument('--duration',  type=int, default=10,
                         help='Delay of progress.')

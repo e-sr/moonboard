@@ -41,6 +41,13 @@ The WS2811 LED strips have three wires (colors may differ in your case):
 
 ![Raspi Wiring](raspi_wiring.png)
 
+## Put Holds to moonboard
+- There is a mode (CLI) to display the hold setups with leds
+```
+sudo systemctl stop moonboard.service
+sudo /usr/bin/python3  /home/pi/moonboard/led/moonboard.py --driver PiWS281x
+```
+
 
 ## Configure the LED addresses FIXME!
 - Create a custom layout in <TBD> FIXME moonboard.py
