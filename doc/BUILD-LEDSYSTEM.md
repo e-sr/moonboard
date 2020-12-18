@@ -45,7 +45,7 @@ The WS2811 LED strips have three wires (colors may differ in your case):
 - There is a mode (CLI) to display the hold setups with leds
 ```
 sudo systemctl stop moonboard.service
-sudo /usr/bin/python3  /home/pi/moonboard/led/moonboard.py  --driver_type PiWS281x
+sudo /usr/bin/python3  /home/pi/moonboard/led/moonboard.py  --driver_type PiWS281x --holdset "Hold Set A"
 ```
 
 
