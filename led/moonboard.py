@@ -165,7 +165,8 @@ class MoonBoard:
         self.clear()
         
     def display_holdset(self, holdset="A", duration=10, **kwds): 
-        print ("Display holdset: " + holdset)
+        print ("Display holdset: " + str(holdset))
+
         with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
             data = json.load(json_file)
             for hold in data[self.SETUP]:
@@ -180,7 +181,7 @@ class MoonBoard:
                 
         self.layout.push_to_driver()
 
-        time.sleep(duration)
+        time.sleep(int(duration))
 
         self.clear()
                 
