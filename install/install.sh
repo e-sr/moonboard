@@ -7,16 +7,17 @@ echo "Disable Audio"
 sudo sed -i 's/\dtparam=audio=on/#dtparam=audio=on/g' /boot/config.txt
 sudo echo blacklist snd_bcm2835 > /etc/modprobe.d/raspi-blacklist.conf # FIXME: defensive
 
-
 # Install dependencies
 sudo apt-get update
 sudo apt-get upgrade
+
+# Install + build led drivers 
 sudo apt-get -y install git vim python3-pip gcc make build-essential
 sudo apt-get -y install libatlas-base-dev 
 sudo apt-get -y install python-dev swig scons # for building WS2811 drivers
 
 echo "Install application"
-test -d moonboard || git clone https://github.com/8cH9azbsFifZ/moonboard.git
+test -d moonboard || git clone https://github.com/grasnag/moonboard.git
 cd moonboard
 git pull
 

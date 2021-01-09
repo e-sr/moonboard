@@ -5,7 +5,15 @@ from gi.repository import GLib
 import dbus
 from dbus.mainloop.glib import DBusGMainLoop
 from functools import partial
-import json 
+import json
+
+# external power led
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BCM) 
+GPIO.setup(26, GPIO.OUT) 
+GPIO.output(26,1)
+
+# create power button to shutdown lights
 
 def new_problem_cb(mb,holds_string):
         holds = json.loads(holds_string)
