@@ -55,20 +55,18 @@ LED_LAYOUT = {
        [  0,  35,  36,  71,  72, 107, 108, 143, 144, 179, 180]]
        }
 
+
 class MoonBoard:
-    DEFAULT_PROBLEM_COLORS = {'START':COLORS.green,'TOP':COLORS.red,'MOVES':COLORS.orange}
-    DEFAULT_COLOR = COLORS.blue #FIXME ?
-    X_GRID_NAMES = string.ascii_uppercase[0:11] # FIXME: del
-    LED_SPACING = 1 # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
-    ROWS = 18 * LED_SPACING # FIXME
+    DEFAULT_PROBLEM_COLORS = {'START': COLORS.green, 'TOP': COLORS.red, 'MOVES': COLORS.orange}
+    DEFAULT_COLOR = COLORS.blue  # FIXME ?
+    X_GRID_NAMES = string.ascii_uppercase[0:11]  # FIXME: del
+    LED_SPACING = 1  # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
+    ROWS = 18 * LED_SPACING  # FIXME
     COLS = 11
     NUM_PIXELS = ROWS*COLS
     DEFAULT_BRIGHTNESS = 100 # FIXME: to config file
     SETUP = 'MoonboardMasters2017' # FIXME: to config file / Arg
-
-    
-    # FIXME: json
-    MAPPING= { }
+    MAPPING = {}  # FIXME:json
 
     with open('/home/pi/moonboard/led/led_mapping.json') as json_file:
         data = json.load(json_file)
@@ -186,9 +184,7 @@ class MoonBoard:
         time.sleep(60*10)
 
         self.clear()
-                
-                
-                
+
     def stop_animation(self):
         if self.animation is not None:
             self.animation.stop()
@@ -196,11 +192,13 @@ class MoonBoard:
 
 class TestAnimation:
     COLOR=[COLORS.Green, COLORS.Blue]
+
     def __init__(self, layout, ):
         self.layout = layout
 
     def step(self, amt=1):
         pass
+
 
 if __name__=="__main__":
     import argparse
