@@ -7,7 +7,6 @@ echo "Disable Audio"
 sudo sed -i 's/\dtparam=audio=on/#dtparam=audio=on/g' /boot/config.txt
 sudo echo blacklist snd_bcm2835 > /etc/modprobe.d/raspi-blacklist.conf # FIXME: defensive
 
-
 # Install dependencies
 sudo apt-get update
 sudo apt-get upgrade
