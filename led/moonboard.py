@@ -164,23 +164,26 @@ class MoonBoard:
 
         self.clear()
         
-    def display_holdset(self, holdset, duration):
+    def display_holdset(self, holdset="Hold Set A", duration=10, **kwds): 
+        print ("Display holdset: " + str(holdset))
 
         with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
             data = json.load(json_file)
             for hold in data[self.SETUP]:
-                hs = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
+                hs = (data[self.SETUP][hold]['HoldSet']) 
                 color = COLORS.black
-
-                if (holdset == hs):
-                     color = COLORS.red                    
-                     
+    
+                if (hs == holdset):# FIXME
+                        color = COLORS.green                    
+    
                 self.layout.set(self.MAPPING[hold], color)
-                
-                
+
+                #self.set_hold (hold, color)
+                #print "Orientation"
+        
         self.layout.push_to_driver()
 
-        time.sleep(duration)
+        time.sleep(60*10)
 
         self.clear()
                 
@@ -206,20 +209,23 @@ if __name__=="__main__":
 
     parser = argparse.ArgumentParser(description='Test led system')
 
-    parser.add_argument('driver_type', type=str,
+    parser.add_argument('--driver_type', type=str,
                         help='driver type, depends on leds and device controlling the led.',choices=['PiWS281x', 'WS2801', 'SimPixel'])
     parser.add_argument('--duration',  type=int, default=10,
                         help='Delay of progress.')
-    parser.add_argument('--special_gz_layout',  action='store_true') # FIXME
+    parser.add_argument('--holdset',  type=str, help="Display a holdset for current layout", choices=['Hold Set A', 'Hold Set B', 'Hold Set C', 'Original School Holds', "Wooden Holds"])
     args = parser.parse_args()
         
-    print("Test MOONBOARD LEDS\n===========")
-    led_layout = LED_LAYOUT['gz'] if args.special_gz_layout else None # FIXME
+    led_layout = None
+
     MOONBOARD = MoonBoard(args.driver_type,led_layout )
-    print("Run animation,")
-    #animation=
-    MOONBOARD.run_animation()
-    #MOONBOARD.layout.fillScreen(COLORS.red)
+    
+    # Display a holdset
+    MOONBOARD.display_holdset(args.holdset, args.duration)
+
+    #print("Run animation,")
+    #MOONBOARD.run_animation() # FIXME
+
     print(f"wait {args.duration} seconds,")
     time.sleep(args.duration)
     print("clear and exit.")
