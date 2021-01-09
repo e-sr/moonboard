@@ -7,7 +7,7 @@ MAPPING = {}
 
 ROWS = 18  
 COLS = 11
-LED_SPACING = 3
+LED_SPACING = 1
 
 
 # Every Col Bottom>Up Left>Right
