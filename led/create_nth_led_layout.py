@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # This script is used to create the arrays for the LED layouts, if using redily available led string with 10cm spacing between LED´s
+# Adjust LED_SPACING accordingly how many LED´s are unused between actual holds
 
 import json
 
