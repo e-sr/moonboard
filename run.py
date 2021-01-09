@@ -6,6 +6,7 @@ import dbus
 from dbus.mainloop.glib import DBusGMainLoop
 from functools import partial
 import json
+import RPi.GPIO as GPIO
 
 # external power led
 GPIO.setwarnings(False)
