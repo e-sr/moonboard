@@ -19,10 +19,10 @@ In this project we emulate the behaviour of the box using a rasperry pi and addr
 
 Besides the tools, time and money (the climbing holds are the most expensive component) you will need:
 
-- Rapi W Zero with 8GB SD Card - powered over GPIO
+- Raspi 3 b +
 - 4x LED Strips: 50x WS2811 LED, 5V, 12mm - custom cable length of 23cm (alternatively 3x 4x LED Strips with standard length of 7cm)
 - Power supply [meanwell mdr-60-5](https://www.meanwell.com/webapp/product/search.aspx?prod=MDR-60) - (~60mA * 50 * 4 = 12A ==> 60 W for 5V)
-- Suitable Case (i.e. TEKO)
+- DIN rail case for rpi
 
 
 # Build Instructions
