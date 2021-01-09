@@ -13,6 +13,8 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(26, GPIO.OUT) 
 GPIO.output(26,1)
 
+# create power button to shutdown lights
+
 def new_problem_cb(mb,holds_string):
         holds = json.loads(holds_string)
         mb.show_problem(holds)
