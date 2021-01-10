@@ -7,7 +7,8 @@ from dbus.mainloop.glib import DBusGMainLoop
 from functools import partial
 import json
 import RPi.GPIO as GPIO
-import signal
+import os
+#import signal
 import sys
 import logging
 
@@ -15,16 +16,13 @@ import logging
 LED_GPIO = 26
 BUTTON_GPIO = 3
 
-# signal handler for shutdown interrupt ctr-c
-# def signal_handler(sig, frame):
-#     GPIO.cleanup()
-#     sys.exit(0)
-
 # Button function
 def button_pressed_callback(channel):
     print("Button pressed") # add shutdown function for raspi
-    MOONBOARD.led_test()
-    #MOONBOARD.clear()
+    #MOONBOARD.led_test()
+    MOONBOARD.clear()
+    print('Shutting down')
+    os.system("sudo shutdown -h now")
 
 def new_problem_cb(mb,holds_string):
         holds = json.loads(holds_string)
@@ -77,6 +75,9 @@ if __name__ == "__main__":
     # problems
     led_layout = LED_LAYOUT.get(args.led_layout) if args.led_layout is not None else None
     MOONBOARD = MoonBoard(args.driver_type, led_layout)
+
+    # run led led
+    MOONBOARD.led_test()
 
     # connect to dbus signal new problem
     dbml = DBusGMainLoop(set_as_default=True)
