@@ -22,5 +22,5 @@ In this project we emulate the behaviour of the box using a rasperry pi and addr
 
 # Build Instructions
 
-drawing´s for the board up to come
+todo : drawing´s for the board
 - [Software Description](doc/OVERVIEW-SOFTWARE.md)
