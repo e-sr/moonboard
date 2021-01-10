@@ -6,8 +6,8 @@ Free standing foldaway version of moonboard. Moonboard with 150mm kicker and tot
 
 ***WIP: add power button function + led test animation at startup***
 
-#![Image of the Wall](doc/front.png)
-#![LEDs](doc/led.png)
+#![Image of the Wall](doc/MB-front-folded.jpg)
+#![LEDs](doc/MB-front-unfolded.jpg)
 
 The [moonboard](https://www.moonboard.com/) smartphone app is build to work with the [moonboard led system](https://moonclimbing.com/moonboard-led-system.html) using bluetooth low energy.
 In this project we emulate the behaviour of the box using a rasperry pi and addressable LED stripes. 
