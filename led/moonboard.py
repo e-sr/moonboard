@@ -122,7 +122,8 @@ class MoonBoard:
 
     # run all colors in led´s to see if something is missing
     def led_test(self):
-        duration = 0.1
+        print('led test')
+        duration = 0.4
         COLORS = ['red', 'green', 'blue']
 
         for color in range(len(COLORS)):
@@ -130,12 +131,12 @@ class MoonBoard:
                 for j in range (0,self.COLS):
                     le = chr(j+65)
                     h = le+str(i)
-                    print (h)
+                    #print (h)
                     self.layout.set(self.MAPPING[h], COLORS[color])
                 self.layout.push_to_driver()
                 time.sleep(duration)
 
-        time.sleep (0.5)
+        time.sleep (1.2)
         self.clear()
 
     def run_animation(self, run_options={}, **kwds):
