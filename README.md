@@ -4,7 +4,8 @@
 
 Free standing foldaway version of moonboard. Moonboard with 150mm kicker and total height of 2900mm, some alteration for 2016 hold setup needs to be done since one hold cannot fit in shortened top panel.
 
-***WIP: testing***
+***WIP: Installation script not tested, otherwise working... 
+TODO:Config.json for board configuration, remove old config features from code, create different led layout options ***
 
 ![MB folded away](/doc/MB-front-folded.JPG)
 ![MB unfolded ready to train](/doc/MB-front-unfolded.JPG)
