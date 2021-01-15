@@ -11,7 +11,7 @@ echo "Install dependencies"
 sudo apt-get update
 sudo apt-get upgrade
 
-ecgo "Install + build led drivers" # FIXME: check driver installation
+echo "Install + build led drivers" # FIXME: check driver installation
 sudo apt-get -y install git vim python3-pip gcc make build-essential
 sudo apt-get -y install libatlas-base-dev 
 sudo apt-get -y install python-dev swig scons # for building WS2811 drivers
