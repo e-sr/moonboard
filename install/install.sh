@@ -11,22 +11,10 @@ echo "Install dependencies"
 sudo apt-get update
 sudo apt-get upgrade
 
-echo "Install + build led drivers" # FIXME: check driver installation
+echo "Install + build led drivers"
 sudo apt-get -y install git vim python3-pip gcc make build-essential
 sudo apt-get -y install libatlas-base-dev 
 sudo apt-get -y install python-dev swig scons # for building WS2811 drivers
-
-#    installation on https://github.com/ManiacalLabs/BiblioPixel/blob/master/bibliopixel/drivers/PiWS281X.py TODO remove, if works correctly
-#    git clone https://github.com/jgarff/rpi_ws281x.git
-#    cd rpi_ws281x
-#    sudo apt-get install python-dev swig scons
-#    sudo scons
-#    cd python
-#    # If using default system python3
-#    sudo python3 setup.py build install
-#    # If using virtualenv, enter env then run
-#    python setup.py build install
-
 
 echo "Install application"
 test -d moonboard || git clone https://github.com/grasnag/moonboard.git
