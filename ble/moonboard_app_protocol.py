@@ -25,8 +25,8 @@ def decode_problem_string(s):
 
 class UnstuffSequence():
     """
-    hold sequence come separated  in parts due to BLE packet size limitation
-    this class srve to put different parts together
+    hold sequence come separated in parts due to BLE packet size limitation
+    this class serves to put different parts together
     """
     START = 'l#'
     STOP= '#'
