@@ -7,16 +7,6 @@ from dbus.mainloop.glib import DBusGMainLoop
 from functools import partial
 import json
 import RPi.GPIO as GPIO
-<<<<<<< HEAD
-
-# external power led
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM) 
-GPIO.setup(26, GPIO.OUT) 
-GPIO.output(26,1)
-
-# create power button to shutdown lights
-=======
 import os
 #import signal
 import sys
@@ -28,12 +18,10 @@ BUTTON_GPIO = 3
 
 # Button function
 def button_pressed_callback(channel):
-    print("Button pressed") # add shutdown function for raspi
-    #MOONBOARD.led_test()
+    print("Button pressed") 
     MOONBOARD.clear()
-    print('Shutting down')
-    os.system("sudo shutdown -h now")
->>>>>>> 8e672289607b733d75ca6f1ffa53e6e191a3100c
+    #print('Shutting down')
+    #os.system("sudo shutdown -h now")
 
 def new_problem_cb(mb,holds_string):
         holds = json.loads(holds_string)
