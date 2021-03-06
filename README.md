@@ -30,3 +30,6 @@ Besides the tools, time and money (the climbing holds are the most expensive com
 - [How to Build a Home Climbing Wall](doc/BUILD-WALL.md)
 - [How to Build the LED System](doc/BUILD-LEDSYSTEM.md)
 - [Software Description](doc/OVERVIEW-SOFTWARE.md)
+
+## Troubleshooting
+- In case of bluetooth connection problems: make sure to have paired your phone with the raspi once.
