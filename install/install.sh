@@ -5,25 +5,24 @@ sudo sed -i 's/\#dtparam=spi=on/dtparam=spi=on/g' /boot/config.txt
 
 echo "Disable Audio"
 sudo sed -i 's/\dtparam=audio=on/#dtparam=audio=on/g' /boot/config.txt
-sudo echo blacklist snd_bcm2835 > /etc/modprobe.d/raspi-blacklist.conf # FIXME: defensive, /bin/bash: line 7: /etc/modprobe.d/raspi-blacklist.conf: Permission denied
+sudo echo blacklist snd_bcm2835 > /etc/modprobe.d/raspi-blacklist.conf # FIXME: defensive
 
-echo "Install dependencies"
+
+# Install dependencies
 sudo apt-get update
 sudo apt-get upgrade
-
-echo "Install + build led drivers"
 sudo apt-get -y install git vim python3-pip gcc make build-essential
 sudo apt-get -y install libatlas-base-dev 
 sudo apt-get -y install python-dev swig scons # for building WS2811 drivers
 
 echo "Install application"
-test -d moonboard || git clone https://github.com/lidiapb/moonboard.git
+test -d moonboard || git clone https://github.com/8cH9azbsFifZ/moonboard.git
 cd moonboard
 git pull
 
-echo "Installing python dependencies"
+# Installing python dependencies
 pip3 install -r install/requirements.txt
-sudo pip3 install -r install/requirements.txt 
+sudo pip3 install -r instll/requirements.txt 
 # pip3 uninstall -y -r install/requirements.txt # uninstall
 
 

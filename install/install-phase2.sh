@@ -7,4 +7,3 @@ sudo /home/pi/moonboard/services/install_service.sh com.moonboard.service > /tmp
 
 # Remove phase 2 from boot
 sudo systemctl disable moonboard-install.service
-sudo systemctl start moonboard.service
