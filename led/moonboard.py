@@ -8,9 +8,8 @@ from bibliopixel.drivers.SimPixel import SimPixel
 from bibliopixel.drivers.spi_interfaces import SPI_INTERFACES
 import string
 import json
-import time
 
-# FIXME: Describe Layouts
+# FIXME: Describe Layouts 
 # FIXME: Delete this
 LED_LAYOUT = {
     'nest':[
@@ -56,18 +55,20 @@ LED_LAYOUT = {
        [  0,  35,  36,  71,  72, 107, 108, 143, 144, 179, 180]]
        }
 
-
 class MoonBoard:
-    DEFAULT_PROBLEM_COLORS = {'START': COLORS.green, 'TOP': COLORS.red, 'MOVES': COLORS.blue}
-    DEFAULT_COLOR = COLORS.blue  # FIXME ?
-    X_GRID_NAMES = string.ascii_uppercase[0:11]  # FIXME: del
-    LED_SPACING = 1  # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
-    ROWS = 18 * LED_SPACING  # FIXME
+    DEFAULT_PROBLEM_COLORS = {'START':COLORS.blue,'TOP':COLORS.red,'MOVES':COLORS.green}
+    DEFAULT_COLOR = COLORS.blue #FIXME ?
+    X_GRID_NAMES = string.ascii_uppercase[0:11] # FIXME: del
+    LED_SPACING = 3 # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
+    ROWS = 18 * LED_SPACING # FIXME
     COLS = 11
     NUM_PIXELS = ROWS*COLS
     DEFAULT_BRIGHTNESS = 100 # FIXME: to config file
     SETUP = 'MoonboardMasters2017' # FIXME: to config file / Arg
-    MAPPING = {}  # FIXME:json
+
+    
+    # FIXME: json
+    MAPPING= { }
 
     with open('/home/pi/moonboard/led/led_mapping.json') as json_file:
         data = json.load(json_file)
@@ -93,7 +94,7 @@ class MoonBoard:
         if led_layout is not None:
             self.layout = Strip (driver, brightness=brightness,threadedUpdate=True)
         else:
-            self.layout = Strip (driver, brightness=brightness,threadedUpdate=True)
+            self.layout = Strip (driver, brightness=brightness,threadedUpdate=True) 
         self.layout.cleanup_drivers()
         self.layout.start()
         self.animation = None
@@ -115,35 +116,16 @@ class MoonBoard:
         for k in ['START', 'MOVES', 'TOP']:
             for hold in holds[k]:
                 self.set_hold(
-                    hold,
+                    hold, 
                     hold_colors.get(k, self.DEFAULT_PROBLEM_COLORS[k]),
                     )
         self.layout.push_to_driver()
 
-    # run all colors in led´s to see if something is missing
-    def led_test(self):
-        print('led test')
-        duration = 0.4
-        COLORS = ['red', 'green', 'blue']
+    def run_animation(self, run_options={}, **kwds): # FIXME: will it still work?
+        duration = 0.001
 
-        for color in range(len(COLORS)):
-            for i in range(1,self.ROWS+1):
-                for j in range (0,self.COLS):
-                    le = chr(j+65)
-                    h = le+str(i)
-                    #print (h)
-                    self.layout.set(self.MAPPING[h], COLORS[color])
-                self.layout.push_to_driver()
-                time.sleep(duration)
-
-        time.sleep (1.2)
-        self.clear()
-
-    def run_animation(self, run_options={}, **kwds):
-        duration = 0.5
-
-        for i in range(1,self.ROWS+1):
-            for j in range (0,self.COLS):
+        for i in range(1,18+1): 
+            for j in range (0,11): #FIXME
 
                 le = chr(j+65)
                 h = le+str(i)
@@ -152,58 +134,61 @@ class MoonBoard:
                 #self.set_hold (h, COLORS.red)
             self.layout.push_to_driver()
             time.sleep(duration)
-
+        
         time.sleep (1)
         self.clear()
 
-    def display_holdset_all(self, run_options={}, **kwds):
-        with open('/home/pi/moonboard/problems/HoldSetup.json') as json_file:
+        with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
             data = json.load(json_file)
             for hold in data[self.SETUP]:
-                holdset = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016
+                holdset = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
                 color = COLORS.black
-                if (holdset == "Hold Set A"):
-                    color = COLORS.red
-                    print (holdset, hold, data[self.SETUP][hold]["Orientation"])
-                if (holdset == "Original School Holds"):
-                    color = COLORS.blue
-                    print (holdset, hold, data[self.SETUP][hold]["Orientation"])
-                if (holdset == "Hold Set B"):
-                    color = COLORS.yellow
-                    print (holdset, hold, data[self.SETUP][hold]["Orientation"])
-                if (holdset == "Hold Set C"):
-                     color = COLORS.green
+                #if (holdset == "Hold Set A"): # FIXME
+                #    color = COLORS.red
+                #    print (hold, data[self.SETUP][hold]["Orientation"])
+                #if (holdset == "Original School Holds"):# FIXME
+                #    color = COLORS.blue
+                #    print (hold, data[self.SETUP][hold]["Orientation"])
+                #if (holdset == "Hold Set B"):# FIXME
+                #    color = COLORS.yellow
+                #    print (hold, data[self.SETUP][hold]["Orientation"])
+                if (holdset == "Hold Set C"):# FIXME
+                     color = COLORS.green                    
                 self.layout.set(self.MAPPING[hold], color)
-
+                #self.set_hold (hold, color)
+                #print "Orientation"
+        
         self.layout.push_to_driver()
 
         time.sleep(60*10)
 
         self.clear()
-
-    def display_holdset(self, holdset="Hold Set A", duration=10, **kwds):
+        
+    def display_holdset(self, holdset="Hold Set A", duration=10, **kwds): 
         print ("Display holdset: " + str(holdset))
 
-        with open('/home/pi/moonboard/problems/HoldSetup.json') as json_file:
+        with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
             data = json.load(json_file)
             for hold in data[self.SETUP]:
-                hs = (data[self.SETUP][hold]['HoldSet'])
+                hs = (data[self.SETUP][hold]['HoldSet']) 
                 color = COLORS.black
-
+    
                 if (hs == holdset):# FIXME
-                        color = COLORS.green
-
+                        color = COLORS.green                    
+    
                 self.layout.set(self.MAPPING[hold], color)
 
                 #self.set_hold (hold, color)
                 #print "Orientation"
-
+        
         self.layout.push_to_driver()
 
         time.sleep(60*10)
 
         self.clear()
-
+                
+                
+                
     def stop_animation(self):
         if self.animation is not None:
             self.animation.stop()
@@ -211,13 +196,11 @@ class MoonBoard:
 
 class TestAnimation:
     COLOR=[COLORS.Green, COLORS.Blue]
-
     def __init__(self, layout, ):
         self.layout = layout
 
     def step(self, amt=1):
         pass
-
 
 if __name__=="__main__":
     import argparse
@@ -232,11 +215,11 @@ if __name__=="__main__":
                         help='Delay of progress.')
     parser.add_argument('--holdset',  type=str, help="Display a holdset for current layout", choices=['Hold Set A', 'Hold Set B', 'Hold Set C', 'Original School Holds', "Wooden Holds"])
     args = parser.parse_args()
-
+        
     led_layout = None
 
     MOONBOARD = MoonBoard(args.driver_type,led_layout )
-
+    
     # Display a holdset
     MOONBOARD.display_holdset(args.holdset, args.duration)
 
