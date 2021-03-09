@@ -1,14 +1,6 @@
 # moonboard
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-***WIP: Installation script not tested, otherwise working... Check different led mappings in LED folder!
-TODO:Config.json for board configuration, remove old config features from code, create different led layout options ***
-
-Free standing foldaway version of moonboard. Moonboard with 150mm kicker and total height of 2900mm, some alteration for 2016 hold setup needs to be done since one hold cannot fit in shortened top panel.
-
-![MB folded away](/doc/MB-front-folded.JPG)
-![MB unfolded ready to train](/doc/MB-front-unfolded.JPG)
-
 The [moonboard](https://www.moonboard.com/) smartphone app is build to work with the [moonboard led system](https://moonclimbing.com/moonboard-led-system.html) using bluetooth low energy.
 In this project we emulate the behaviour of the box using a rasperry pi and addressable LED stripes.
 
@@ -20,8 +12,5 @@ Ask for alibaba supplier mo make custom one.
 - Power supply [meanwell mdr-60-5](https://www.meanwell.com/webapp/product/search.aspx?prod=MDR-60) - (~60mA * 50 * 4 = 12A ==> 60 W for 5V)
 - DIN rail case for rpi
 
-
 # Build Instructions
-
-todo : drawing´s for the board
 - [Software Description](doc/OVERVIEW-SOFTWARE.md)
