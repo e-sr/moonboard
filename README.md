@@ -34,8 +34,8 @@ Besides the tools, time and money (the climbing holds are the most expensive com
 ## Example boards
 Free standing foldaway version of moonboard. Moonboard with 150mm kicker and total height of 2900mm, some alteration for 2016 hold setup needs to be done since one hold cannot fit in shortened top panel.
 
-![MB folded away](doc/MB-front-folded.JPG)
-![MB unfolded ready to train](doc/MB-front-unfolded.JPG)
+![MB folded away](doc/MB-front-folded.jpg)
+![MB unfolded ready to train](doc/MB-front-unfolded.jpg)
 
 
 
