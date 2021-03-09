@@ -8,6 +8,7 @@ from bibliopixel.drivers.SimPixel import SimPixel
 from bibliopixel.drivers.spi_interfaces import SPI_INTERFACES
 import string
 import json
+import time
 
 # FIXME: Describe Layouts 
 # FIXME: Delete this
@@ -121,11 +122,31 @@ class MoonBoard:
                     )
         self.layout.push_to_driver()
 
+    # run all colors in led´s to see if something is missing
+    def led_test(self):
+        print('led test')
+        duration = 0.4
+        COLORS = ['red', 'green', 'blue']
+
+        for color in range(len(COLORS)):
+            for i in range(1,self.ROWS+1):
+                for j in range (0,self.COLS):
+                    le = chr(j+65)
+                    h = le+str(i)
+                    #print (h)
+                    self.layout.set(self.MAPPING[h], COLORS[color])
+                self.layout.push_to_driver()
+                time.sleep(duration)
+
+        time.sleep (1.2)
+        self.clear()
+
+
     def run_animation(self, run_options={}, **kwds): # FIXME: will it still work?
         duration = 0.001
 
-        for i in range(1,18+1): 
-            for j in range (0,11): #FIXME
+        for i in range(1,self.ROWS+1):
+            for j in range (0,self.COLS):
 
                 le = chr(j+65)
                 h = le+str(i)

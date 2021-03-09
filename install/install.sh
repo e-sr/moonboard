@@ -9,8 +9,11 @@ sudo echo blacklist snd_bcm2835 > /etc/modprobe.d/raspi-blacklist.conf # FIXME: 
 
 
 # Install dependencies
+echo "Install dependencies"
 sudo apt-get update
 sudo apt-get upgrade
+
+echo "Install + build led drivers"
 sudo apt-get -y install git vim python3-pip gcc make build-essential
 sudo apt-get -y install libatlas-base-dev 
 sudo apt-get -y install python-dev swig scons # for building WS2811 drivers
@@ -21,8 +24,9 @@ cd moonboard
 git pull
 
 # Installing python dependencies
+echo "Installing python dependencies"
 pip3 install -r install/requirements.txt
-sudo pip3 install -r instll/requirements.txt 
+sudo pip3 install -r install/requirements.txt 
 # pip3 uninstall -y -r install/requirements.txt # uninstall
 
 
