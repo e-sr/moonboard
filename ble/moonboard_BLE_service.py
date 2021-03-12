@@ -11,6 +11,7 @@ from moonboard_app_protocol import UnstuffSequence, decode_problem_string
 
 import os
 import threading
+import pty
  
 BLUEZ_SERVICE_NAME =           'org.bluez'
 DBUS_OM_IFACE =                'org.freedesktop.DBus.ObjectManager'
@@ -39,6 +40,38 @@ class UartService(Service):
         Service.__init__(self, bus,path, index, UART_SERVICE_UUID, True)
         self.add_characteristic(RxCharacteristic(bus, 1, self, process_rx))       
 
+class OutStream:
+    def __init__(self, fileno):
+        self._fileno = fileno
+        self._buffer = b""
+
+    def read_lines(self):
+        try:
+            output = os.read(self._fileno, 1000)
+        except OSError as e:
+            if e.errno != errno.EIO: raise
+            output = b""
+        lines = output.split(b"\n")
+        lines[0] = self._buffer + lines[0] # prepend previous
+                                           # non-finished line.
+        if output:
+            self._buffer = lines[-1]
+            finished_lines = lines[:-1]
+            readable = True
+        else:
+            self._buffer = b""
+            if len(lines) == 1 and not lines[0]:
+                # We did not have buffer left, so no output at all.
+                lines = []
+            finished_lines = lines
+            readable = False
+
+        finished_lines = [line.rstrip(b"\r")
+                         for line in finished_lines]
+        
+        return finished_lines, readable
+
+
 class MoonApplication(dbus.service.Object):
     IFACE = "com.moonboard.method"
     def __init__(self, bus, socket,logger):
@@ -53,17 +86,19 @@ class MoonApplication(dbus.service.Object):
         monitor_thread.start()
 
     def monitor_btmon(self): 
-        process = subprocess.Popen(["sudo","btmon"], stdout=subprocess.PIPE)
+        out_r, out_w = pty.openpty()
+        cmd = ["sudo","btmon"]
+        process = subprocess.Popen(cmd, stdout=out_w)
+        f = OutStream(out_r)
         while True:
-            line = str(process.stdout.readline())
-            self.logger.info(line)
-            if line != '':
-                if 'Data:' in line:
-                    line = line.replace(" ","")
-                    data = line[7:-3]
-                    self.process_rx(data)
-            else:
-                break  
+            lines, readable = f.read_lines()
+            if not readable: break
+            for line in lines:                
+                if line != '':
+                    line = line.decode()
+                    if 'Data:' in line:
+                        data = line.replace(' ','').replace('\x1b','').replace('[0m','').replace('Data:','')
+                        self.process_rx(data)
 
     def process_rx(self,ba):
         new_problem_string= self.unstuffer.process_bytes(ba)

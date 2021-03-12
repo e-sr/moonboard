@@ -43,9 +43,10 @@ class UnstuffSequence():
         process new incoming bytes and return if new problem is available. 
         handle some error due to multiple connected devices sending simoultaneously.
         """
-        self.logger.debug("incoming raw:"+ba)
-        s = bytearray.fromhex(ba).decode('ascii')
-        self.logger.debug("incoming bytes:"+s)
+
+        s = bytearray.fromhex(ba).decode()
+        self.logger.debug("incoming bytes:"+str(s))
+        
         if s[:2]==self.START:
             self.logger.debug('START')
             if self.s =='':
