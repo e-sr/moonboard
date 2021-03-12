@@ -8,6 +8,9 @@ import string,json
 import subprocess
 import logging
 from moonboard_app_protocol import UnstuffSequence, decode_problem_string
+
+import os
+import threading
  
 BLUEZ_SERVICE_NAME =           'org.bluez'
 DBUS_OM_IFACE =                'org.freedesktop.DBus.ObjectManager'
@@ -21,39 +24,6 @@ LOCAL_NAME =                   'Moonboard A'
 SERVICE_NAME=                  'com.moonboard'
 mainloop = None
 
-class TxCharacteristic(Characteristic):
-    def __init__(self, bus, index, service):
-        Characteristic.__init__(self, bus, index, UART_TX_CHARACTERISTIC_UUID,
-                                ['notify'], service)
-        self.notifying = False
-        GLib.io_add_watch(sys.stdin, GLib.IO_IN, self.on_console_input)
- 
-    def on_console_input(self, fd, condition):
-        s = fd.readline()
-        if s.isspace():
-            pass
-        else:
-            self.send_tx(s)
-        return True
- 
-    def send_tx(self, s):
-        if not self.notifying:
-            return
-        value = []
-        for c in s:
-            value.append(dbus.Byte(c.encode()))
-        self.PropertiesChanged(GATT_CHRC_IFACE, {'Value': value}, [])
- 
-    def StartNotify(self):
-        if self.notifying:
-            return
-        self.notifying = True
- 
-    def StopNotify(self):
-        if not self.notifying:
-            return
-        self.notifying = False
- 
 class RxCharacteristic(Characteristic):
     def __init__(self, bus, index, service, process_rx):
         Characteristic.__init__(self, bus, index, UART_RX_CHARACTERISTIC_UUID,
@@ -61,27 +31,43 @@ class RxCharacteristic(Characteristic):
         self.process_rx=process_rx
 
     def WriteValue(self, value, options):
-        self.process_rx(value)
+        pass
+        #self.process_rx(value)
 
 class UartService(Service):
     def __init__(self, bus,path, index, process_rx):
         Service.__init__(self, bus,path, index, UART_SERVICE_UUID, True)
-        #self.add_characteristic(TxCharacteristic(bus, 0, self))
-        self.add_characteristic(RxCharacteristic(bus, 1, self, process_rx))
- 
+        self.add_characteristic(RxCharacteristic(bus, 1, self, process_rx))       
+
 class MoonApplication(dbus.service.Object):
     IFACE = "com.moonboard.method"
     def __init__(self, bus, socket,logger):
         self.path = '/com/moonboard'
         self.services = []
         self.logger=logger
-        self.socket=socket
         self.unstuffer= UnstuffSequence(self.logger)
         dbus.service.Object.__init__(self, bus, self.path)
-        self.add_service(UartService(bus,self.get_path(), 0, self.process_rx))
+        self.add_service(UartService(bus,self.get_path(), 0, self.process_rx)) 
+
+        monitor_thread = threading.Thread(target=self.monitor_btmon)  
+        monitor_thread.start()
+
+    def monitor_btmon(self): 
+        process = subprocess.Popen(["sudo","btmon"], stdout=subprocess.PIPE)
+        while True:
+            line = str(process.stdout.readline())
+            self.logger.info(line)
+            if line != '':
+                if 'Data:' in line:
+                    line = line.replace(" ","")
+                    data = line[7:-3]
+                    self.process_rx(data)
+            else:
+                break  
 
     def process_rx(self,ba):
         new_problem_string= self.unstuffer.process_bytes(ba)
+
         if new_problem_string is not None:
             problem= decode_problem_string(new_problem_string)
             self.new_problem(json.dumps(problem))
@@ -94,10 +80,10 @@ class MoonApplication(dbus.service.Object):
 
     def get_path(self):
         return dbus.ObjectPath(self.path)
- 
+
     def add_service(self, service):
         self.services.append(service)
- 
+
     @dbus.service.method(DBUS_OM_IFACE, out_signature='a{oa{sa{sv}}}')
     def GetManagedObjects(self):
         response = {}
@@ -107,8 +93,7 @@ class MoonApplication(dbus.service.Object):
             for chrc in chrcs:
                 response[chrc.get_path()] = chrc.get_properties()
         return response
- 
- 
+
 def register_app_cb():
     print('GATT application registered')
 
@@ -178,7 +163,7 @@ def main(logger,adapter):
     except dbus.exceptions.NameExistsException:
         sys.exit(1)
 
-    app = MoonApplication(bus_name,None,logger)
+    app = MoonApplication(bus_name,None,logger)    
 
     service_manager = dbus.Interface(
                                 bus.get_object(BLUEZ_SERVICE_NAME, adapter),
