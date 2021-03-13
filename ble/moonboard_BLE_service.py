@@ -39,7 +39,6 @@ class UartService(Service):
     def __init__(self, bus,path, index, process_rx):
         Service.__init__(self, bus,path, index, UART_SERVICE_UUID, True)
         self.add_characteristic(RxCharacteristic(bus, 1, self, process_rx))       
-        self.logger.info('Starting uart')
 
 class OutStream:
     def __init__(self, fileno):
