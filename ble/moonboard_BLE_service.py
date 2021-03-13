@@ -12,9 +12,6 @@ from moonboard_app_protocol import UnstuffSequence, decode_problem_string
 import os
 import threading
 import pty
-import logging
-
-logging.basicConfig(filename='/tmp/bt-testing.log', encoding='utf-8', level=logging.DEBUG)
  
 BLUEZ_SERVICE_NAME =           'org.bluez'
 DBUS_OM_IFACE =                'org.freedesktop.DBus.ObjectManager'
@@ -42,8 +39,7 @@ class UartService(Service):
     def __init__(self, bus,path, index, process_rx):
         Service.__init__(self, bus,path, index, UART_SERVICE_UUID, True)
         self.add_characteristic(RxCharacteristic(bus, 1, self, process_rx))       
-        logging.debug('Starting UART')
-
+        self.logger.info('Starting uart')
 
 class OutStream:
     def __init__(self, fileno):
@@ -104,7 +100,7 @@ class MoonApplication(dbus.service.Object):
                     if 'Data:' in line:
                         data = line.replace(' ','').replace('\x1b','').replace('[0m','').replace('Data:','')
                         self.process_rx(data)
-                        logging.debug('This message should go to the log file: ' + data)
+                        self.logger.info('New data '+ data)
 
     def process_rx(self,ba):
         new_problem_string= self.unstuffer.process_bytes(ba)
