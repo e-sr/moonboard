@@ -99,6 +99,7 @@ class MoonApplication(dbus.service.Object):
                     if 'Data:' in line:
                         data = line.replace(' ','').replace('\x1b','').replace('[0m','').replace('Data:','')
                         self.process_rx(data)
+                        print ("data: " + data)
 
     def process_rx(self,ba):
         new_problem_string= self.unstuffer.process_bytes(ba)
