@@ -40,3 +40,10 @@ Free standing foldaway version of moonboard. Moonboard with 150mm kicker and tot
 
 ## Troubleshooting
 - In case of bluetooth connection problems: make sure to have paired your phone with the raspi once.
+
+## Tested setups
+- Raspi W Zero with iPhone 5, 8, X, 11 (iOS >= 14)
+
+# Versions
+- v0.27 merged bt fix test
+- v0.23 running in gz setup
