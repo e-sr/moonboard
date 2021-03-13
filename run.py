@@ -83,9 +83,8 @@ if __name__ == "__main__":
     MOONBOARD = MoonBoard(args.driver_type, led_layout)
     
     # run led led
-    MOONBOARD.led_test()
-    #MOONBOARD.led_.clear()test()
-    MOONBOARD.clear()
+    #MOONBOARD.led_test()
+    #MOONBOARD.clear()
 
     # connect to dbus signal new problem
     dbml = DBusGMainLoop(set_as_default=True)
