@@ -24,7 +24,6 @@ Besides the tools, time and money (the climbing holds are the most expensive com
 - Power supply [meanwell mdr-60-5](https://www.meanwell.com/webapp/product/search.aspx?prod=MDR-60) - (~60mA * 50 * 4 = 12A ==> 60 W for 5V)
 - Suitable Case (i.e. TEKO)
 
-
 # Build Instructions
 
 - [How to Build a Home Climbing Wall](doc/BUILD-WALL.md)
