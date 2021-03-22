@@ -5,10 +5,14 @@ X_GRID_NAMES = string.ascii_uppercase[0:11]
 
 def position_trans(p):
     """convert led number (strip number) to moonboard grid """
-    col= p//18
-    row= (p%18) +1
+    if self.mini==True:
+        num_rows = 12
+    else:
+        num_rows = 18
+    col= p//num_rows
+    row= (p%num_rows) +1
     if col%2==1:
-        row=19-row
+        row=(num_rows+1)-row
     return X_GRID_NAMES[col]+str(row)
     
 def decode_problem_string(s):
@@ -69,7 +73,7 @@ class UnstuffSequence():
                 self.logger.debug('error: not started')
                 self.s= ''
         elif s[:3]==self.MINI:
-            self.logger.debug('START')
+            self.logger.debug('MINI')
             self.mini = True
         else:
             self.s+=s
