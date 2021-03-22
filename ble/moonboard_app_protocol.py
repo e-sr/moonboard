@@ -30,6 +30,7 @@ class UnstuffSequence():
     """
     START = 'l#'
     STOP= '#'
+    MINI= '~M*'
 
     def __init__(self,logger=None):
         if logger is None:
@@ -37,6 +38,7 @@ class UnstuffSequence():
         else:
             self.logger=logger
         self.s=''
+        self.mini=False
 
     def process_bytes(self, ba):
         """ 
@@ -66,5 +68,8 @@ class UnstuffSequence():
             else:
                 self.logger.debug('error: not started')
                 self.s= ''
+        elif s[:3]==self.MINI:
+            self.logger.debug('START')
+            self.mini = True
         else:
             self.s+=s
