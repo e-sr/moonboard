@@ -3,9 +3,9 @@ import string
 
 X_GRID_NAMES = string.ascii_uppercase[0:11]
 
-def position_trans(p):
+def position_trans(p,mini):
     """convert led number (strip number) to moonboard grid """
-    if self.mini==True:
+    if mini==True:
         num_rows = 12
     else:
         num_rows = 18
@@ -15,10 +15,10 @@ def position_trans(p):
         row=(num_rows+1)-row
     return X_GRID_NAMES[col]+str(row)
     
-def decode_problem_string(s):
+def decode_problem_string(s, mini):
     holds = {'START':[],'MOVES':[],'TOP':[]}
     for h in s.split(','):
-        t,p = h[0],position_trans(int(h[1:]))
+        t,p = h[0],position_trans(int(h[1:]), mini)
         if t=='S':
             holds['START'].append(p)
         if t=='P':
