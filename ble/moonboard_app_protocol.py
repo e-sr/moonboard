@@ -3,22 +3,24 @@ import string
 
 X_GRID_NAMES = string.ascii_uppercase[0:11]
 
-def position_trans(p,mini):
+def position_trans(p,num_rows):
     """convert led number (strip number) to moonboard grid """
-    if mini==True:
-        num_rows = 12
-    else:
-        num_rows = 18
     col= p//num_rows
     row= (p%num_rows) +1
     if col%2==1:
         row=(num_rows+1)-row
     return X_GRID_NAMES[col]+str(row)
     
-def decode_problem_string(s, mini):
-    holds = {'START':[],'MOVES':[],'TOP':[]}
+def decode_problem_string(s, flags):
+    holds = {'START':[],'MOVES':[],'TOP':[], 'FLAGS':[flags]}
+
+    if flags.find("M") != -1:
+        num_rows = 12
+    else:
+        num_rows = 18
+
     for h in s.split(','):
-        t,p = h[0],position_trans(int(h[1:]), mini)
+        t,p = h[0],position_trans(int(h[1:]), num_rows)
         if t=='S':
             holds['START'].append(p)
         if t=='P':
@@ -34,7 +36,6 @@ class UnstuffSequence():
     """
     START = 'l#'
     STOP= '#'
-    MINI= '~M*'
 
     def __init__(self,logger=None):
         if logger is None:
@@ -42,7 +43,7 @@ class UnstuffSequence():
         else:
             self.logger=logger
         self.s=''
-        self.mini=False
+        self.flags=''
 
     def process_bytes(self, ba):
         """ 
@@ -53,7 +54,14 @@ class UnstuffSequence():
         s = bytearray.fromhex(ba).decode()
         self.logger.debug("incoming bytes:"+str(s))
         
-        if s[:2]==self.START:
+        if s[0] == '~' and s[-1] == '*':
+            # Flag processing
+            self.flags=s[1:-1]
+            if s.find("M") != -1:
+                self.logger.debug('MINI')
+            if s.find("D") != -1:
+                self.logger.debug('BothLights')
+        elif s[:2]==self.START:
             self.logger.debug('START')
             if self.s =='':
                 if s[-1]==self.STOP:
@@ -72,8 +80,5 @@ class UnstuffSequence():
             else:
                 self.logger.debug('error: not started')
                 self.s= ''
-        elif s[:3]==self.MINI:
-            self.logger.debug('MINI')
-            self.mini = True
         else:
             self.s+=s
