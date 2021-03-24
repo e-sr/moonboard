@@ -103,11 +103,12 @@ class MoonApplication(dbus.service.Object):
 
     def process_rx(self,ba):
         new_problem_string= self.unstuffer.process_bytes(ba)
-        mini = self.unstuffer.mini
+        flags = self.unstuffer.flags
 
         if new_problem_string is not None:
-            problem= decode_problem_string(new_problem_string, mini)
+            problem= decode_problem_string(new_problem_string, flags)
             self.new_problem(json.dumps(problem))
+            self.unstuffer.flags = ''
             start_adv(self.logger)
 
     @dbus.service.signal(dbus_interface="com.moonboard",
