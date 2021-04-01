@@ -45,5 +45,6 @@ Free standing foldaway version of moonboard. Moonboard with 150mm kicker and tot
 - Raspi W Zero with iPhone 5, 8, X, 11 (iOS >= 14)
 
 # Versions
+- v0.28 merged moonboard mini protocol
 - v0.27 merged bt fix test
 - v0.23 running in gz setup
