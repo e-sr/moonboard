@@ -1,0 +1,11 @@
+[Unit]
+Description=Install Phase 2
+After=multi-user.target
+
+[Service]
+ExecStart=/home/pi/moonboard/install-phase2.sh
+User=root
+
+[Install]
+WantedBy=multi-user.target
+

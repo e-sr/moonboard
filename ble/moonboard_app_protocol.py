@@ -3,18 +3,24 @@ import string
 
 X_GRID_NAMES = string.ascii_uppercase[0:11]
 
-def position_trans(p):
+def position_trans(p,num_rows):
     """convert led number (strip number) to moonboard grid """
-    col= p//18
-    row= (p%18) +1
+    col= p//num_rows
+    row= (p%num_rows) +1
     if col%2==1:
-        row=19-row
+        row=(num_rows+1)-row
     return X_GRID_NAMES[col]+str(row)
     
-def decode_problem_string(s):
-    holds = {'START':[],'MOVES':[],'TOP':[]}
+def decode_problem_string(s, flags):
+    holds = {'START':[],'MOVES':[],'TOP':[], 'FLAGS':[flags]}
+
+    if flags.find("M") != -1:
+        num_rows = 12
+    else:
+        num_rows = 18
+
     for h in s.split(','):
-        t,p = h[0],position_trans(int(h[1:]))
+        t,p = h[0],position_trans(int(h[1:]), num_rows)
         if t=='S':
             holds['START'].append(p)
         if t=='P':
@@ -25,26 +31,37 @@ def decode_problem_string(s):
 
 class UnstuffSequence():
     """
-    hold sequence come separated  in parts due to BLE packet size limitation
-    this class srve to put different parts together
+    hold sequence come separated in parts due to BLE packet size limitation
+    this class serves to put different parts together
     """
     START = 'l#'
     STOP= '#'
+
     def __init__(self,logger=None):
         if logger is None:
             self.logger= logging
         else:
             self.logger=logger
         self.s=''
+        self.flags=''
 
     def process_bytes(self, ba):
         """ 
         process new incoming bytes and return if new problem is available. 
         handle some error due to multiple connected devices sending simoultaneously.
         """
-        s = bytearray(ba).decode('ascii')
-        self.logger.debug("incoming bytes:"+s)
-        if s[:2]==self.START:
+
+        s = bytearray.fromhex(ba).decode()
+        self.logger.debug("incoming bytes:"+str(s))
+        
+        if s[0] == '~' and s[-1] == '*':
+            # Flag processing
+            self.flags=s[1:-1]
+            if s.find("M") != -1:
+                self.logger.debug('MINI')
+            if s.find("D") != -1:
+                self.logger.debug('BothLights')
+        elif s[:2]==self.START:
             self.logger.debug('START')
             if self.s =='':
                 if s[-1]==self.STOP:

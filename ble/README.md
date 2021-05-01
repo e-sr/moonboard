@@ -40,7 +40,7 @@ Communication between app and led box is done by the uart service. The others se
 
 ### APP => Nordic UART  communication Protocol
 
-The communication is very simple, the app send a sequence of characters describing the problem. The sequence always **start** with `'#l'` and **finish** with `'#'`. Holds information are comma `,` separated. The hold first character describe the hold type. `'S'` for start, `'P'` for moves and `'E'` for end holds. The following char describe the position.
+The communication is very simple, the app send a sequence of characters describing the problem. The sequence always **start** with `'l#'` and **finish** with `'#'`. Holds information are comma `,` separated. The hold first character describe the hold type. `'S'` for start, `'P'` for moves and `'E'` for end holds. The following char describe the position.
 As an Example we can have `'l#S5,P9,P13,E18#'`
 
 The hold positions is a number between 1 and 198. It trasform to the grid position following the strip.  

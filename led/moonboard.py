@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
 from bibliopixel.colors import COLORS
-from bibliopixel import Matrix
+from bibliopixel import Strip
 from bibliopixel.drivers.PiWS281X import PiWS281X
 from bibliopixel.drivers.dummy_driver import DriverDummy
 from bibliopixel.drivers.SPI.WS2801 import  WS2801
-from bibliopixel.drivers.PiWS281X import  PiWS281X
 from bibliopixel.drivers.SimPixel import SimPixel
 from bibliopixel.drivers.spi_interfaces import SPI_INTERFACES
 import string
+import json
+import time
 
+# FIXME: Describe Layouts 
+# FIXME: Delete this
 LED_LAYOUT = {
     'nest':[
     # Top panel
@@ -51,18 +54,31 @@ LED_LAYOUT = {
        [  2,  33,  38,  69,  74, 105, 110, 141, 146, 177, 182],
        [  1,  34,  37,  70,  73, 106, 109, 142, 145, 178, 181],
        [  0,  35,  36,  71,  72, 107, 108, 143, 144, 179, 180]]
-}
+       }
 
 class MoonBoard:
     DEFAULT_PROBLEM_COLORS = {'START':COLORS.blue,'TOP':COLORS.red,'MOVES':COLORS.green}
-    DEFAULT_COLOR = COLORS.blue
-    X_GRID_NAMES = string.ascii_uppercase[0:11]
-    NUM_PIXELS = 198
-    DEFAULT_BRIGHTNESS = 150
+    DEFAULT_COLOR = COLORS.blue #FIXME ?
+    X_GRID_NAMES = string.ascii_uppercase[0:11] # FIXME: del
+    LED_SPACING = 3 # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
+    ROWS = 18 * LED_SPACING # FIXME
+    COLS = 11
+    NUM_PIXELS = ROWS*COLS
+    DEFAULT_BRIGHTNESS = 100 # FIXME: to config file
+    SETUP = 'MoonboardMasters2017' # FIXME: to config file / Arg
+
+    
+    # FIXME: json
+    MAPPING= { }
+
+    with open('/home/pi/moonboard/led/led_mapping.json') as json_file:
+        data = json.load(json_file)
+        MAPPING = data
+
 
     def __init__(self, driver_type, led_layout=None, brightness=DEFAULT_BRIGHTNESS):
         try:
-            if driver_type == "WS281X":
+            if driver_type == "PiWS281x":
                 driver = PiWS281X(self.NUM_PIXELS)
             elif driver_type == "WS2801":
                 driver = WS2801(self.NUM_PIXELS, dev='/dev/spidev0.1',spi_interface= SPI_INTERFACES.PERIPHERY,spi_speed=1)
@@ -77,18 +93,9 @@ class MoonBoard:
             driver = DriverDummy(self.NUM_PIXELS)
 
         if led_layout is not None:
-            self.layout = Matrix(driver,
-                                width=11,
-                                height=18,
-                                coord_map=led_layout,
-                                threadedUpdate=True,
-                                brightness=brightness
-                                )
+            self.layout = Strip (driver, brightness=brightness,threadedUpdate=True)
         else:
-            self.layout = Matrix(driver,width=11,height=18, 
-                                threadedUpdate=True,
-                                brightness=brightness
-                                )
+            self.layout = Strip (driver, brightness=brightness,threadedUpdate=True) 
         self.layout.cleanup_drivers()
         self.layout.start()
         self.animation = None
@@ -99,10 +106,7 @@ class MoonBoard:
         self.layout.push_to_driver()
 
     def set_hold(self, hold, color=DEFAULT_COLOR):
-        x_grid_name, y_grid_name = hold[0], int(hold[1:])
-        x = self.X_GRID_NAMES.index(x_grid_name)
-        y = 18 - y_grid_name
-        self.layout.set(x, y, color)
+        self.layout.set(self.MAPPING[hold], color)
 
     def show_hold(self, hold, color=DEFAULT_COLOR):
         self.set_hold(hold, color)
@@ -118,11 +122,94 @@ class MoonBoard:
                     )
         self.layout.push_to_driver()
 
-    def run_animation(self, animation, run_options={}, **kwds):
-        self.stop_animation()
-        self.animation = animation(self.layout, **kwds)
-        self.animation.run(**run_options)
+    # run all colors in led´s to see if something is missing
+    def led_test(self):
+        print('led test')
+        duration = 0.4
+        COLORS = ['red', 'green', 'blue']
 
+        for color in range(len(COLORS)):
+            for i in range(1,self.ROWS+1):
+                for j in range (0,self.COLS):
+                    le = chr(j+65)
+                    h = le+str(i)
+                    #print (h)
+                    self.layout.set(self.MAPPING[h], COLORS[color])
+                self.layout.push_to_driver()
+                time.sleep(duration)
+
+        time.sleep (1.2)
+        self.clear()
+
+
+    def run_animation(self, run_options={}, **kwds): # FIXME: will it still work?
+        duration = 0.001
+
+        for i in range(1,self.ROWS+1):
+            for j in range (0,self.COLS):
+
+                le = chr(j+65)
+                h = le+str(i)
+                print (h)
+                self.layout.set(self.MAPPING[h], COLORS.purple)
+                #self.set_hold (h, COLORS.red)
+            self.layout.push_to_driver()
+            time.sleep(duration)
+        
+        time.sleep (1)
+        self.clear()
+
+        with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
+            data = json.load(json_file)
+            for hold in data[self.SETUP]:
+                holdset = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
+                color = COLORS.black
+                #if (holdset == "Hold Set A"): # FIXME
+                #    color = COLORS.red
+                #    print (hold, data[self.SETUP][hold]["Orientation"])
+                #if (holdset == "Original School Holds"):# FIXME
+                #    color = COLORS.blue
+                #    print (hold, data[self.SETUP][hold]["Orientation"])
+                #if (holdset == "Hold Set B"):# FIXME
+                #    color = COLORS.yellow
+                #    print (hold, data[self.SETUP][hold]["Orientation"])
+                if (holdset == "Hold Set C"):# FIXME
+                     color = COLORS.green                    
+                self.layout.set(self.MAPPING[hold], color)
+                #self.set_hold (hold, color)
+                #print "Orientation"
+        
+        self.layout.push_to_driver()
+
+        time.sleep(60*10)
+
+        self.clear()
+        
+    def display_holdset(self, holdset="Hold Set A", duration=10, **kwds): 
+        print ("Display holdset: " + str(holdset))
+
+        with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
+            data = json.load(json_file)
+            for hold in data[self.SETUP]:
+                hs = (data[self.SETUP][hold]['HoldSet']) 
+                color = COLORS.black
+    
+                if (hs == holdset):# FIXME
+                        color = COLORS.green                    
+    
+                self.layout.set(self.MAPPING[hold], color)
+
+                #self.set_hold (hold, color)
+                #print "Orientation"
+        
+        self.layout.push_to_driver()
+
+        time.sleep(60*10)
+
+        self.clear()
+                
+                
+                
     def stop_animation(self):
         if self.animation is not None:
             self.animation.stop()
@@ -143,21 +230,24 @@ if __name__=="__main__":
 
     parser = argparse.ArgumentParser(description='Test led system')
 
-    parser.add_argument('driver_type', type=str,
+    parser.add_argument('--driver_type', type=str,
                         help='driver type, depends on leds and device controlling the led.',choices=['PiWS281x', 'WS2801', 'SimPixel'])
     parser.add_argument('--duration',  type=int, default=10,
                         help='Delay of progress.')
-    parser.add_argument('--special_nest_layout',  action='store_true')
+    parser.add_argument('--holdset',  type=str, help="Display a holdset for current layout", choices=['Hold Set A', 'Hold Set B', 'Hold Set C', 'Original School Holds', "Wooden Holds"])
     args = parser.parse_args()
-    
-    print("Test MOONBOARD LEDS\n===========")
-    led_layout = LED_LAYOUT['nest'] if args.special_nest_layout else None
+        
+    led_layout = None
+
     MOONBOARD = MoonBoard(args.driver_type,led_layout )
-    print("Run animation,")
-    #animation=
-    #MoonBoard.run_animation()
-    #MOONBOARD.layout.fillScreen(COLORS.red)
-    #print(f"wait {args.duration} seconds,")
+    
+    # Display a holdset
+    MOONBOARD.display_holdset(args.holdset, args.duration)
+
+    #print("Run animation,")
+    #MOONBOARD.run_animation() # FIXME
+
+    print(f"wait {args.duration} seconds,")
     time.sleep(args.duration)
     print("clear and exit.")
     MOONBOARD.clear()
