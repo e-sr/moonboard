@@ -25,7 +25,7 @@ Pillow==8.2.0
 pylint==2.3.1
 pyserial==3.4
 python-dateutil==2.8.0
-PyYAML==5.1
+PyYAML==5.4
 requests==2.21.0
 six==1.12.0
 smmap2==2.0.5
