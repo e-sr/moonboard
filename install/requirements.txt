@@ -32,7 +32,7 @@ smmap2==2.0.5
 soupsieve==1.9.1
 urllib3==1.24.3
 websockets==7.0
-Werkzeug==0.15.2
+Werkzeug==0.15.3
 wrapt==1.11.1
 spidev 
 python-periphery
