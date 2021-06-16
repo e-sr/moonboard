@@ -30,7 +30,7 @@ requests==2.21.0
 six==1.12.0
 smmap2==2.0.5
 soupsieve==1.9.1
-urllib3==1.24.3
+urllib3==1.26.5
 websockets==7.0
 Werkzeug==0.15.2
 wrapt==1.11.1
