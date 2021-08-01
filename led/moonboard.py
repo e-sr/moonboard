@@ -152,7 +152,7 @@ class MoonBoard:
                 h = le+str(i)
                 print (h)
                 self.layout.set(self.MAPPING[h], COLORS.purple)
-                #self.set_hold (h, COLORS.red)
+                self.layout.set(self.MAPPING[h], COLORS.blue)
             self.layout.push_to_driver()
             time.sleep(duration)
         
