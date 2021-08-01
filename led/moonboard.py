@@ -145,8 +145,8 @@ class MoonBoard:
     def run_animation(self, run_options={}, **kwds): # FIXME: will it still work?
         duration = 0.001
 
-        for i in range(1,self.ROWS-1):
-            for j in range (0,self.COLS-1):
+        for i in range(1,self.ROWS-2):
+            for j in range (0,self.COLS):
 
                 le = chr(j+65)
                 h = le+str(i)
