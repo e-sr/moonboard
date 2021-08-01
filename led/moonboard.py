@@ -60,9 +60,10 @@ class MoonBoard:
     DEFAULT_PROBLEM_COLORS = {'START':COLORS.blue,'TOP':COLORS.red,'MOVES':COLORS.green}
     DEFAULT_COLOR = COLORS.blue #FIXME ?
     X_GRID_NAMES = string.ascii_uppercase[0:11] # FIXME: del
-    ROWS = 18
+    LED_SPACING = 3 # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
+    ROWS = 18 
     COLS = 11
-    NUM_PIXELS = ROWS*COLS
+    NUM_PIXELS = ROWS*COLS * LED_SPACING
     DEFAULT_BRIGHTNESS = 100 # FIXME: to config file
     SETUP = 'MoonboardMasters2017' # FIXME: to config file / Arg
 
