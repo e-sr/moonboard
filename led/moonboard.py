@@ -204,7 +204,8 @@ class MoonBoard:
         
         self.layout.push_to_driver()
 
-        time.sleep(60*10)
+        wait_holdset_duration = duration # FIXME
+        time.sleep(wait_holdset_duration)
 
         self.clear()
                 
