@@ -236,7 +236,9 @@ if __name__=="__main__":
                         default = "PiWS281x")
     parser.add_argument('--duration',  type=int, default=10,
                         help='Delay of progress.')
-    parser.add_argument('--holdset',  type=str, help="Display a holdset for current layout", choices=['Hold Set A', 'Hold Set B', 'Hold Set C', 'Original School Holds', "Wooden Holds"])
+    parser.add_argument('--holdset',  type=str, help="Display a holdset for current layout", 
+                        choices=['Hold Set A', 'Hold Set B', 'Hold Set C', 'Original School Holds', "Wooden Holds"],
+                        default = "Hold Set A")
     args = parser.parse_args()
         
     led_layout = None
@@ -246,8 +248,8 @@ if __name__=="__main__":
     # Display a holdset
     MOONBOARD.display_holdset(args.holdset, args.duration)
 
-    #print("Run animation,")
-    #MOONBOARD.run_animation() # FIXME
+    print("Run animation,")
+    MOONBOARD.run_animation() # FIXME
 
     print(f"wait {args.duration} seconds,")
     time.sleep(args.duration)
