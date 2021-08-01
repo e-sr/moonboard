@@ -6,4 +6,3 @@ sudo systemctl restart com.moonboard
 
 sudo systemctl restart moonboard
 
-journalctl -fu com.moonboard
