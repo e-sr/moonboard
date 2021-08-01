@@ -1,8 +1,7 @@
 
 [Unit]
 Description= moon board app service
-After=multi-user.target com.moonboard.service
-Wants=com.moonboard.service
+After=multi-user.target 
 
 [Service]
 User=pi
