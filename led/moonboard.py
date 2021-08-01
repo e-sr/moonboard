@@ -146,7 +146,7 @@ class MoonBoard:
         duration = 0.001
 
         for i in range(1,self.ROWS-1):
-            for j in range (0,self.COLS):
+            for j in range (0,self.COLS-1):
 
                 le = chr(j+65)
                 h = le+str(i)
