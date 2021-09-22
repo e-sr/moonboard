@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import argparse
-from led.moonboard import MoonBoard,LED_LAYOUT
+from led.moonboard import MoonBoard
 from gi.repository import GLib
 import dbus
 from dbus.mainloop.glib import DBusGMainLoop
@@ -49,7 +49,6 @@ if __name__ == "__main__":
     # #signal.signal(signal.SIGINT, signal_handler)
     # #signal.pause()
 
-
     parser = argparse.ArgumentParser(description='')
 
     parser.add_argument('--driver_type',
@@ -59,9 +58,9 @@ if __name__ == "__main__":
 
     parser.add_argument('--brightness',  default=100, type=int)
 
-    parser.add_argument('--led_layout',  
-                        default=None, 
-                        choices=list(LED_LAYOUT.keys())
+    parser.add_argument('--led_mapping',
+                        type=str,  
+                        default='led_mapping.json', 
                         )
 
     parser.add_argument('--debug',  action = "store_true")
@@ -78,13 +77,14 @@ if __name__ == "__main__":
     else:
         logger.setLevel(logging.INFO)
 
-    #problems
-    led_layout = LED_LAYOUT.get(args.led_layout) if args.led_layout is not None else None
-    MOONBOARD = MoonBoard(args.driver_type, led_layout)
-    
-    # run led led
-    #MOONBOARD.led_test()
-    #MOONBOARD.clear()
+    MOONBOARD = MoonBoard(
+        args.driver_type,
+        args.led_mapping)
+
+    print(f"Led mapping:{args.led_mapping}")
+    print(f"Driver type:{args.driver_type}")
+
+    MOONBOARD.clear()
 
     # connect to dbus signal new problem
     dbml = DBusGMainLoop(set_as_default=True)

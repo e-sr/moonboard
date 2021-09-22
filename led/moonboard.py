@@ -9,9 +9,10 @@ from bibliopixel.drivers.spi_interfaces import SPI_INTERFACES
 import string
 import json
 import time
+import os
 
 class MoonBoard:
-    DEFAULT_PCOLSROBLEM_COLORS = {'START':COLORS.blue,'TOP':COLORS.red,'MOVES':COLORS.green}
+    DEFAULT_PROBLEM_COLORS = {'START':COLORS.blue,'TOP':COLORS.red,'MOVES':COLORS.green}
     DEFAULT_COLOR = COLORS.blue #FIXME ?
     X_GRID_NAMES = string.ascii_uppercase[0:11] # FIXME: del
     ROWS = 18 
@@ -19,15 +20,14 @@ class MoonBoard:
     DEFAULT_BRIGHTNESS = 100 # FIXME: to config file
     SETUP = 'MoonboardMasters2017' # FIXME: to config file / Arg
     DEFAULT_LED_MAPPING_FILE='led_mapping.json'
-    # generate with {C+str(n):i*18+n for n in range(18) for  i, C in enumerate(string.ascii_uppercase[0:11]) }
+    # generate with {C+str(n+1):int(i*18+ (1-((-1)**(i%2)))/2*17 + ((-1)**(i%2))*n) for  i, C in enumerate(string.ascii_uppercase[0:11]) for n in range(18) }
     def __init__(self, 
                     driver_type, 
-                    led_layout=None, 
                     led_mapping=DEFAULT_LED_MAPPING_FILE, 
                     brightness=DEFAULT_BRIGHTNESS):
-
-                #read led mapping
-        with open(led_mapping) as json_file:
+        #read led mapping
+        led_mappimng_abs = os.path.join(os.path.dirname(__file__), led_mapping)
+        with open(led_mappimng_abs) as json_file:
             try:
                 data = json.load(json_file)
             except Exception as e:
@@ -35,7 +35,11 @@ class MoonBoard:
                 raise e
             else:
                 self.MAPPING = data
-                num_pixels=max(self.MAPPING.values())
+        
+        try:
+            num_pixels=self.MAPPING["num_pixels"]
+        except:
+            num_pixels=max(self.MAPPING.values())+1
 
         try:
             if driver_type == "PiWS281x":
@@ -52,12 +56,7 @@ class MoonBoard:
             print("Use bibliopixel.drivers.dummy_driver")
             driver = DriverDummy(num_pixels)
 
-        if led_layout is not None:
-            self.layout = Strip (driver, brightness=brightness,threadedUpdate=True)
-        else:
-            self.layout = Strip (driver, brightness=brightness,threadedUpdate=True) 
-
-
+        self.layout = Strip (driver, brightness=brightness,threadedUpdate=True)
         self.layout.cleanup_drivers()
         self.layout.start()
         self.animation = None
@@ -147,7 +146,7 @@ if __name__=="__main__":
         
     led_layout = None
 
-    MOONBOARD = MoonBoard(args.driver_type,led_layout,args.led_mapping )
+    MOONBOARD = MoonBoard(args.driver_type,args.led_mapping )
 
     print("Led Layout Test,")
     MOONBOARD.led_layout_test(args.duration) 
