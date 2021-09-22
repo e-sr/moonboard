@@ -22,10 +22,9 @@
 
 # Moonboard Service
 To stop / restart the moonboard services (i.e. for debugging) use systemctl:
-```
-sudo systemctl stop moonboard.service
-```
-
++ `sudo systemctl stop moonboard.service`
++ Debug the BLE backend using `journalctl -fu com.moonboard`
++ Debug the application itself using `tail -f /var/log/moonboard`
 
 # LED Driver
 *** FIXME ***

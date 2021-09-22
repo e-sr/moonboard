@@ -61,9 +61,9 @@ class MoonBoard:
     DEFAULT_COLOR = COLORS.blue #FIXME ?
     X_GRID_NAMES = string.ascii_uppercase[0:11] # FIXME: del
     LED_SPACING = 3 # Use every n-th LED only - used for 3 x 4x5 LED strp      # FIXME: normal=1
-    ROWS = 18 * LED_SPACING # FIXME
+    ROWS = 18 
     COLS = 11
-    NUM_PIXELS = ROWS*COLS
+    NUM_PIXELS = ROWS*COLS * LED_SPACING
     DEFAULT_BRIGHTNESS = 100 # FIXME: to config file
     SETUP = 'MoonboardMasters2017' # FIXME: to config file / Arg
 
@@ -152,35 +152,11 @@ class MoonBoard:
                 h = le+str(i)
                 print (h)
                 self.layout.set(self.MAPPING[h], COLORS.purple)
-                #self.set_hold (h, COLORS.red)
+                self.layout.set(self.MAPPING[h], COLORS.blue)
+                self.layout.set(self.MAPPING[h], COLORS.red)
             self.layout.push_to_driver()
             time.sleep(duration)
-        
-        time.sleep (1)
-        self.clear()
-
-        with open('../problems/HoldSetup.json') as json_file: # FIXME: path 
-            data = json.load(json_file)
-            for hold in data[self.SETUP]:
-                holdset = (data[self.SETUP][hold]['HoldSet']) # A, B, OS for 2016 
-                color = COLORS.black
-                #if (holdset == "Hold Set A"): # FIXME
-                #    color = COLORS.red
-                #    print (hold, data[self.SETUP][hold]["Orientation"])
-                #if (holdset == "Original School Holds"):# FIXME
-                #    color = COLORS.blue
-                #    print (hold, data[self.SETUP][hold]["Orientation"])
-                #if (holdset == "Hold Set B"):# FIXME
-                #    color = COLORS.yellow
-                #    print (hold, data[self.SETUP][hold]["Orientation"])
-                if (holdset == "Hold Set C"):# FIXME
-                     color = COLORS.green                    
-                self.layout.set(self.MAPPING[hold], color)
-                #self.set_hold (hold, color)
-                #print "Orientation"
-        
-        self.layout.push_to_driver()
-
+    
         time.sleep(60*10)
 
         self.clear()
@@ -204,7 +180,8 @@ class MoonBoard:
         
         self.layout.push_to_driver()
 
-        time.sleep(60*10)
+        wait_holdset_duration = duration # FIXME
+        time.sleep(wait_holdset_duration)
 
         self.clear()
                 
@@ -231,10 +208,13 @@ if __name__=="__main__":
     parser = argparse.ArgumentParser(description='Test led system')
 
     parser.add_argument('--driver_type', type=str,
-                        help='driver type, depends on leds and device controlling the led.',choices=['PiWS281x', 'WS2801', 'SimPixel'])
+                        help='driver type, depends on leds and device controlling the led.',choices=['PiWS281x', 'WS2801', 'SimPixel'],
+                        default = "PiWS281x")
     parser.add_argument('--duration',  type=int, default=10,
                         help='Delay of progress.')
-    parser.add_argument('--holdset',  type=str, help="Display a holdset for current layout", choices=['Hold Set A', 'Hold Set B', 'Hold Set C', 'Original School Holds', "Wooden Holds"])
+    parser.add_argument('--holdset',  type=str, help="Display a holdset for current layout", 
+                        choices=['Hold Set A', 'Hold Set B', 'Hold Set C', 'Original School Holds', "Wooden Holds"],
+                        default = "Hold Set A")
     args = parser.parse_args()
         
     led_layout = None
@@ -244,8 +224,8 @@ if __name__=="__main__":
     # Display a holdset
     MOONBOARD.display_holdset(args.holdset, args.duration)
 
-    #print("Run animation,")
-    #MOONBOARD.run_animation() # FIXME
+    print("Run animation,")
+    MOONBOARD.run_animation() # FIXME
 
     print(f"wait {args.duration} seconds,")
     time.sleep(args.duration)
