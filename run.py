@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     parser.add_argument('--driver_type',
                         help='driver type, depends on leds and device controlling the led.',
-                        choices=['PiWS281x', 'WS2801', 'SimPixel'],
+                        choices=["WS281X", 'WS2801', 'SimPixel'],
                         default='WS2801')
 
     parser.add_argument('--brightness',  default=100, type=int)
@@ -47,7 +47,8 @@ if __name__ == "__main__":
     #problems
     led_layout = LED_LAYOUT.get(args.led_layout) if args.led_layout is not None else None
     MOONBOARD = MoonBoard(args.driver_type, led_layout)
-    
+    MOONBOARD.start_show_leds()
+ 
     # connect to dbus signal new problem
     dbml = DBusGMainLoop(set_as_default=True)
 
@@ -65,6 +66,7 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("keyboard interrupt received")
     except Exception as e:
+        logger.error(str(e))
         print("Unexpected exception occurred: '{}'".format(str(e)))
     finally:
         loop.quit()

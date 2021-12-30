@@ -13,7 +13,8 @@ MOONBOARD_PIXELS_COUNT = 198
 HOLDS_COLORS = {'START':COLORS.green,'TOP':COLORS.red,'MOVES':COLORS.blue}
 
 def init_pixels(type, npixels = MOONBOARD_PIXELS_COUNT, brightness=BRIGHTNESS):
-    
+    driver = PiWS281X(50)
+
     layout = Strip(driver,  brightness=brightness)
     #layout.start()
     return layout

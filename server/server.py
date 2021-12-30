@@ -52,7 +52,7 @@ async def unregister(ws,client,logger,**kwargs):
         f'Remove client n. {client}, number of clients is {len(CLIENTS)}')
 
 async def handle_search_submit_action(ws, msg, conn, logger,**kwargs):
-    search_param=msg['search_param']
+    search_param=msg['search_parameter']
     logger.info(search_param)
     p, limit_reach=await query.user_query_get_problems(conn=conn, limit=LIMIT, **search_param)
     if limit_reach:

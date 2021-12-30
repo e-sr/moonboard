@@ -8,7 +8,8 @@ import string,json
 import subprocess
 import logging
 from moonboard_app_protocol import UnstuffSequence, decode_problem_string
- 
+
+
 BLUEZ_SERVICE_NAME =           'org.bluez'
 DBUS_OM_IFACE =                'org.freedesktop.DBus.ObjectManager'
 LE_ADVERTISING_MANAGER_IFACE = 'org.bluez.LEAdvertisingManager1'
@@ -94,6 +95,7 @@ class MoonApplication(dbus.service.Object):
 
     def get_path(self):
         return dbus.ObjectPath(self.path)
+
  
     def add_service(self, service):
         self.services.append(service)
@@ -117,6 +119,29 @@ def register_app_error_cb(error):
     print('Failed to register application: ' + str(error))
     mainloop.quit()
 
+from subprocess import Popen
+def run(*popenargs, **kwargs):
+    input = kwargs.pop("input", None)
+    check = kwargs.pop("handle", False)
+
+    if input is not None:
+        if 'stdin' in kwargs:
+            raise ValueError('stdin and input arguments may not both be used.')
+        kwargs['stdin'] = subprocess.PIPE
+
+    process = subprocess.Popen(*popenargs, **kwargs)
+    try:
+        stdout, stderr = process.communicate(input)
+    except:
+        process.kill()
+        process.wait()
+        raise
+    retcode = process.poll()
+    if check and retcode:
+        raise subprocess.CalledProcessError(
+            retcode, process.args, output=stdout, stderr=stderr)
+    return retcode, stdout, stderr
+
 def setup_adv(logger):
     logger.info('setup adv')
     setup_adv = [
@@ -126,7 +151,10 @@ def setup_adv(logger):
     "hcitool -i hci0 cmd 0x08 0x0006 80 02 c0 03 00 00 00 00 00 00 00 00 00 07 00"
     ]
     for c in setup_adv:
-        subprocess.run("sudo "+ c, shell=True,check=True)
+        try:
+            run(["sudo " + c], shell=True)
+        except Exception as e:
+            print("subprocess {} is not a valid run candidate".format(c))
 
 def start_adv(logger,start=True):
     if start:
@@ -136,7 +164,7 @@ def start_adv(logger,start=True):
         start='00'
         logger.info('stop adv')
     start_adv= "hcitool -i hci0 cmd 0x08 0x000a {}".format(start)
-    subprocess.run("sudo " +start_adv, shell=True,check=True)
+    run("sudo " +start_adv, shell=True)
 
 def main(logger,adapter):
     global mainloop
@@ -151,6 +179,7 @@ def main(logger,adapter):
                                         bus=bus,
                                         do_not_queue=True)
     except dbus.exceptions.NameExistsException:
+        print("Name Exists Exemption")
         sys.exit(1)
 
     app = MoonApplication(bus_name,None,logger)
@@ -170,8 +199,7 @@ def main(logger,adapter):
     
     setup_adv(logger)
     start_adv(logger)
-
-    # Run the loop
+     # Run the loop
     try:
         loop.run()
     except KeyboardInterrupt:
@@ -199,5 +227,4 @@ if __name__ == '__main__':
         logger.setLevel(logging.DEBUG)
     else:
         logger.setLevel(logging.INFO)
-
     main(logger,adapter='/org/bluez/hci0')
