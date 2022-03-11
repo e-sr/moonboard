@@ -21,7 +21,7 @@ MarkupSafe==1.1.1
 mccabe==0.6.1
 numpy==1.16.3
 olefile==0.46
-Pillow==8.3.2
+Pillow==9.0.1
 pylint==2.3.1
 pyserial==3.4
 python-dateutil==2.8.0
